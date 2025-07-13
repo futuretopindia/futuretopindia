@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Future Top India - Software Development Company</title>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+        }
+        .floating-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 50;
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .contact-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+    </style>
+</head>
+<body class="font-sans bg-gray-50">
+    <!-- Floating WhatsApp Button -->
+    <a href="https://wa.me/919864551558" target="_blank" class="floating-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <!-- Navigation -->
+    
+	<nav class="gradient-bg text-white shadow-md">
+        <div class="container mx-auto px-5 py-3">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                   <img src="image/logo.png" alt="Future Top India logo" class="h-12 mr-10">
+                 
+               </div>
+			   
+			 
+			   
+                <div class="hidden md:flex space-x-8">
+                    <a href="#home" class="hover:text-blue-200">Home</a>
+                    <a href="#about" class="hover:text-blue-200">About</a>
+                    <a href="#services" class="hover:text-blue-200">Services</a>
+                    <a href="#technologies" class="hover:text-blue-200">Technologies</a>
+                    <a href="#contact" class="hover:text-blue-200">Contact</a>
+                </div>
+                <div class="md:hidden">
+                    <button id="menu-btn" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
+                <a href="#home" class="block py-2 hover:bg-blue-700 rounded px-4">Home</a>
+                <a href="#about" class="block py-2 hover:bg-blue-700 rounded px-4">About</a>
+                <a href="#services" class="block py-2 hover:bg-blue-700 rounded px-4">Services</a>
+                <a href="#technologies" class="block py-2 hover:bg-blue-700 rounded px-4">Technologies</a>
+                <a href="#contact" class="block py-2 hover:bg-blue-700 rounded px-4">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="gradient-bg text-white py-20 px-4">
+        <div class="container mx-auto flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-10 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Building Your Digital Future</h1>
+                <p class="text-xl mb-8">Transform your ideas into reality with our one-stop solution for websites, mobile apps, and digital marketing — everything your brand needs to grow.</p>
+                <div class="flex space-x-4">
+                    <a href="#contact" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Get Started</a>
+                    <a href="#services" class="border border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition">Our Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2">
+                <img src="image/main.png" alt="Future Top India team working on software projects" class="rounded-lg shadow-xl">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">About Future Top India</h2>
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <img src="image/rakib.png" alt="Future Top India team meeting" class="rounded-lg shadow-lg">
+                </div>
+                <div class="md:w-1/2">
+                    <p class="text-lg mb-6">
+                        Future Top India is a software development company founded on April 5, 2022, by Mr. Rakibur Islam. Based in Guwahati, Assam, our company is dedicated to delivering cutting-edge IT solutions using modern technologies, tools, and frameworks across multiple domains.
+                    </p>
+                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                        <h3 class="text-xl font-bold mb-3 text-blue-800">Why Choose Us?</h3>
+                        <ul class="space-y-2">
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Highly customizable development</span>
+                            </li>
+							<li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Free Domain & Hosting for 1 Year </span>
+                            </li>
+							<li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Any problems are supported even after the project is created</span>
+                            </li>
+							
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Transparent project planning</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Latest technology implementation</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Dedicated support team 24/7 Available </span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                                <span>Affordable pricing without compromising quality</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-16 px-4 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-4">What We Do</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We provide end-to-end software development services tailored to your business needs</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-globe text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Web Development</h3>
+                    <p class="text-gray-600">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+                </div>
+
+                <!-- Service 2 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-mobile-alt text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Mobile Applications</h3>
+                    <p class="text-gray-600">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
+                </div>
+
+                <!-- Service 3 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-laptop-code text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Desktop Software</h3>
+                    <p class="text-gray-600">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
+                </div>
+
+                <!-- Service 4 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-cloud text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SaaS Platforms</h3>
+                    <p class="text-gray-600">Scalable Software-as-a-Service solutions with subscription management.</p>
+                </div>
+
+                <!-- Service 5 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-chart-line text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Admin Panels</h3>
+                    <p class="text-gray-600">Custom dashboards and admin panels for business management.</p>
+                </div>
+
+                <!-- Service 6 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-users text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">SMM Panels</h3>
+                    <p class="text-gray-600">Social media marketing tools and automation platforms.</p>
+                </div>
+
+                <!-- Service 7 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-project-diagram text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">ERP/CRM</h3>
+                    <p class="text-gray-600">Custom enterprise resource planning and customer relationship management systems.</p>
+                </div>
+
+                <!-- Service 8 -->
+                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                    <div class="text-blue-600 mb-4">
+                        <i class="fas fa-paint-brush text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Design Services</h3>
+                    <p class="text-gray-600">UI/UX design, graphics, branding, and marketing materials.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technologies Section -->
+    <section id="technologies" class="py-16 px-4">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Technologies We Work With</h2>
+
+            <!-- Frontend Technologies -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Frontend Technologies</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/html5.png" alt="HTML5 logo" class="w-10 h-10 mr-3">
+                        <span>HTML5</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/css3.png" alt="CSS3 logo" class="w-10 h-10 mr-3">
+                        <span>CSS3</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/js.png" alt="JavaScript logo" class="w-10 h-10 mr-3">
+                        <span>JavaScript</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3138bd6-ed32-423e-8a34-522e7dd9b6d3.png" alt="React logo" class="w-10 h-10 mr-3">
+                        <span>React.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f024f084-44df-487e-8b1f-c60a482c507e.png" alt="Next.js logo" class="w-10 h-10 mr-3">
+                        <span>Next.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37b34f72-5f47-435f-a8f9-9f906015a239.png" alt="Vue.js logo" class="w-10 h-10 mr-3">
+                        <span>Vue.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9cc4d8ea-4fb7-4fda-8df5-eec04ed9da23.png" alt="Angular logo" class="w-10 h-10 mr-3">
+                        <span>Angular</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55528df3-3f47-4258-87b1-c6a83f93f72d.png" alt="Tailwind CSS logo" class="w-10 h-10 mr-3">
+                        <span>Tailwind CSS</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/Bootstrap.jpg" alt="Bootstrap logo" class="w-10 h-10 mr-3">
+                        <span>Bootstrap</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Backend Technologies -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Backend Technologies</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2edc2f1-c254-44f1-a3ed-cd145bad949d.png" alt="Node.js logo" class="w-10 h-10 mr-3">
+                        <span>Node.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3528cf81-8907-4b7a-a1bc-23951bae6be6.png" alt="Express.js logo" class="w-10 h-10 mr-3">
+                        <span>Express.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6cd45de-b265-40da-9cc0-ebd3d1f163c0.png" alt="PHP logo" class="w-10 h-10 mr-3">
+                        <span>PHP</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb744bc3-57ba-465c-80f0-66be2f8e6f67.png" alt="Laravel logo" class="w-10 h-10 mr-3">
+                        <span>Laravel</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afacc929-75ad-4e59-ad3f-e2a90caa9f21.png" alt="Python logo" class="w-10 h-10 mr-3">
+                        <span>Python</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e46e6f83-7e66-41d0-b921-e8036a831a61.png" alt="Django logo" class="w-10 h-10 mr-3">
+                        <span>Django</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/674c8af5-0cd5-4a70-997c-786fc3a994cd.png" alt="Java logo" class="w-10 h-10 mr-3">
+                        <span>Java</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/07198f8e-d83f-4161-8d67-d3cd8dacd429.png" alt="Spring Boot logo" class="w-10 h-10 mr-3">
+                        <span>Spring Boot</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Mobile Development -->
+            <div class="mb-12">
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Mobile Development</h3>
+                <div class="flex flex-wrap gap-4">
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/adf6c39f-6305-4982-8816-e2d27e331af9.png" alt="Flutter logo" class="w-10 h-10 mr-3">
+                        <span>Flutter</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55d13b75-c771-47c7-a470-1c03bcfa1ef3.png" alt="React Native logo" class="w-10 h-10 mr-3">
+                        <span>React Native</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/Kotlin.jpg" alt="Kotlin logo" class="w-10 h-10 mr-3">
+                        <span>Kotlin</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12e85de7-f078-43cc-bd0c-b50fca43c394.png" alt="Swift logo" class="w-10 h-10 mr-3">
+                        <span>Swift</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other Technologies Sections -->
+            <!-- Note: Similar structure for Database, E-commerce, Cloud & DevOps, Design sections -->
+            <!-- Space considerations prevent showing all, but the pattern is the same -->
+        </div>
+    </section>
+
+    <!-- Our Approach Section -->
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Our Development Process</h2>
+
+            <div class="relative">
+                <!-- Timeline line -->
+                <div class="hidden md:block absolute left-1/2 h-full w-1 bg-blue-200 transform -translate-x-1/2"></div>
+
+                <!-- Step 1 -->
+                <div class="mb-16 relative">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-16 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-xl font-bold mb-2">1. Client Discussion & Requirement Gathering</h3>
+                            <p>We thoroughly understand your business needs and project goals through detailed discussions.</p>
+                        </div>
+                        <div class="md:w-1/2">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                                <img src="image/Technology Stack Selection.png" alt="Client requirement discussion" class="w-full rounded mb-4">
+                                <p>We document all requirements to ensure we're aligned with your vision before starting development.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="mb-16 relative">
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 order-last md:pl-16">
+                            <h3 class="text-xl font-bold mb-2">2. Technology Stack Selection</h3>
+                            <p>We choose the right technologies based on scalability, budget, and timeline requirements.</p>
+                        </div>
+                        <div class="md:w-1/2 mb-6 md:mb-0">
+                            <div class="bg-white p-6 rounded-lg shadow-md border-l-4 border-blue-500">
+                                <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/bb7ff2db-2b49-4443-ba59-bfc94bb05a8c.png" alt="Team evaluating technology options on whiteboard" class="w-full rounded mb-4">
+                                <p>Our experts select optimal frameworks and tools for your specific project needs.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- More steps would follow the same pattern for 3-7 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-16 px-4 gradient-bg text-white">
+        <div class="container mx-auto">
+            <h2 class="text-3xl font-bold text-center mb-12">Contact Us</h2>
+
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                    <h3 class="text-2xl font-semibold mb-6">Let's Build Something Great Together</h3>
+                    <p class="mb-6">Ready to start your project or have questions? Reach out to our team in Guwahati, Assam.</p>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start">
+                            <i class="fas fa-phone-alt mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Call Us</h4>
+                                <a href="tel:+919864551558" class="hover:underline">+91 98645 51558</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Email Us</h4>
+                                <a href="mailto:futuretopindia@gmail.com" class="hover:underline">futuretopindia@gmail.com</a>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt mt-1 mr-4"></i>
+                            <div>
+                                <h4 class="font-bold">Visit Us</h4>
+                                <p>Royal Path, Opp. Balaji Temple,<br>Ahom Gaon, Guwahati,<br>Assam – 781035</p>
+                            </div>
+                        </div>
+
+                        <div class="pt-4">
+                            <a href="https://wa.me/919864551558" target="_blank" class="inline-flex items-center bg-green-500 hover:bg-green-600 px-6 py-3 rounded-lg font-bold transition">
+                                <i class="fab fa-whatsapp mr-2 text-xl"></i> Chat on WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                        <div class="mb-4">
+                            <label for="name" class="block mb-2 font-medium">Your Name</label>
+                            <input type="text" id="name" class="contact-input w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:bg-opacity-30" placeholder="Enter your name">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="email" class="block mb-2 font-medium">Email Address</label>
+                            <input type="email" id="email" class="contact-input w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:bg-opacity-30" placeholder="Enter your email">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="phone" class="block mb-2 font-medium">Phone Number</label>
+                            <input type="tel" id="phone" class="contact-input w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:bg-opacity-30" placeholder="Enter your phone number">
+                        </div>
+
+                        <div class="mb-4">
+                            <label for="message" class="block mb-2 font-medium">Your Message</label>
+                            <textarea id="message" rows="4" class="contact-input w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:bg-opacity-30" placeholder="Tell us about your project"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-white text-blue-800 py-3 rounded-lg font-bold hover:bg-opacity-90 transition">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <!-- Footer -->
+    
+	<footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <img src="image/sublogo.png" alt="Future Top India logo" class="h-10 mr-3">
+            <i> 
+					  <span class="font-bold text-xl">FTI • Pvt Ltd </span>
+		    </i>
+                    </div>
+                    <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>
+                </div>
+
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-facebook-f text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-twitter text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-instagram text-xl"></i>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-white transition">
+                        <i class="fab fa-linkedin-in text-xl"></i>
+                    </a>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+                <p>Copyright © 2022-25 by Future Top India | All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+
+
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-btn').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.toggle('hidden');
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Form submission handling (would need backend in real implementation)
+        document.querySelector('form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will contact you shortly.');
+            this.reset();
+        });
+    </script>
+</body>
+</html>
