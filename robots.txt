@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://futuretopindia.in/sitemap.xml
