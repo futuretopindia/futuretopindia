@@ -6,7 +6,41 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="Latest blogs by Future Top India on software, web, apps, tech & design.">
   <meta name="keywords" content="Future Top India, blog, software, web, apps">
+  
+  
+  <!-- Primary Meta Tags -->
+<title>🚀 Future Top India Blog – Latest Web, App, & Marketing Tips</title>
+<meta name="title" content="🚀 Future Top India Blog – Latest Web, App, & Marketing Tips">
+<meta name="description" content="Explore expert tips, guides, and case studies on website development, app design, SEO, and digital marketing. Stay updated with Future Top India's blog.">
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://futuretopindia.in/blog.html">
+<meta property="og:title" content="🚀 Future Top India Blog – Web & App Development Insights">
+<meta property="og:description" content="Get professional insights, tutorials, and real client case studies on building websites, apps, and promoting businesses online.">
+<meta property="og:image" content="https://futuretopindia.in/images/blog-cover.jpg"> <!-- Change image if needed -->
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="https://futuretopindia.in/blog.html">
+<meta property="twitter:title" content="🚀 Future Top India Blog – Web & App Development Insights">
+<meta property="twitter:description" content="Explore expert tips and tutorials from the Future Top India team on website development, app design, and digital marketing.">
+<meta property="twitter:image" content="https://futuretopindia.in/images/blog-cover.jpg">
+
+<!-- Keywords (Google still uses it lightly) -->
+<meta name="keywords" content="Future Top India blog, website development blog, app development tips, SEO tips, digital marketing articles, coding blog India, web design blog India, tech tutorials, developer case studies">
+
+<!-- Author and SEO Info -->
+<meta name="author" content="Future Top India">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://futuretopindia.in/blog.html">
+
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  
+  <!-- Favicon -->
+<link rel="icon" href="https://futuretopindia.in/image/favicon.png" type="image/png">
+
+  
  <style>
    /* Navbar Style */
     .navbar {
@@ -247,10 +281,11 @@
 
 <body>
 
+
 <!-- Navbar -->
   <div class="navbar">
    <center> <h1><b>📘 Future Top India - Latest Blogs</b></h1></center>
-	 <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
+   <button class="toggle-btn" onclick="toggleDarkMode()">🌙</button>
     <a href="https://futuretopindia.in/"> Back to Home</a>
   </div>
 
@@ -366,19 +401,28 @@
           <div class="blog-content">
             <h3>${blog.title}</h3>
             <p>${blog.desc}</p>
-            <a class="read-more" href="${blog.link}">Read More</a>
+            <a class="read-more" href="${blog.link}">Read More...</a>  
           </div>
         </div>
       `;
       container.innerHTML += card;
     });
 
-	
-	 function toggleDarkMode() {
-      document.body.classList.toggle('dark');
-      const btn = document.querySelector('.toggle-btn');
-      btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
-    }
-  </script>
+  function toggleDarkMode() {
+    document.body.classList.toggle('dark');
+    const btn = document.querySelector('.toggle-btn');
+    btn.textContent = document.body.classList.contains('dark') ? '☀️' : '🌙';
+  }
+
+  function submitComment(event) {
+    event.preventDefault();
+    document.getElementById('successMsg').style.display = 'block';
+    setTimeout(() => {
+      document.getElementById('successMsg').style.display = 'none';
+    }, 3000);
+    event.target.reset();
+  }
+</script>
+  
 </body>
 </html>
