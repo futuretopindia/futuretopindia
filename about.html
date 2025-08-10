@@ -200,6 +200,114 @@
                     </div>
   </section>
 
+<hr>
+<hr>
+<hr>
+
+
+
+	<!-- FAQ Title Box Style with Animation & Hover -->
+<div class="flex justify-center gap-4 py-2 bg-[#1d2951]" >
+
+  <div class="bg-red-600 w-16 h-16 flex items-center justify-center transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-red-700 rounded">
+    <span class="text-white text-3xl font-bold">F</span>
+  </div>
+  <div class="bg-red-600 w-16 h-16 flex items-center justify-center transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-red-700 rounded">
+    <span class="text-white text-3xl font-bold">A</span>
+  </div>
+  <div class="bg-red-600 w-16 h-16 flex items-center justify-center transform transition duration-300 hover:scale-110 hover:shadow-lg hover:bg-red-700 rounded">
+    <span class="text-white text-3xl font-bold">Q</span>
+  </div>
+</div>
+
+
+
+		  
+    <!-- FAQ Section Start -->
+<section class="bg-[#FFFFFF] py-12 px-4 text-white">
+  <div class="max-w-3xl mx-auto">
+    
+
+    <!-- FAQ Items -->
+    <div class="space-y-4">
+
+      <!-- Item 1 -->
+      <div class="bg-white text-black rounded shadow transition-transform duration-300 hover:scale-105">
+        <button class="w-full flex justify-between items-center p-4 font-semibold text-lg toggle-btn">
+          <span>What does Future Top India do?</span>
+          <span class="icon text-xl">+</span>
+        </button>
+        <div class="px-4 pb-4 hidden answer text-sm text-gray-800">
+          Future Top India provides one-stop solution for website, mobile apps and digital marketing for your brand.
+        </div>
+      </div>
+
+      <!-- Item 2 -->
+      <div class="bg-white text-black rounded shadow transition-transform duration-300 hover:scale-105">
+        <button class="w-full flex justify-between items-center p-4 font-semibold text-lg toggle-btn">
+          <span>How to contact Future Top India?</span>
+          <span class="icon text-xl">+</span>
+        </button>
+        <div class="px-4 pb-4 hidden answer text-sm text-gray-800">
+          You can contact Future Top India on our mail
+          <a href="mailto:futuretopindia@gmail.com" class="text-blue-600 underline"><b>futuretopindia@gmail.com</b></a>
+          or visit the <a href="#contact" class="text-blue-600 underline"><b>Contact page</b></a>.
+        </div>
+      </div>
+
+      <!-- Item 3 -->
+      <div class="bg-white text-black rounded shadow transition-transform duration-300 hover:scale-105">
+        <button class="w-full flex justify-between items-center p-4 font-semibold text-lg toggle-btn">
+          <span>Where is the office of Future Top India?</span>
+          <span class="icon text-xl">+</span>
+        </button>
+        <div class="px-4 pb-4 hidden answer text-sm text-gray-800">
+          Currently Future Top India has 1 office: <b>Guwahati (Assam)</b>.
+        </div>
+      </div>
+
+      <!-- Item 4 -->
+      <div class="bg-white text-black rounded shadow transition-transform duration-300 hover:scale-105">
+        <button class="w-full flex justify-between items-center p-4 font-semibold text-lg toggle-btn">
+          <span>What are the services provided by Future Top India?</span>
+          <span class="icon text-xl">+</span>
+        </button>
+        <div class="px-4 pb-4 hidden answer text-sm text-gray-800">
+          We provide mobile apps, website development, digital marketing services, API, and SEO for your brand.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- JavaScript for toggle -->
+<script>
+  const toggleButtons = document.querySelectorAll('.toggle-btn');
+
+  toggleButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const answer = button.nextElementSibling;
+      const icon = button.querySelector('.icon');
+
+      answer.classList.toggle('hidden');
+      icon.textContent = icon.textContent === '+' ? '−' : '+';
+    });
+  });
+</script>
+
+
+
+
+
+
+
+
+<hr>
+<hr>
+<hr>
+
+
   <!-- Location Section -->
   <section class="max-w-4xl mx-auto px-6 py-10 bg-white rounded-lg shadow-md">
     <h2 class="text-2xl font-bold mb-4 text-center">Our Location</h2>
@@ -308,6 +416,9 @@
   <div class="container mx-auto text-center space-x-4">
     <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Home</a>
     <a href="about.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">About</a>
+	<a href="contact.html" class="text-blue-500 hover:underline" class="horver=:text-sea green-400"> Contact Us</a>
+	<a href="blog.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400"> Blogs </a>
+	<a href="technologies.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400"> Technologies </a>
     <a href="portfolio.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Our Portfolio</a>
     <a href="privacy.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Privacy Policy</a>
   </div>
@@ -329,6 +440,7 @@
 
 </body>
 </html>
+
 
 
 
