@@ -111,6 +111,29 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
     </style>
+
+	<style>
+	.stats-section {
+  padding: 50px 20px;
+  background: #fff;
+}
+.stat-card {
+  padding: 20px;
+  border: 1px solid #f1f1f1;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+.stat-card h3 {
+  color: #170ec7; /* blue shade */
+  font-size: 2.5rem;
+  margin-bottom: 8px;
+}
+.stat-card p {
+  color: #666;
+  font-size: 1.2rem;
+}
+</style>
+
 </head>
 
 
@@ -246,7 +269,33 @@
 	
 	
 	
+		
 	
+<!-- Stats Section -->
+
+<section class="py-2 bg-white">
+  <div class="container mx-auto flex justify-center">
+    <div class="flex space-x-2 overflow-x-auto md:grid md:grid-cols-3 md:gap-4 text-center">
+      
+      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-500" data-text="100%">100%</h4>
+        <h5 class="text-gray-700 text-[10px]">Happy 😊</h5>
+      </div>
+      
+      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-500" data-text="24/7">24/7</h4>
+        <h5 class="text-gray-700 text-[10px]">Support ☎</h5>
+      </div>
+      
+      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-500" data-text="3-10 Days">3-10 Days</h4>
+        <h5 class="text-gray-700 text-[10px]">Delivery 📦</h5>
+      </div>
+      
+    </div>
+  </div>
+</section>
+
 	
 	
 	
@@ -1047,6 +1096,7 @@
 
 </body>
 </html>
+
 
 
 
