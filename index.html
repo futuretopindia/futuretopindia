@@ -87,6 +87,54 @@
 	
     
     <style>
+	
+	/* Custom Button Styles */
+.custom-button {
+  /* Box Model aur Layout */
+  display: inline-flex; /* 'flex' jaisa hai par inline elements ke liye behtar hai */
+  align-items: center;
+  justify-content: center;
+  width: 150px;
+  height: 50px;
+  padding: 0 20px; /* Text ke aas-paas thodi jagah ke liye */
+  box-sizing: border-box; /* Padding aur border width mein shamil ho */
+
+  /* Look and Feel */
+  background-color: #ffffff; /* Button ka background color safed */
+  color: #007bff; /* Text ka color neela */
+  border: 1px solid #007bff; /* Border ka color neela */
+  border-radius: 30px; /* Gol-kinare wala button */
+  
+  /* Text Properties */
+  font-family: "Source Sans Pro", sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none; /* Link ke neeche wali line hatane ke liye */
+
+  /* Interaction */
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s ease; /* Hover effect ko smooth banane ke liye */
+}
+
+/* Jab mouse button ke upar aaye (hover) */
+.custom-button:hover {
+  background-color: #007bff; /* Background neela ho jayega */
+  color: #ffffff; /* Text safed ho jayega */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Halki si parchhai (shadow) */
+}
+
+/* Jab button par click kiya jaaye (active) */
+.custom-button:active {
+  background-color: #0056b3; /* Thoda gehra neela color */
+  border-color: #0056b3;
+  transform: translateY(1px); /* Button halka sa neeche dabe */
+}
+
+
+
+
+
 
         .gradient-bg {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -113,28 +161,121 @@
         }
     </style>
 
-	<style>
-	.stats-section {
-  padding: 50px 20px;
-  background: #fff;
-}
-.stat-card {
-  padding: 20px;
-  border: 1px solid #f1f1f1;
-  border-radius: 12px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-}
-.stat-card h3 {
-  color: #170ec7; /* blue shade */
-  font-size: 2.5rem;
-  margin-bottom: 8px;
-}
-.stat-card p {
-  color: #666;
-  font-size: 1.2rem;
-}
-</style>
+	
 
+
+
+
+
+
+<style>
+/* General Card Styles */
+.card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+
+/* --- MODIFICATIONS START HERE --- */
+
+/* 1. Base .card style (Mobile First) */
+/* This is how the card will look on small screens by default. */
+/* We removed max-width and margin to allow it to fill the space. */
+.card {
+    display: block;
+    position: relative;
+    background-color: #f2f8f9;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%; /* Make card take full width of its container */
+    max-width: 400px; /* Optional: prevent it from being too wide on wide phones */
+}
+
+/* 2. Styles for larger screens (Tablet and Desktop) */
+/* This media query applies styles ONLY when the screen is 768px or wider. */
+@media (min-width: 768px) {
+    .card {
+        /* We re-apply the max-width and margin for the desktop view */
+        max-width: 300px;
+        margin: 12px;
+    }
+}
+
+
+/* --- HOVER EFFECTS (No changes here) --- */
+
+.card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+    transform: scale(28);
+}
+
+.card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+}
+</Style>
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
 </head>
 
 
@@ -238,12 +379,6 @@
 
 
 
-
-
-
-
-
-
     <!-- Hero Section -->
     <section id="home" class="gradient-bg text-white py-20 px-4">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
@@ -257,12 +392,17 @@
 				
                 <p class="text-xl mb-8">Transform your ideas into reality with our one-stop solution for websites, mobile apps, and digital marketing — everything your brand needs to grow.</p>
                 <div class="flex space-x-4">
-                    <a href="https://futuretopindia.in/contact.html" class="bg-white text-blue-800 px-6 py-3 rounded-lg font-bold hover:bg-gray-100 transition">Create Now </a>
-                    <a href="https://futuretopindia.in/service" class="border border-white text-white px-6 py-3 rounded-lg font-bold hover:bg-blue-700 transition">Our Services</a>
+                   <a href="https://futuretopindia.in/contact.html" class="custom-button">Create Now</a>
+                    <a href="https://futuretopindia.in/service" class="border border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-blue-700 transition duration-300 ease-in-out">  Our Services </a>
+                                      
                 </div>
             </div>
+
+			
+			
+			
             <div class="md:w-1/2">
-                <img src="image/main.png" alt="Future Top India - Web and Mobile App Development Services" width="1200" height="800" fetchpriority="high" class="rounded-lg shadow-xl">
+                <img src="image/main.png" alt="Future Top India - Web and Mobile App Development Services" width="1200" height="800" fetchpriority="high" class="border border-blue-100 rounded-lg shadow-xl">
             </div>
         </div>
     </section>
@@ -287,19 +427,19 @@
    <div class="grid grid-cols-3 gap-2 md:gap-4 text-center">
    
    
-      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
-        <h4 class="text-base font-bold text-blue-500" data-text="100%">100%</h4>
-        <h5 class="text-gray-700 text-[10px]">Happy Client😊</h5>
+      <div class="stat-card min-w-[80px] border border-blue-600 rounded-full p-1 bg-white hover:bg-blue-300 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-600" data-text="100%">100%</h4>
+        <h5 class="text-black-700 text-[10px]">Happy 😊</h5>
       </div>
       
-      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
-        <h4 class="text-base font-bold text-blue-500" data-text="24/7">24/7</h4>
-        <h5 class="text-gray-700 text-[10px]">Support System ☎</h5>
+      <div class="stat-card min-w-[80px] border border-blue-600 rounded-full p-1 bg-white hover:bg-blue-300 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-600" data-text="24/7">24/7</h4>
+        <h5 class="text-black-700 text-[10px]">Support ☎</h5>
       </div>
       
-      <div class="stat-card min-w-[80px] border border-blue-400 rounded-lg p-1 bg-white hover:bg-blue-100 cursor-pointer ">
-        <h4 class="text-base font-bold text-blue-500" data-text="3-10 Days">3-10 Days</h4>
-        <h5 class="text-gray-700 text-[10px]">Delivery Time 📦</h5>
+      <div class="stat-card min-w-[80px] border border-blue-600 rounded-full p-1 bg-white hover:bg-blue-300 cursor-pointer ">
+        <h4 class="text-base font-bold text-blue-600" data-text="3-10 Days">3-10 Days</h4>
+        <h5 class="text-black-700 text-[10px]">Delivery 📦</h5>
       </div>
       
     </div>
@@ -327,58 +467,58 @@
 	
 
     <!-- page builder Section -->
-    <section id="page-builder" class="py-16 px-4">
-        <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2">Elementor Page Builder <br> Future Top India</h2>
-		
-		<div class="w-24 h-1 bg-red-500 mx-auto mb-12"></div>
-		
-            <div class="flex flex-col md:flex-row items-center">
-                <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
-                    <img src="image/rakib.png" alt="Rakibur Islam, founder and CEO of Future Top India" loading="lazy" decoding="async" width="600" height="600" class="rounded-lg shadow-lg">
-                </div>
-                <div class="md:w-1/2">
-                    <p class="text-lg mb-6">
-                        Future Top India is a software development company founded on April 5, 2022, by Mr. Rakibur Islam. Based in Guwahati, Assam, our company is dedicated to delivering cutting-edge IT solutions using modern technologies, tools, and frameworks across multiple domains.
-                    </p>
-                    <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
-                        <h3 class="text-xl font-bold mb-3 text-blue-800">Why Choose Us?</h3>
-                        <ul class="space-y-2">
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Highly customizable development</span>
-                            </li>
-							<li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Free Domain & Hosting for 1 Year </span>
-                            </li>
-							<li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Any problems are supported even after the project is created</span>
-                            </li>
-							
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Transparent project planning</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Latest technology implementation</span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Dedicated support team 24/7 Available </span>
-                            </li>
-                            <li class="flex items-start">
-                                <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
-                                <span>Affordable pricing without compromising quality</span>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
+          <section id="page-builder" class="py-16 px-4">
+       <div class="container mx-auto">
+        <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100">Elementor Page Builder <br> Future Top India</code></h2>
+        
+        <div class="w-24 h-1 bg-red-500 mx-auto mb-12"></div>
+        
+        <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
+                <img src="image/rakib.png" alt="Rakibur Islam, founder and CEO of Future Top India" loading="lazy" decoding="async" width="600" height="600" class="rounded-lg shadow-lg border-4 border-blue-300 transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl">
             </div>
-        </div>
-    </section>
+            <div class="md:w-1/2">
+                <p class="text-lg mb-6">
+                   <strong class="inline bg-yellow-100"> Future Top India </strong> is a software development company founded on April 5, 2022, by <strong class="inline bg-yellow-100"> Mr. Rakibur Islam.</strong> Based in <strong class="inline bg-yellow-100"> Guwahati, Assam, India</strong> our company is dedicated to delivering cutting-edge IT solutions using modern technologies, tools, and frameworks across multiple domains.
+                </p>
+                <div class="bg-blue-50 p-6 rounded-lg border-l-4 border-blue-500">
+                    <h3 class="text-xl font-bold mb-3 text-blue-800">Why Choose Us?</h3>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Highly customizable development</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Free Domain & Hosting for 1 Year </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Any problems are supported even after the project is created</span>
+                        </li>
+                        
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Transparent project planning</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Latest technology implementation</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Dedicated support team 24/7 Available </span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="fas fa-check text-green-500 mt-1 mr-2"></i>
+                            <span>Affordable pricing without compromising quality</span>
+                        </li>
+                      </ul>
+                    </div>
+                 </div>
+               </div>
+            </div>
+         </section>
 	
 	
 	
@@ -390,108 +530,138 @@
 	
 	
 	
-	
-	
-	
-	
-	
-	
-	
-	
+
 
     <!-- Services Section -->
     <section id="services" class="py-16 px-4 bg-gray-100">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2">What We Do ?</h2>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100">What We Do ? </code></h2>
 			<div class="w-24 h-1 bg-red-500 mx-auto mb-2"></div>
                <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
                              We provide end-to-end software development services tailored to your business needs
                         </p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
  
-
-         <!-- Service 1 -->
-              <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer">
-    <div class="text-blue-600 mb-4">
-        <i class="fas fa-globe text-3xl"></i>
-    </div>
-    <h3 class="text-xl font-bold mb-2">Web Development</h3>
-    <p class="text-gray-600">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+ 
+ 
+ 
+	
+	
+                 <!-- Service 1 -->
+            <div class="card">
+             <div class="text-blue-600 mb-4">
+            <i class="fas fa-globe text-3xl"></i>
+             </div>
+             <h3 class="card-title">Web Development</h3>
+                <p class="small-desc">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+           <div class="go-corner">
+                  <div class="go-arrow">→</div>
+              </div>
            </div>
-
+		   
 
                 <!-- Service 2 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-mobile-alt text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Mobile Applications</h3>
-                    <p class="text-gray-600">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
-                </div>
+                    <h3 class="card-title">Mobile Applications</h3>
+                    <p class="small-desc">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
+                 <div class="go-corner">
+                  <div class="go-arrow">→</div>
+               </div>
+             </div>
+
 				
 				
 				<!-- Service 3 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-magnifying-glass"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SEO</h3>
-                    <p class="text-gray-600">SEO is a set of techniques and strategies aimed at increasing the quantity and quality of traffic to your website from search engines.</p>
-                </div>
+                    <h3 class="card-title">SEO</h3>
+                    <p class="small-desc">SEO is a set of techniques and strategies aimed at increasing the quantity and quality of traffic to your website from search engines.</p>
+                <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
                 <!-- Service 4 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-laptop-code text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Desktop Software</h3>
-                    <p class="text-gray-600">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
-                </div>
+                    <h3 class="card-title">Desktop Software</h3>
+                    <p class="small-desc">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
+
 
                 <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-cloud text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SaaS Platforms</h3>
-                    <p class="text-gray-600">Scalable Software-as-a-Service solutions with subscription management.</p>
-                </div>
+                    <h3 class="card-title">SaaS Platforms</h3>
+                    <p class="small-desc">Scalable Software-as-a-Service solutions with subscription management.</p>
+                 <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
+
 
                 <!-- Service 6 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-chart-line text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Admin Panels</h3>
-                    <p class="text-gray-600">Custom dashboards and admin panels for business management.</p>
-                </div>
+                    <h3 class="card-title">Admin Panels</h3>
+                    <p class="small-desc">Custom dashboards and admin panels for business management.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
+
 
                 <!-- Service 7 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-users text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SMM Panels</h3>
-                    <p class="text-gray-600">Social media marketing tools and automation platforms.</p>
-                </div>
+                    <h3 class="card-title">SMM Panels</h3>
+                    <p class="small-desc">Social media marketing tools and automation platforms.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
+
 
                 <!-- Service 8 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-project-diagram text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">ERP/CRM</h3>
-                    <p class="text-gray-600">Custom enterprise resource planning and customer relationship management systems.</p>
-                </div>
+                    <h3 class="card-title">ERP/CRM</h3>
+                    <p class="small-desc">Custom enterprise resource planning and customer relationship management systems.</p>
+                 <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
                 <!-- Service 9 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-paint-brush text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Design Services</h3>
-                    <p class="text-gray-600">UI/UX design, Graphics, branding, and Marketing Materials.</p>
-                </div>
+                    <h3 class="card-title">Design Services</h3>
+                    <p class="small-desc">UI/UX design, Graphics, branding, and Marketing Materials.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
+
             </div>
         </div>
     </section>
@@ -520,7 +690,7 @@
     <!-- Technologies Section -->
     <section id="technologies" class="py-16 px-4">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2">Technologies We Work With</h2>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100"> Technologies We Work With </code></h2>
             <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
 
             <!-- Frontend Technologies -->
@@ -670,7 +840,7 @@
     <!-- Our Approach Section -->
     <section class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2">Our Development Process</h2>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100"> Our Development Process </code> </h2>
               <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
 
             <div class="relative">
@@ -862,7 +1032,7 @@
     <!-- Contact Section -->
     <section id="contact" class="py-16 px-4 gradient-bg text-white">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2">Contact Us: </h2>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline"> Contact Us: </code></h2>
               <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
             <div class="flex flex-col md:flex-row">
                 <div class="md:w-1/2 mb-8 md:mb-0 md:pr-8">
@@ -1119,7 +1289,6 @@
 
 </body>
 </html>
-
 
 
 
