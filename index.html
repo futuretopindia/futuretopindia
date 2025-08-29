@@ -1575,11 +1575,6 @@
 	
 	
 	
-	
-	
-	
-	
-	
 	<script>
     // === SAHI JAVASCRIPT CODE ===
     document.addEventListener('DOMContentLoaded', () => {
@@ -1587,18 +1582,19 @@
         const userInput = document.getElementById('user-input');
         const resultsDiv = document.getElementById('gemini-results');
         const loader = document.getElementById('gemini-loader');
-        
-        // API key has been added here
-        const apiKey = ""; 
+      
+	  
+	  async function callGeminiAPI(prompt) {
+        try {
+            const response = await fetch('gemini.php', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ message: prompt })
+            });
 
-        async function callGeminiAPI(prompt) {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
+	  
+	  
+	  
 
                 if (!response.ok) {
                     throw new Error(`HTTP error! status: ${response.status}`);
@@ -1656,7 +1652,6 @@
 
 </body>
 </html>
-
 
 
 
