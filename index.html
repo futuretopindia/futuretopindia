@@ -80,6 +80,9 @@
     gtag('config', 'G-4XZ5LCKXW9');
   </script>
 
+
+
+	
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8504669589149742"
      crossorigin="anonymous"></script>
 
@@ -755,7 +758,7 @@
       
       <div class="stat-card min-w-[80px] border border-blue-600 rounded-full p-1 bg-white hover:bg-blue-300 cursor-pointer ">
         <h4 class="text-base font-bold text-blue-600" data-text="Up To 3-10 Days">3-10 Days</h4>
-        <h5 class="text-black-700 text-[10px]">Delivery Time📦</h5>
+        <h5 class="text-black-700 text-[10px]">Up to Delivery Time📦</h5>
       </div>
       
     </div>
@@ -1006,7 +1009,7 @@
     <!-- Technologies Section -->
     <section id="technologies" class="py-16 px-4">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100"> Technologies We Work With </code></h2>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100">Technologies We Work With</code></h2>
             <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
 
             <!-- Frontend Technologies -->
@@ -1258,7 +1261,7 @@
         <div class="px-4 pb-4 hidden answer text-sm text-gray-800">
           You can contact Future Top India on our mail
           <a href="mailto:futuretopindia@gmail.com" class="text-blue-600 underline"><b>futuretopindia@gmail.com</b></a>
-          or visit the <a href="#contact" class="text-blue-600 underline"><b>Contact page</b></a>.
+          or visit the <a href="https://futuretopindia.in/contact" class="text-blue-600 underline"><b>Contact page</b></a>.
         </div>
       </div>
 
@@ -1288,6 +1291,8 @@
   </div>
 </section>
 
+
+
 <!-- JavaScript for toggle -->
 <script>
   const toggleButtons = document.querySelectorAll('.toggle-btn');
@@ -1302,22 +1307,6 @@
     });
   });
 </script>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1591,99 +1580,83 @@
 	
 	
 	
-	
 	<script>
-    document.addEventListener("DOMContentLoaded", function() {
-        const cards = document.querySelectorAll(".service-card");
+    // === SAHI JAVASCRIPT CODE ===
+    document.addEventListener('DOMContentLoaded', () => {
+        const geminiButton = document.getElementById('gemini-button');
+        const userInput = document.getElementById('user-input');
+        const resultsDiv = document.getElementById('gemini-results');
+        const loader = document.getElementById('gemini-loader');
+        
+        // API key has been added here
+        const apiKey = "AIzaSyB42M-5svaJ7PHRNvT0mUzvZEz9LAbPX-o"; 
 
-        cards.forEach(card => {
-            card.addEventListener("click", () => {
-                // Remove highlight from all cards
-                cards.forEach(c => c.classList.remove("bg-blue-100", "border-blue-500", "border-2"));
-                
-                // Add highlight to clicked card
-                card.classList.add("bg-blue-100", "border-blue-500", "border-2");
-            });
+        async function callGeminiAPI(prompt) {
+            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            try {
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+                });
+
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
+                   return result.candidates[0].content.parts[0].text;
+                } else {
+                   console.error("Invalid API response or content blocked:", result);
+                   return `<p style="color: #facc15;">Dost, is vishay par main abhi jawaab nahi de sakta. Kya aap kuch aur pooch sakte hain?</p>`;
+                }
+
+            } catch (error) {
+                console.error("API Call Error:", error);
+                return `<p style="color: #fb7185;">Dost, maaf karna, abhi kuch takniki samasya aa gayi hai. Kripya thodi der baad dobara koshish karein.</p>`;
+            }
+        }
+
+        geminiButton.addEventListener('click', async () => {
+            const userTopic = userInput.value.trim();
+            if (!userTopic) {
+                resultsDiv.innerHTML = '<p style="color: #facc15;">Dost, pehle kuch poocho toh sahi!</p>';
+                resultsDiv.classList.remove('hidden');
+                return;
+            }
+
+            loader.classList.remove('hidden');
+            resultsDiv.classList.add('hidden');
+            resultsDiv.innerHTML = '';
+
+            const superImprovedPrompt = `
+            You are a friendly, knowledgeable, and helpful AI partner. Your name is 'Future Top India'.
+            A user wants to know about: "${userTopic}".
+            Your task is to respond like a friend explaining a topic.
+
+            Here are your instructions:
+            1.  **Start with a friendly greeting.** For example: "Namaste dost!", "Hey there!", or "Chaliye, iske baare mein baat karte hain!".
+            2.  **Check if the user is asking for your name.** If the topic is "what is your name", "tumhara naam kya hai", or something similar, respond with: "Mera naam Future Top India hai, aur main aapka digital partner hoon. Aap kuch bhi pooch sakte hain, main jawaab dunga!" Then, stop.
+            3.  **Explain the topic clearly.** If it's a normal topic, explain it in simple, easy-to-understand language. Use 2-3 short paragraphs. Make it feel like a conversation.
+            4.  **Give an interesting fact or an example.** After the explanation, add a small, fun fact or a real-world example related to the topic to make it more engaging.
+            5.  **End with a question.** Finish your response by asking a friendly, open-ended question to encourage the user to reply.
+            6.  **Formatting:** Use simple HTML tags only. Use <p> for paragraphs and <strong> for important words. Do not use any other tags like <ul> or <li>. The entire response should be a single block of text.
+            `;
+
+            const responseText = await callGeminiAPI(superImprovedPrompt);
+            
+            loader.classList.add('hidden');
+            resultsDiv.innerHTML = responseText;
+            resultsDiv.classList.remove('hidden');
         });
     });
 </script>
 
-<script>
-        // === SAHI JAVASCRIPT CODE ===
-        document.addEventListener('DOMContentLoaded', () => {
-            const geminiButton = document.getElementById('gemini-button');
-            const userInput = document.getElementById('user-input');
-            const resultsDiv = document.getElementById('gemini-results');
-            const loader = document.getElementById('gemini-loader');
-            
-            // API key environment se provide hogi, isse khali rakhein
-            const apiKey = ""; 
-
-            async function callGeminiAPI(prompt) {
-                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
-                try {
-                    const response = await fetch(apiUrl, {
-                        method: 'POST',
-                        headers: { 'Content-Type': 'application/json' },
-                        body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                    });
-
-                    if (!response.ok) {
-                        throw new Error(`HTTP error! status: ${response.status}`);
-                    }
-
-                    const result = await response.json();
-
-                    if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                       return result.candidates[0].content.parts[0].text;
-                    } else {
-                       console.error("Invalid API response or content blocked:", result);
-                       return `<p style="color: #facc15;">Dost, is vishay par main abhi jawaab nahi de sakta. Kya aap kuch aur pooch sakte hain?</p>`;
-                    }
-
-                } catch (error) {
-                    console.error("API Call Error:", error);
-                    return `<p style="color: #fb7185;">Dost, maaf karna, abhi kuch takniki samasya aa gayi hai. Kripya thodi der baad dobara koshish karein.</p>`;
-                }
-            }
-
-            geminiButton.addEventListener('click', async () => {
-                const userTopic = userInput.value.trim();
-                if (!userTopic) {
-                    resultsDiv.innerHTML = '<p style="color: #facc15;">Dost, pehle kuch poocho toh sahi!</p>';
-                    resultsDiv.classList.remove('hidden');
-                    return;
-                }
-
-                loader.classList.remove('hidden');
-                resultsDiv.classList.add('hidden');
-                resultsDiv.innerHTML = '';
-
-                const superImprovedPrompt = `
-                You are a friendly, knowledgeable, and helpful AI partner. Your name is 'Future Top India'.
-                A user wants to know about: "${userTopic}".
-                Your task is to respond like a friend explaining a topic.
-
-                Here are your instructions:
-                1.  **Start with a friendly greeting.** For example: "Namaste dost!", "Hey there!", or "Chaliye, iske baare mein baat karte hain!".
-                2.  **Check if the user is asking for your name.** If the topic is "what is your name", "tumhara naam kya hai", or something similar, respond with: "Mera naam Future Top India hai, aur main aapka digital partner hoon. Aap kuch bhi pooch sakte hain, main jawaab dunga!" Then, stop.
-                3.  **Explain the topic clearly.** If it's a normal topic, explain it in simple, easy-to-understand language. Use 2-3 short paragraphs. Make it feel like a conversation.
-                4.  **Give an interesting fact or an example.** After the explanation, add a small, fun fact or a real-world example related to the topic to make it more engaging.
-                5.  **End with a question.** Finish your response by asking a friendly, open-ended question to encourage the user to reply.
-                6.  **Formatting:** Use simple HTML tags only. Use <p> for paragraphs and <strong> for important words. Do not use any other tags like <ul> or <li>. The entire response should be a single block of text.
-                `;
-
-                const responseText = await callGeminiAPI(superImprovedPrompt);
-                
-                loader.classList.add('hidden');
-                resultsDiv.innerHTML = responseText;
-                resultsDiv.classList.remove('hidden');
-            });
-        });
-    </script>
-
 </body>
 </html>
+
 
 
 
