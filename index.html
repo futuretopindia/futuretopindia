@@ -1640,15 +1640,38 @@
 	
 
    <script>
-    // === JAVASCRIPT CODE ===
+    // === JAVAVSCRIPT CODE WITH TYPING EFFECT ===
     document.addEventListener('DOMContentLoaded', () => {
         const geminiButton = document.getElementById('gemini-button');
         const userInput = document.getElementById('user-input');
         const resultsDiv = document.getElementById('gemini-results');
         const loader = document.getElementById('gemini-loader');
-        
+
         // Apni Nayi aur Secret API Key yahan daalein
-        const apiKey = "AIzaSyB42M-5svaJ7PHRNvT0mUzvZEz9LAbPX-o"; 
+        const apiKey = "AIzaSyB42M-5svaJ7PHRNvT0mUzvZEz9LAbPX-o"; // 
+        // 1. NAYA TYPEWRITER FUNCTION YAHAN ADD KAREIN
+        // Yeh function text ko type karta hua dikhayega
+        function typeWriter(element, text, speed) {
+            let i = 0;
+            element.innerHTML = ""; // Pehle purana result saaf karein
+            
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    // HTML tags ko handle karne ke liye, taaki woh type na hon
+                    const isTag = text[i] === '<';
+                    if (isTag) {
+                        const tagEndIndex = text.indexOf('>', i);
+                        element.innerHTML += text.substring(i, tagEndIndex + 1);
+                        i = tagEndIndex;
+                    } else {
+                        element.innerHTML += text.charAt(i);
+                    }
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, speed);
+        }
 
         async function callGeminiAPI(prompt) {
             const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
@@ -1690,15 +1713,10 @@
             resultsDiv.classList.add('hidden');
             resultsDiv.innerHTML = '';
 
-            // === PROMPT START ===
-            // Yahan humne AI ko naye instructions diye hain.
             const superImprovedPrompt = `
             You are a friendly, multilingual AI partner named 'Future Top India'.
-
             **Primary Goal: Your entire response MUST be in the same language as the user's query.**
-
             The user's query is: "${userTopic}"
-
             Follow these steps:
             1.  **Detect Language:** First, identify the language of the user's query ("${userTopic}").
             2.  **Friendly Greeting:** Start your response with a natural, friendly greeting in the detected language.
@@ -1708,20 +1726,23 @@
             6.  **End with a Question:** Finish by asking a friendly, open-ended question in their language to encourage another reply.
             7.  **Formatting:** Use only simple HTML tags like <p> and <strong>. The entire response should be a single block of text.
             `;
-            // === PROMPT END ===
 
             const responseText = await callGeminiAPI(superImprovedPrompt);
             
             loader.classList.add('hidden');
-            resultsDiv.innerHTML = responseText;
             resultsDiv.classList.remove('hidden');
+
+            // 2. PURANI LINE KO NAYI LINE SE REPLACE KAREIN
+            // PURANI LINE: resultsDiv.innerHTML = responseText;
+            // NAYI LINE:
+            typeWriter(resultsDiv, responseText, 20); // 20ms typing speed
         });
     });
 </script>
 
-
 </body>
 </html>
+
 
 
 
