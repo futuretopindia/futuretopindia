@@ -451,51 +451,50 @@
 </Style>
 
 
-        <style>
-
+    
+<style>
+    
     /* === 1. DYNAMIC AURORA BACKGROUND & CARD STYLING === */
     .gemini-ai-card {
         max-width: 500px;
         width: 100%;
         position: relative;
-        overflow: hidden; /* Zaroori hai background animation ke liye */
-        background-color: rgba(29, 38, 54, 0.6); /* Semi-transparent background */
-        backdrop-filter: blur(15px); /* Glassmorphism effect */
+        overflow: hidden;
+        background-color: rgba(29, 38, 54, 0.6);
+        backdrop-filter: blur(15px);
         border-radius: 20px;
         padding: 2rem;
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: #e2e8f0;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        font-family: sans-serif; /* Default font add kar diya hai */
     }
-    
-    /* Aurora animation ke liye pseudo-element */
+
     .gemini-ai-card::before {
         content: '';
         position: absolute;
         top: 0; left: 0; right: 0; bottom: 0;
-        background-image: 
+        background-image:
             radial-gradient(circle at 10% 20%, rgba(56, 189, 248, 0.2), transparent 40%),
             radial-gradient(circle at 80% 70%, rgba(139, 92, 246, 0.2), transparent 40%);
-        animation: aurora 10s linear infinite;
+        animation: gemini-aurora 10s linear infinite;
         z-index: -1;
     }
 
-    @keyframes aurora {
+    @keyframes gemini-aurora {
         0% { background-position: 0% 50%; }
         50% { background-position: 100% 50%; }
         100% { background-position: 0% 50%; }
     }
 
     /* === 2. CARD CONTENT STYLING === */
-    .card-content { display: flex; flex-direction: column; gap: 1.5rem; }
-    .card-title { font-size: 1.75rem; font-weight: 700; text-align: center; color: #ffffff; }
-    .card-description { text-align: center; color: #94a3b8; margin-top: -1rem; margin-bottom: 0.5rem; }
-    
+    .gemini-ai-card .card-content { display: flex; flex-direction: column; gap: 1.5rem; }
+    .gemini-ai-card .card-title { font-size: 1.75rem; font-weight: 700; text-align: center; color: #ffffff; }
+    .gemini-ai-card .card-description { text-align: center; color: #94a3b8; margin-top: -1rem; margin-bottom: 0.5rem; }
+
     /* === 3. FLOATING LABEL INPUT === */
-    .input-group {
-        position: relative;
-    }
-    #user-input {
+    .gemini-ai-card .input-group { position: relative; }
+    .gemini-ai-card #user-input {
         width: 100%;
         background-color: rgba(0, 0, 0, 0.3);
         color: #e2e8f0;
@@ -507,7 +506,7 @@
         transition: border-color 0.3s;
         box-sizing: border-box;
     }
-    .input-group label {
+    .gemini-ai-card .input-group label {
         position: absolute;
         left: 16px;
         top: 14px;
@@ -515,19 +514,19 @@
         pointer-events: none;
         transition: all 0.2s ease;
     }
-    #user-input:focus + label,
-    #user-input:not(:placeholder-shown) + label {
+    .gemini-ai-card #user-input:focus + label,
+    .gemini-ai-card #user-input:not(:placeholder-shown) + label {
         top: -10px;
         left: 12px;
         font-size: 0.75rem;
-        background-color: #232e42; /* Card ke background se match karta hua */
+        background-color: #232e42;
         padding: 0 4px;
         color: #38bdf8;
     }
-    #user-input:focus { border-color: #38bdf8; }
+    .gemini-ai-card #user-input:focus { border-color: #38bdf8; }
 
     /* === 4. DYNAMIC BUTTON === */
-    #gemini-button {
+    .gemini-ai-card #gemini-button {
         display: flex;
         align-items: center;
         justify-content: center;
@@ -541,58 +540,93 @@
         cursor: pointer;
         transition: all 0.3s ease;
     }
-    #gemini-button svg {
+    .gemini-ai-card #gemini-button svg {
         width: 20px; height: 20px;
         transition: transform 0.3s ease;
     }
-    #gemini-button:hover {
+    .gemini-ai-card #gemini-button:hover {
         box-shadow: 0 0 20px rgba(56, 189, 248, 0.5);
         transform: translateY(-2px);
     }
-    #gemini-button:hover svg {
-        transform: translateX(3px);
-    }
+    .gemini-ai-card #gemini-button:hover svg { transform: translateX(3px); }
 
     /* === 5. "AI IS THINKING" LOADER === */
-    .loader-container { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1rem 0; color: #94a3b8;}
-    .typing-indicator {
-        display: flex;
-        gap: 0.5rem;
-    }
-    .typing-indicator span {
-        width: 10px;
-        height: 10px;
+    .gemini-ai-card .loader-container { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1rem 0; color: #94a3b8;}
+    .gemini-ai-card .typing-indicator { display: flex; gap: 0.5rem; }
+    .gemini-ai-card .typing-indicator span {
+        width: 10px; height: 10px;
         background-color: #38bdf8;
         border-radius: 50%;
-        animation: typing 1.4s infinite both;
+        animation: gemini-typing 1.4s infinite both;
     }
-    .typing-indicator span:nth-child(1) { animation-delay: 0.2s; }
-    .typing-indicator span:nth-child(2) { animation-delay: 0.4s; }
-    .typing-indicator span:nth-child(3) { animation-delay: 0.6s; }
+    .gemini-ai-card .typing-indicator span:nth-child(1) { animation-delay: 0.2s; }
+    .gemini-ai-card .typing-indicator span:nth-child(2) { animation-delay: 0.4s; }
+    .gemini-ai-card .typing-indicator span:nth-child(3) { animation-delay: 0.6s; }
 
-    @keyframes typing {
+    @keyframes gemini-typing {
         0% { opacity: 0.2; transform: translateY(0); }
         50% { opacity: 1; transform: translateY(-5px); }
         100% { opacity: 0.2; transform: translateY(0); }
     }
 
     /* === 6. RESULTS CONTAINER === */
-    .results-container { 
-        margin-top: 1rem; 
-        background-color: rgba(0, 0, 0, 0.2); 
-        padding: 1rem; 
+    .gemini-ai-card .results-container {
+        margin-top: 1rem;
+        background-color: rgba(0, 0, 0, 0.2);
+        padding: 1rem;
+        padding-top: 50px;
         border-radius: 12px;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         min-height: 50px;
+        position: relative;
     }
-    #gemini-results p { margin-bottom: 1rem; line-height: 1.6; }
-    #gemini-results strong { color: #7dd3fc; }
-    #gemini-results::after {
+    .gemini-ai-card #results-text p { margin-bottom: 1rem; line-height: 1.6; }
+    .gemini-ai-card #results-text strong { color: #7dd3fc; }
+    .gemini-ai-card #results-text::after {
         content: '▋';
-        animation: blink 1s step-end infinite;
+        animation: gemini-blink 1s step-end infinite;
     }
-    @keyframes blink { 50% { opacity: 0; } }
+    @keyframes gemini-blink { 50% { opacity: 0; } }
+    
+    /* === 7. ICON BUTTONS STYLING (SPEAKER & COPY) === */
+    .gemini-ai-card .button-container {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        display: flex;
+        gap: 8px;
+    }
+    .gemini-ai-card .icon-btn {
+        background-color: rgba(255, 255, 255, 0.1);
+        border: none;
+        border-radius: 50%;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        color: #94a3b8;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    .gemini-ai-card .icon-btn:hover {
+        background-color: rgba(56, 189, 248, 0.2);
+        color: #38bdf8;
+    }
+    .gemini-ai-card .icon-btn.speaking {
+        color: #38bdf8;
+        animation: gemini-pulse 1.5s infinite;
+    }
+    @keyframes gemini-pulse {
+        0% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.4); }
+        70% { box-shadow: 0 0 0 10px rgba(56, 189, 248, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(56, 189, 248, 0); }
+    }
+    .gemini-ai-card .hidden { display: none !important; }
+
 </style>
+	
+
 
 </head>
 
@@ -752,35 +786,45 @@
 <!-- ================================== -->
 
 
-      <div class="md:w-1/2 flex justify-center md:justify-end">
-    <div class="gemini-ai-card">
-        <div class="card-content">
-            <h2 class="card-title">🤖 Hey! I’m Future Top India AI. <br> How can I assist you today?✨</h2>
-            <p class="card-description">Ask anything - Future Top India AI is ready for you.</p>
+       <div class="md:w-1/2 flex justify-center md:justify-end">
+        <div class="gemini-ai-card">
+            <div class="card-content">
+                <h2 class="card-title">🤖 Hey! I’m Future Top India AI. <br> How can I assist you today?✨</h2>
+                <p class="card-description">Ask anything - Future Top India AI is ready for you.</p>
 
-            <div class="input-group">
-                <input type="text" id="user-input" placeholder=" " required>
-                <label for="user-input">Ask anything...</label>
-            </div>
-
-            <button id="gemini-button">
-                <span>Submit</span>
-                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L15 6M21 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            </button>
-            
-            <div id="gemini-loader" class="loader-container hidden">
-                <div class="typing-indicator">
-                    <span></span>
-                    <span></span>
-                    <span></span>
+                <div class="input-group">
+                    <input type="text" id="user-input" placeholder=" " required>
+                    <label for="user-input">Ask anything...</label>
                 </div>
-                <p>AI is thinking...</p>
+
+                <button id="gemini-button">
+                    <span>Submit</span>
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 12H21M21 12L15 6M21 12L15 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+                </button>
+                
+                <div id="gemini-loader" class="loader-container hidden">
+                    <div class="typing-indicator">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <p>AI is thinking...</p>
+                </div>
+                
+                <div id="gemini-results" class="results-container hidden">
+                    <div class="button-container">
+                        <button id="speaker-button" class="icon-btn hidden" title="Listen to response">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02zM14 3.23v2.06c2.89.86 5 3.54 5 6.71s-2.11 5.85-5 6.71v2.06c4.01-.91 7-4.49 7-8.77s-2.99-7.86-7-8.77z"></path></svg>
+                        </button>
+                        <button id="copy-button" class="icon-btn hidden" title="Copy response">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" width="20px" height="20px"><path d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z"></path></svg>
+                        </button>
+                    </div>
+                    <div id="results-text"></div>
+                </div>
             </div>
-            
-            <div id="gemini-results" class="results-container hidden"></div>
         </div>
-    </div>
-</div>
+    
 			
 			
 			
@@ -1634,110 +1678,231 @@
 	
 	
 	
+	
+	<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // === ELEMENT SELECTION ===
+    const geminiButton = document.getElementById('gemini-button');
+    const userInput = document.getElementById('user-input');
+    const resultsDiv = document.getElementById('gemini-results');
+    const loader = document.getElementById('gemini-loader');
+    
+    // Naye elements (speaker, copy, text container)
+    const speakerButton = document.getElementById('speaker-button');
+    const copyButton = document.getElementById('copy-button');
+    const resultsText = document.getElementById('results-text');
 
-   <script>
-    // === JAVAVSCRIPT CODE WITH TYPING EFFECT ===
-    document.addEventListener('DOMContentLoaded', () => {
-        const geminiButton = document.getElementById('gemini-button');
-        const userInput = document.getElementById('user-input');
-        const resultsDiv = document.getElementById('gemini-results');
-        const loader = document.getElementById('gemini-loader');
+    // === API & SPEECH SYNTHESIS SETUP ===
+    const apiKey =  "AIzaSyBeYu3y6PvEgaTM7d7ZqX98eCz5UTc49Mc";
+    const synth = window.speechSynthesis;
+    let currentUtterance = null;
 
-        // Apni Nayi aur Secret API Key yahan daalein
-        const apiKey = "AIzaSyBeYu3y6PvEgaTM7d7ZqX98eCz5UTc49Mc"; // 
-        // 1. NAYA TYPEWRITER FUNCTION YAHAN ADD KAREIN
-        // Yeh function text ko type karta hua dikhayega
-        function typeWriter(element, text, speed) {
-            let i = 0;
-            element.innerHTML = ""; // Pehle purana result saaf karein
-            
-            const interval = setInterval(() => {
-                if (i < text.length) {
-                    // HTML tags ko handle karne ke liye, taaki woh type na hon
-                    const isTag = text[i] === '<';
-                    if (isTag) {
-                        const tagEndIndex = text.indexOf('>', i);
-                        element.innerHTML += text.substring(i, tagEndIndex + 1);
-                        i = tagEndIndex;
-                    } else {
-                        element.innerHTML += text.charAt(i);
-                    }
-                    i++;
+    // === FUNCTIONS ===
+
+    // 1. Typewriter Effect
+    function typeWriter(element, text, speed) {
+        let i = 0;
+        element.innerHTML = "";
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                const isTag = text[i] === '<';
+                if (isTag) {
+                    const tagEndIndex = text.indexOf('>', i);
+                    element.innerHTML += text.substring(i, tagEndIndex + 1);
+                    i = tagEndIndex;
                 } else {
-                    clearInterval(interval);
+                    element.innerHTML += text.charAt(i);
                 }
-            }, speed);
+                i++;
+            } else {
+                clearInterval(interval);
+                // Typewriter khatam hone ke baad dono buttons dikhayein
+                speakerButton.classList.remove('hidden');
+                copyButton.classList.remove('hidden');
+            }
+        }, speed);
+    }
+
+    // 2. Gemini API Call
+    async function callGeminiAPI(prompt) {
+        const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+        try {
+            const response = await fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
+            });
+            if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+            const result = await response.json();
+            if (result.candidates && result.candidates[0].content.parts) {
+               return result.candidates[0].content.parts[0].text;
+            } else {
+               console.error("Invalid API response:", result);
+               return `<p style="color: #facc15;">Sorry, I can't answer this right now.</p>`;
+            }
+        } catch (error) {
+            console.error("API Call Error:", error);
+            return `<p style="color: #fb7185;">Sorry, there is a technical problem right now.</p>`;
+        }
+    }
+    
+    // 3. Text to Speech
+    function speakText(text) {
+        if (synth.speaking) {
+            synth.cancel(); // Agar pehle se bol raha hai to rokein
+            return;
+        }
+        // HTML tags ko text se hata dein
+        const plainText = text.replace(/<[^>]*>?/gm, '');
+        currentUtterance = new SpeechSynthesisUtterance(plainText);
+        currentUtterance.onstart = () => speakerButton.classList.add('speaking');
+        currentUtterance.onend = () => speakerButton.classList.remove('speaking');
+        synth.speak(currentUtterance);
+    }
+
+    // === EVENT LISTENERS ===
+
+    // 1. Main Submit Button Click
+    geminiButton.addEventListener('click', async () => {
+        const userTopic = userInput.value.trim();
+        if (!userTopic) {
+            resultsText.innerHTML = '<p style="color: #facc15;">First ask me something!</p>';
+            resultsDiv.classList.remove('hidden');
+            return;
         }
 
-        async function callGeminiAPI(prompt) {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
-            try {
-                const response = await fetch(apiUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                const result = await response.json();
-
-                if (result.candidates && result.candidates.length > 0 && result.candidates[0].content && result.candidates[0].content.parts && result.candidates[0].content.parts.length > 0) {
-                   return result.candidates[0].content.parts[0].text;
-                } else {
-                   console.error("Invalid API response or content blocked:", result);
-                   return `<p style="color: #facc15;">Sorry, I can't answer this question right now. Can you ask something else?</p>`;
-                }
-
-            } catch (error) {
-                console.error("API Call Error:", error);
-                return `<p style="color: #fb7185;">Sorry, there is some technical problem right now. Please try again later.</p>`;
-            }
+        // UI ko reset karein
+        loader.classList.remove('hidden');
+        resultsDiv.classList.add('hidden');
+        speakerButton.classList.add('hidden');
+        copyButton.classList.add('hidden');
+        resultsText.innerHTML = '';
+        if (synth.speaking) {
+            synth.cancel();
         }
 
-        geminiButton.addEventListener('click', async () => {
-            const userTopic = userInput.value.trim();
-            if (!userTopic) {
-                resultsDiv.innerHTML = '<p style="color: #facc15;">First ask me something!</p>';
-                resultsDiv.classList.remove('hidden');
-                return;
-            }
+         // This is the new and improved prompt with all your instructions.
+            const superImprovedPrompt = `
+            You are 'Future Top India AI', a helpful and knowledgeable AI assistant created by the Future Top India software development company. Your persona is that of a friendly and patient teacher.
 
-            loader.classList.remove('hidden');
-            resultsDiv.classList.add('hidden');
-            resultsDiv.innerHTML = '';
+            **Core Instructions:**
 
-            const superImprovedPrompt = `
-            You are a friendly, multilingual AI partner named 'Future Top India'.
-            **Primary Goal: Your entire response MUST be in the same language as the user's query.**
-            The user's query is: "${userTopic}"
-            Follow these steps:
-            1.  **Detect Language:** First, identify the language of the user's query ("${userTopic}").
-            2.  **Friendly Greeting:** Start your response with a natural, friendly greeting in the detected language.
-            3.  **Check for Name Query:** If the user is asking for your name (e.g., "what is your name", "tumhara naam kya hai"), respond in their language with the meaning of: "My name is Future Top India, and I am your digital partner. You can ask me anything!". Then stop.
-            4.  **Explain the Topic:** Clearly explain the topic of the user's query in their language. Use simple, conversational paragraphs.
-            5.  **Add a Fact/Example:** Include an interesting fact or a real-world example, also in the user's language.
-            6.  **End with a Question:** Finish by asking a friendly, open-ended question in their language to encourage another reply.
-            7.  **Formatting:** Use only simple HTML tags like <p> and <strong>. The entire response should be a single block of text.
+            1.  **Language Match:** You MUST respond in the exact same language as the user's query. For example, if the user asks in Hindi, your entire response must be in Hindi.
+            2.  **Answering Style:**
+                * If the question has a short, direct answer, provide it in one or two clear lines.
+                * For more complex questions, explain the topic thoroughly and clearly, as a teacher would. Break down the information to make it easy to understand.
+                * Your tone should be helpful and informative, not overly cheerful or excited.
+            3.  **Follow-Up:** After every answer, ask a follow-up question to encourage further conversation. For example, "Is there anything else I can help you with?" or "What is the next step I can assist you with?". You can also suggest a related topic by saying something like, "I can also help you with [related topic]."
+            4.  **External Links:** If you can find a relevant and helpful link online for the user's question, please include it in your response.
+
+            **Specific Query Handling:**
+
+            * **If the user asks about 'Future Top India':**
+                Provide the following information about the company in the user's language.
+
+                "Future Top India is a software development company founded on April 5, 2022, by Mr. Rakibur Islam. Based in Guwahati, Assam, our company is dedicated to delivering cutting-edge IT solutions using modern technologies, tools, and frameworks across multiple domains.
+
+                **What We Do:** We provide end-to-end software development services, including:
+                * Websites (Static/Dynamic/E-commerce/Portfolio/Custom Portals)
+                * Mobile Applications (Android/iOS/Hybrid)
+                * Desktop Software
+                * SaaS Platforms
+                * Admin Panels & Dashboards
+                * SMM Panels and Tools
+                * Custom ERP/CRM Solutions
+                * Graphics & UI/UX Design Services
+
+                **Technologies We Work With:** We work with a broad range of technologies like HTML5, CSS3, JavaScript, React.js, Next.js, Node.js, PHP, Python, Java, Flutter, React Native, MySQL, PostgreSQL, MongoDB, Firebase, Shopify, WooCommerce, AWS, Google Cloud, and more.
+
+                **Our Approach:**
+                1.  Client Discussion & Requirement Gathering
+                2.  Technology Stack Selection
+                3.  Wireframing & UI Design
+                4.  Backend & Frontend Development
+                5.  Testing & Debugging
+                6.  Deployment
+                7.  Post-Delivery Support & Updates
+
+                **Why Choose Future Top India?**
+                * Highly customizable development
+                * Transparent project planning
+                * Latest technology implementation
+                * Dedicated support team
+                * Affordable pricing without compromising quality
+
+                **Contact Us:**
+                * **Call/WhatsApp:** +91 9864551558
+                * **Email:** info@futuretopindia.in
+                * **Website:** https://futuretopindia.in/
+                * **Location:** Royal Path, Opp. Balaji Temple, Ahom Gaon, Guwahati, Assam – 781035"
+
+            * **If the user asks "who are you?" or "what is your name?":**
+                Respond in their language with: "My name is 'Future Top India AI', and I was created by the Future Top India software development company. You can find more about them here: https://futuretopindia.in/"
+
+            * **If the user asks "why were you made?" or "what is your purpose?":**
+                Respond in their language with: "I was created to be a helpful assistant, providing clear and accurate information on a wide variety of topics. My goal is to help you learn and find the information you need."
+
+            * **If you cannot understand the question:**
+                Respond in their language with: "I'm sorry, I'm not sure I understand your question. Could you please rephrase it?"
+
+            **User's Query:** "${userTopic}"
             `;
 
-            const responseText = await callGeminiAPI(superImprovedPrompt);
-            
-            loader.classList.add('hidden');
-            resultsDiv.classList.remove('hidden');
+        const responseText = await callGeminiAPI(superImprovedPrompt);
+        
+        loader.classList.add('hidden');
+        resultsDiv.classList.remove('hidden');
 
-            // 2. PURANI LINE KO NAYI LINE SE REPLACE KAREIN
-            // PURANI LINE: resultsDiv.innerHTML = responseText;
-            // NAYI LINE:
-            typeWriter(resultsDiv, responseText, 20); // 20ms typing speed
+        // Jawab ko 'results-text' div mein type karein
+        typeWriter(resultsText, responseText, 20);
+    });
+    
+    // 2. Speaker Button Click
+    speakerButton.addEventListener('click', () => {
+        const textToSpeak = resultsText.innerHTML;
+        if (textToSpeak) {
+            speakText(textToSpeak);
+        }
+    });
+
+    // 3. Copy Button Click
+    copyButton.addEventListener('click', () => {
+        const textToCopy = resultsText.innerText; // Sirf text copy karega, HTML nahi
+        
+        navigator.clipboard.writeText(textToCopy).then(() => {
+            const originalIcon = copyButton.innerHTML;
+            copyButton.innerHTML = `<span style="font-size: 12px; font-weight: bold;">Copied!</span>`;
+            setTimeout(() => {
+                copyButton.innerHTML = originalIcon;
+            }, 2000); // 2 second baad wapas icon aa jayega
+        }).catch(err => {
+            console.error('Failed to copy text: ', err);
         });
     });
+});
 </script>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 </body>
 </html>
+
 
 
 
