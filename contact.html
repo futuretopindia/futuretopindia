@@ -132,73 +132,67 @@
 
 
     <!-- Navigation -->
-<nav class="gradient-bg text-white shadow-md">
+   <nav class="gradient-bg text-white shadow-md fixed top-0 w-full z-50">
     <div class="container mx-auto px-5 py-3">
         <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <a href="http://futuretopindia.in/">
+            <a href="https://futuretopindia.in/">
                 <div class="flex items-center">
-                    <img src="image/logo.png" alt="Future Top India logo" class="h-12 mr-10">
+                    <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="https://futuretopindia.in/" class="hover:text-blue-200">Home</a>
-	        <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-700 rounded px-4">Portfolio</a>
-                <a href="https://futuretopindia.in/service" class="hover:text-blue-200">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="hover:text-blue-200">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="hover:text-blue-200">Contact Us</a>
-
-
+                <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-800 rounded-lg ">Home</a>
+	            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-800 rounded-lg ">Portfolio</a>
+                <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-800 rounded-lg ">Services</a>
+                <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-800 rounded-lg ">Technologies</a>
+                <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-800 rounded-lg">Contact Us</a>
 
 		     <div class="relative group">   
-  <button id="aboutDropdownBtn" class="hover:bg-blue-700 focus:outline-none py-2  rounded px-2 ">
-    About ▾
-  </button>
+                <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2  rounded px-2 ">
+                    About ▾
+                </button>
 
-  
-  <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
-    <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-blue-100">About Us</a>
-    <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-blue-100">Blogs</a>
-  </div>
-  </div>
+                <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
+                    <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+                    <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                    <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                    <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                    <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                </div>
+              </div>
 
-
-
-		    
-
-                <!-- ✅ Call Now Button (Desktop) -->
-                <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition duration-300">
+                <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
                     📞 Call Now
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" class="text-white">
+               <i class="fas fa-bars text-2xl"></i>
+                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
+		
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-700 rounded px-4">Home</a>
-	    <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-700 rounded px-4">Our Portfolio</a>
-            <a href="https://futuretopindia.in/about" class="block py-2 hover:bg-blue-700 rounded px-4">About Us</a>
-	    <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-blue-700 rounded px-4">Blogs</a>
-            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-700 rounded px-4">Services</a>
-            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-700 rounded px-4">Technologies</a>
-            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-700 rounded px-4">Contact Us</a>
+            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-teal-700 rounded px-4">Home</a>
+            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-teal-700 rounded px-4">Our Portfolio</a>
+			<a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-teal-700 rounded px-4">FTI-ai</a>
+			<a href="https://futuretopindia.in/about" class="block py-2 hover:bg-teal-700 rounded px-4">About Us</a>
+	        <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-teal-700 rounded px-4">Blogs</a>
+			<a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">FAQs</a>
+            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-teal-700 rounded px-4">Services</a>
+            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-teal-700 rounded px-4">Technologies</a>
+            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-teal-700 rounded px-4">Contact Us</a>
+			<a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">Privacy Policy</a>
 
-            <!-- ✅ Call Now Button (Mobile) -->
-            <a href="tel:9864551558" class="block mt-2 py-2 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
+            <a href="tel:9864551558" class="block mt-2 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
                 📞 Call Now
             </a>
         </div>
     </div>
 </nav>
+
 
  
  
@@ -210,7 +204,7 @@
 
 
     <!-- Contact Section -->
-    <section id="contact" class="py-16 px-4 gradient-bg text-white">
+    <section id="contact" class="py-16 pt-20 px-4 gradient-bg text-white">
         <div class="container mx-auto">
             <h2 class="text-3xl font-bold text-center mb-2">Contact Us - Future Top India </h2>
               <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
@@ -330,22 +324,20 @@
                 <div class="mb-6 md:mb-0">
                     
 					<div class="flex items-center mb-4">
-		   <a href="http://futuretopindia.in/">            
-					  <img src="image/sublogo.png" alt="Future Top India logo" class="h-10 mr-3">
-					</a>
-
-			 <a href="http://futuretopindia.in/">		
-            <i> 
-					  <span class="font-bold text-xl">FTI • Pvt Ltd </span>
-		    </i> </a>
+                       <a href="https://futuretopindia.in/">            
+                          <img src="image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3">
+                       </a>
+                       <a href="https://futuretopindia.in/">		
+                         <i> 
+                           <span class="font-bold text-xl">FTI • Pvt Ltd </span>
+                         </i>
+                       </a>
                     </div>
                    
-				   
-<i>	             <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>         
-</i>
+				   <i>	             
+                     <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>         
+                   </i>
                 </div>
-
-
 
                 <div class="flex space-x-6">
                     <a href="https://www.facebook.com/share/198qDFavKp/" class="text-gray-400 hover:text-white transition">
@@ -363,20 +355,31 @@
                 </div>
             </div>
 
-
 	           <br>
-
-
-  <div class="container mx-auto text-center space-x-4">
-    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Home</a>
-    <a href="https://futuretopindia.in/about.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">About Us</a>
-     <a href="https://futuretopindia.in/blog.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Blogs</a>
-    <a href="https://futuretopindia.in/portfolio.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Our Portfolio</a>
-    <a href="https://futuretopindia.in/privacy.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Privacy Policy</a>
-  </div>
+<div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+    <span class="font-bold text-xl">Quick Links:</span>	
+    <div class="container mx-auto space-y-2 mt-4 mb-3">
+    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+    <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+	<a href="https://futuretopindia.in/contact" class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+	<a href="https://futuretopindia.in/blog" class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
+	</div>
+	
+	
+<div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+	<span class="font-bold text-xl">Important Links:</span>
+	<div class="container mx-auto space-y-2 mt-4 ">
+	<a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+	<a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+    <a href="https://futuretopindia.in/portfolio" class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+    <a href="https://futuretopindia.in/privacy" class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+     
+	  </div>
+  
+  
   
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
                 <p>©2022-25 by 
 				<a href="http://futuretopindia.in/"  class="text-blue-500 hover:underline">
 				Future Top India 
@@ -385,7 +388,6 @@
             </div>
         </div>
     </footer>
-
 
 
 
@@ -450,6 +452,7 @@
 
 </body>
 </html>
+
 
 
 
