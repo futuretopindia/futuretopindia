@@ -111,6 +111,101 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
     </style>
+	
+	
+<style>
+
+.card-title {
+    color: #262626;
+    font-size: 1.5em;
+    line-height: normal;
+    font-weight: 700;
+    margin-bottom: 0.5em;
+}
+
+.small-desc {
+    font-size: 1em;
+    font-weight: 400;
+    line-height: 1.5em;
+    color: #452c2c;
+}
+
+.go-corner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    width: 2em;
+    height: 2em;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    background: linear-gradient(135deg, #6293c8, #384c6c);
+    border-radius: 0 4px 0 32px;
+}
+
+.go-arrow {
+    margin-top: -4px;
+    margin-right: -4px;
+    color: white;
+    font-family: courier, sans;
+}
+.card {
+    display: block;
+    position: relative;
+    background-color: #f2f8f9;
+    border-radius: 10px;
+    padding: 2em 1.2em;
+    text-decoration: none;
+    z-index: 0;
+    overflow: hidden;
+    background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%; 
+    max-width: 400px; 
+}
+
+@media (min-width: 768px) {
+    .card {
+
+        max-width: 300px;
+        margin: 12px;
+    }
+}
+
+
+
+
+.card:before {
+    content: '';
+    position: absolute;
+    z-index: -1;
+    top: -16px;
+    right: -16px;
+    background: linear-gradient(135deg, #364a60, #384c6c);
+    height: 32px;
+    width: 32px;
+    border-radius: 32px;
+    transform: scale(1);
+    transform-origin: 50% 50%;
+    transition: transform 0.35s ease-out;
+}
+
+.card:hover:before {
+    transform: scale(28);
+}
+
+.card:hover .small-desc {
+    transition: all 0.5s ease-out;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.card:hover .card-title {
+    transition: all 0.5s ease-out;
+    color: #ffffff;
+}
+</style>
+
 </head>
 
 
@@ -130,68 +225,61 @@
 
 
     <!-- Navigation -->
-<nav class="gradient-bg text-white shadow-md">
+ <nav class="gradient-bg text-white shadow-md fixed top-0 w-full z-50">
     <div class="container mx-auto px-5 py-3">
         <div class="flex items-center justify-between">
-            <!-- Logo -->
-            <a href="http://futuretopindia.in/">
+            <a href="https://futuretopindia.in/">
                 <div class="flex items-center">
-                    <img src="image/logo.png" alt="Future Top India logo" class="h-12 mr-10">
+                    <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
                 </div>
             </a>
 
-            <!-- Desktop Menu -->
             <div class="hidden md:flex items-center space-x-8">
-                <a href="https://futuretopindia.in/" class="hover:text-blue-200">Home</a>
-	        <a href="https://futuretopindia.in/portfolio.html" class="block py-2 hover:bg-blue-700 rounded px-4">Portfolio</a>
-                <a href="https://futuretopindia.in/service.html" class="hover:text-blue-200">Services</a>
-                <a href="technologies.html" class="hover:text-blue-200">Technologies</a>
-                <a href="https://futuretopindia.in/contact.html" class="hover:text-blue-200">Contact Us</a>
-
-
+                <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-800 rounded-lg ">Home</a>
+	            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-800 rounded-lg ">Portfolio</a>
+                <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-800 rounded-lg ">Services</a>
+                <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-800 rounded-lg ">Technologies</a>
+                <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-800 rounded-lg">Contact Us</a>
 
 		     <div class="relative group">   
-  <button id="aboutDropdownBtn" class="hover:bg-blue-700 focus:outline-none py-2  rounded px-2 ">
-    About ▾
-  </button>
+                <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2  rounded px-2 ">
+                    About ▾
+                </button>
 
-  
-  <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
-    <a href="https://futuretopindia.in/about.html" class="block px-4 py-2 hover:bg-blue-100">About Us</a>
-    <a href="https://futuretopindia.in/blog.html" class="block px-4 py-2 hover:bg-blue-100">Blogs</a>
-  </div>
-  </div>
+                <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
+                    <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+                    <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                    <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                    <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                    <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                </div>
+              </div>
 
-
-
-		    
-
-                <!-- ✅ Call Now Button (Desktop) -->
-                <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-2 px-4 rounded-full shadow-lg transition duration-300">
+                <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
                     📞 Call Now
                 </a>
             </div>
 
-            <!-- Mobile Menu Button -->
             <div class="md:hidden">
-                <button id="menu-btn" class="text-white focus:outline-none">
-                    <i class="fas fa-bars text-2xl"></i>
-                </button>
+                <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" class="text-white">
+               <i class="fas fa-bars text-2xl"></i>
+                 </button>
             </div>
         </div>
-
-        <!-- Mobile Menu -->
+		
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-700 rounded px-4">Home</a>
-	    <a href="https://futuretopindia.in/portfolio.html" class="block py-2 hover:bg-blue-700 rounded px-4">Our Portfolio</a>
-            <a href="https://futuretopindia.in/about.html" class="block py-2 hover:bg-blue-700 rounded px-4">About Us</a>
-	    <a href="https://futuretopindia.in/blog.html" class="block py-2 hover:bg-blue-700 rounded px-4">Blogs</a>
-            <a href="https://futuretopindia.in/service.html" class="block py-2 hover:bg-blue-700 rounded px-4">Services</a>
-            <a href="technologies.html" class="block py-2 hover:bg-blue-700 rounded px-4">Technologies</a>
-            <a href="https://futuretopindia.in/contact.html" class="block py-2 hover:bg-blue-700 rounded px-4">Contact Us</a>
+            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-teal-700 rounded px-4">Home</a>
+            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-teal-700 rounded px-4">Our Portfolio</a>
+			<a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-teal-700 rounded px-4">FTI-ai</a>
+			<a href="https://futuretopindia.in/about" class="block py-2 hover:bg-teal-700 rounded px-4">About Us</a>
+	        <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-teal-700 rounded px-4">Blogs</a>
+			<a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">FAQs</a>
+            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-teal-700 rounded px-4">Services</a>
+            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-teal-700 rounded px-4">Technologies</a>
+            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-teal-700 rounded px-4">Contact Us</a>
+			<a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">Privacy Policy</a>
 
-            <!-- ✅ Call Now Button (Mobile) -->
-            <a href="tel:9864551558" class="block mt-2 py-2 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
+            <a href="tel:9864551558" class="block mt-2 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
                 📞 Call Now
             </a>
         </div>
@@ -201,6 +289,8 @@
 
 
 <hr>
+<hr><hr>
+<hr><hr>
 <hr>
 
 
@@ -231,101 +321,117 @@
 	
 
     <!-- Services Section -->
-    <section id="services" class="py-16 px-4 bg-gray-100">
+     <section id="services" class="py-16 pt-20 px-4 bg-gray-100">
         <div class="container mx-auto">
-            <h1 class="text-3xl font-bold text-center mb-2">What Future Top India Do ?</h1>
+            <h2 class="text-3xl font-bold text-center mb-2"> <code class="inline bg-yellow-100">What Future Top India Do ? </code></h2>
 			<div class="w-24 h-1 bg-red-500 mx-auto mb-2"></div>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We provide end-to-end software development services tailored to your business needs</p>
+               <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                             We provide end-to-end software development services tailored to your business needs
+                        </p>
+           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
- 
-
-         <!-- Service 1 -->
-              <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300 cursor-pointer">
-    <div class="text-blue-600 mb-4">
-        <i class="fas fa-globe text-3xl"></i>
-    </div>
-    <h3 class="text-xl font-bold mb-2">Web Development</h3>
-    <p class="text-gray-600">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+                 <div class="card">
+             <div class="text-blue-600 mb-4">
+            <i class="fas fa-globe text-3xl"></i>
+             </div>
+             <h3 class="card-title">Web Development</h3>
+                <p class="small-desc">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+           <div class="go-corner">
+                  <div class="go-arrow">→</div>
+              </div>
            </div>
-
-
-                <!-- Service 2 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+		   
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-mobile-alt text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Mobile Applications</h3>
-                    <p class="text-gray-600">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
-                </div>
+                    <h3 class="card-title">Mobile Applications</h3>
+                    <p class="small-desc">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
+                 <div class="go-corner">
+                  <div class="go-arrow">→</div>
+               </div>
+             </div>
 				
-				
-				<!-- Service 3 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+				<div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-magnifying-glass"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SEO</h3>
-                    <p class="text-gray-600">SEO is a set of techniques and strategies aimed at increasing the quantity and quality of traffic to your website from search engines.</p>
-                </div>
+                    <h3 class="card-title">SEO</h3>
+                    <p class="small-desc">SEO is a set of techniques and strategies aimed at increasing the quantity and quality of traffic to your website from search engines.</p>
+                <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 4 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-laptop-code text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Desktop Software</h3>
-                    <p class="text-gray-600">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
-                </div>
+                    <h3 class="card-title">Desktop Software</h3>
+                    <p class="small-desc">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 5 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-cloud text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SaaS Platforms</h3>
-                    <p class="text-gray-600">Scalable Software-as-a-Service solutions with subscription management.</p>
-                </div>
+                    <h3 class="card-title">SaaS Platforms</h3>
+                    <p class="small-desc">Scalable Software-as-a-Service solutions with subscription management.</p>
+                 <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 6 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-chart-line text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Admin Panels</h3>
-                    <p class="text-gray-600">Custom dashboards and admin panels for business management.</p>
-                </div>
+                    <h3 class="card-title">Admin Panels</h3>
+                    <p class="small-desc">Custom dashboards and admin panels for business management.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 7 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-users text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">SMM Panels</h3>
-                    <p class="text-gray-600">Social media marketing tools and automation platforms.</p>
-                </div>
+                    <h3 class="card-title">SMM Panels</h3>
+                    <p class="small-desc">Social media marketing tools and automation platforms.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 8 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-project-diagram text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">ERP/CRM</h3>
-                    <p class="text-gray-600">Custom enterprise resource planning and customer relationship management systems.</p>
-                </div>
+                    <h3 class="card-title">ERP/CRM</h3>
+                    <p class="small-desc">Custom enterprise resource planning and customer relationship management systems.</p>
+                 <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
 
-                <!-- Service 9 -->
-                <div class="service-card bg-white p-6 rounded-lg shadow-md transition duration-300">
+                <div class="card">
                     <div class="text-blue-600 mb-4">
                         <i class="fas fa-paint-brush text-3xl"></i>
                     </div>
-                    <h3 class="text-xl font-bold mb-2">Design Services</h3>
-                    <p class="text-gray-600">UI/UX design, Graphics, branding, and Marketing Materials.</p>
-                </div>
+                    <h3 class="card-title">Design Services</h3>
+                    <p class="small-desc">UI/UX design, Graphics, branding, and Marketing Materials.</p>
+                  <div class="go-corner">
+                <div class="go-arrow">→</div>
+                 </div>
+               </div>
             </div>
         </div>
     </section>
-	
+
 	
 	
 	
@@ -375,7 +481,6 @@
                     </div>
                 </div>
 
-                <!-- More steps would follow the same pattern for 3-7 -->
             </div>
         </div>
     </section>
@@ -396,28 +501,27 @@
 
  <!-- Footer -->
     
-	<footer class="bg-gray-900 text-white py-8 px-4">
+	
+    <footer class="bg-gray-900 text-white py-8 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     
 					<div class="flex items-center mb-4">
-		   <a href="http://futuretopindia.in/">            
-					  <img src="image/sublogo.png" alt="Future Top India logo" class="h-10 mr-3">
-					</a>
-
-			 <a href="http://futuretopindia.in/">		
-            <i> 
-					  <span class="font-bold text-xl">FTI • Pvt Ltd </span>
-		    </i> </a>
+                       <a href="https://futuretopindia.in/">            
+                          <img src="image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3">
+                       </a>
+                       <a href="https://futuretopindia.in/">		
+                         <i> 
+                           <span class="font-bold text-xl">FTI • Pvt Ltd </span>
+                         </i>
+                       </a>
                     </div>
                    
-				   
-<i>	             <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>         
-</i>
+				   <i>	             
+                     <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>         
+                   </i>
                 </div>
-
-
 
                 <div class="flex space-x-6">
                     <a href="https://www.facebook.com/share/198qDFavKp/" class="text-gray-400 hover:text-white transition">
@@ -435,20 +539,31 @@
                 </div>
             </div>
 
-
 	           <br>
-
-
-  <div class="container mx-auto text-center space-x-4">
-    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Home</a>
-    <a href="https://futuretopindia.in/about.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">About Us</a>
-     <a href="https://futuretopindia.in/blog.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Blogs</a>
-    <a href="https://futuretopindia.in/portfolio.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Our Portfolio</a>
-    <a href="https://futuretopindia.in/privacy.html" class="text-blue-500 hover:underline" class="hover:text-sea green-400">Privacy Policy</a>
-  </div>
+<div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+    <span class="font-bold text-xl">Quick Links:</span>	
+    <div class="container mx-auto space-y-2 mt-4 mb-3">
+    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+    <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+	<a href="https://futuretopindia.in/contact" class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+	<a href="https://futuretopindia.in/blog" class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
+	</div>
+	
+	
+<div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+	<span class="font-bold text-xl">Important Links:</span>
+	<div class="container mx-auto space-y-2 mt-4 ">
+	<a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+	<a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+    <a href="https://futuretopindia.in/portfolio" class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+    <a href="https://futuretopindia.in/privacy" class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+     
+	  </div>
+  
+  
   
 
-            <div class="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
                 <p>©2022-25 by 
 				<a href="http://futuretopindia.in/"  class="text-blue-500 hover:underline">
 				Future Top India 
@@ -467,12 +582,12 @@
 
 
 <script>
-        // Mobile menu toggle
+
         document.getElementById('menu-btn').addEventListener('click', function() {
             document.getElementById('mobile-menu').classList.toggle('hidden');
         });
 
-        // Smooth scrolling for anchor links
+
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -482,7 +597,7 @@
             });
         });
 
-        // Form submission handling (would need backend in real implementation)
+        
         document.querySelector('form').addEventListener('submit', function(e) {
             e.preventDefault();
             alert('Thank you for your message! We will contact you shortly.');
@@ -505,10 +620,10 @@
 
         cards.forEach(card => {
             card.addEventListener("click", () => {
-                // Remove highlight from all cards
+                
                 cards.forEach(c => c.classList.remove("bg-blue-100", "border-blue-500", "border-2"));
                 
-                // Add highlight to clicked card
+              
                 card.classList.add("bg-blue-100", "border-blue-500", "border-2");
             });
         });
@@ -526,7 +641,6 @@
 
 </body>
 </html>
-
 
 
 
