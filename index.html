@@ -85,47 +85,46 @@
 
 <style>
 	
-	/* Custom Button Styles */
 .custom-button {
-  /* Box Model aur Layout */
-  display: inline-flex; /* 'flex' jaisa hai par inline elements ke liye behtar hai */
+ 
+  display: inline-flex;
   align-items: center;
   justify-content: center;
   width: 150px;
   height: 50px;
-  padding: 0 20px; /* Text ke aas-paas thodi jagah ke liye */
-  box-sizing: border-box; /* Padding aur border width mein shamil ho */
+  padding: 0 20px; 
+  box-sizing: border-box; 
 
-  /* Look and Feel */
-  background-color: #ffffff; /* Button ka background color safed */
-  color: #007bff; /* Text ka color neela */
-  border: 1px solid #007bff; /* Border ka color neela */
-  border-radius: 30px; /* Gol-kinare wala button */
   
-  /* Text Properties */
+  background-color: #ffffff;
+  color: #007bff; 
+  border: 1px solid #007bff; 
+  border-radius: 30px;
+  
+  
   font-family: "Source Sans Pro", sans-serif;
   font-size: 14px;
   font-weight: 600;
-  text-decoration: none; /* Link ke neeche wali line hatane ke liye */
+  text-decoration: none; 
 
-  /* Interaction */
+  
   cursor: pointer;
   outline: none;
-  transition: all 0.2s ease; /* Hover effect ko smooth banane ke liye */
+  transition: all 0.2s ease; 
 }
 
-/* Jab mouse button ke upar aaye (hover) */
+
 .custom-button:hover {
-  background-color: #007bff; /* Background neela ho jayega */
-  color: #ffffff; /* Text safed ho jayega */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Halki si parchhai (shadow) */
+  background-color: #007bff;
+  color: #ffffff; 
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
 }
 
-/* Jab button par click kiya jaaye (active) */
+
 .custom-button:active {
-  background-color: #0056b3; /* Thoda gehra neela color */
+  background-color: #0056b3;
   border-color: #0056b3;
-  transform: translateY(1px); /* Button halka sa neeche dabe */
+  transform: translateY(1px); 
 }
 
         .gradient-bg {
@@ -154,7 +153,7 @@
     </style>
 
 <style>
-/* General Card Styles */
+
 .card-title {
     color: #262626;
     font-size: 1.5em;
@@ -190,12 +189,6 @@
     color: white;
     font-family: courier, sans;
 }
-
-/* --- MODIFICATIONS START HERE --- */
-
-/* 1. Base .card style (Mobile First) */
-/* This is how the card will look on small screens by default. */
-/* We removed max-width and margin to allow it to fill the space. */
 .card {
     display: block;
     position: relative;
@@ -207,22 +200,20 @@
     overflow: hidden;
     background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
     font-family: Arial, Helvetica, sans-serif;
-    width: 100%; /* Make card take full width of its container */
-    max-width: 400px; /* Optional: prevent it from being too wide on wide phones */
+    width: 100%; 
+    max-width: 400px; 
 }
 
-/* 2. Styles for larger screens (Tablet and Desktop) */
-/* This media query applies styles ONLY when the screen is 768px or wider. */
 @media (min-width: 768px) {
     .card {
-        /* We re-apply the max-width and margin for the desktop view */
+
         max-width: 300px;
         margin: 12px;
     }
 }
 
 
-/* --- HOVER EFFECTS (No changes here) --- */
+
 
 .card:before {
     content: '';
@@ -433,7 +424,6 @@
 
 <style>
     
-    /* === 1. DYNAMIC AURORA BACKGROUND & CARD STYLING === */
     .gemini-ai-card {
         max-width: 500px;
         width: 100%;
@@ -446,7 +436,7 @@
         border: 1px solid rgba(255, 255, 255, 0.1);
         color: #e2e8f0;
         box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
-        font-family: sans-serif; /* Default font add kar diya hai */
+        font-family: sans-serif;
     }
 
     .gemini-ai-card::before {
@@ -504,7 +494,7 @@
     }
     .gemini-ai-card #user-input:focus { border-color: #38bdf8; }
 
-    /* === 4. DYNAMIC BUTTON === */
+  
     .gemini-ai-card #gemini-button {
         display: flex;
         align-items: center;
@@ -529,7 +519,7 @@
     }
     .gemini-ai-card #gemini-button:hover svg { transform: translateX(3px); }
 
-    /* === 5. "AI IS THINKING" LOADER === */
+
     .gemini-ai-card .loader-container { display: flex; flex-direction: column; align-items: center; gap: 1rem; padding: 1rem 0; color: #94a3b8;}
     .gemini-ai-card .typing-indicator { display: flex; gap: 0.5rem; }
     .gemini-ai-card .typing-indicator span {
@@ -548,7 +538,7 @@
         100% { opacity: 0.2; transform: translateY(0); }
     }
 
-    /* === 6. RESULTS CONTAINER === */
+
     .gemini-ai-card .results-container {
         margin-top: 1rem;
         background-color: rgba(0, 0, 0, 0.2);
@@ -567,7 +557,7 @@
     }
     @keyframes gemini-blink { 50% { opacity: 0; } }
     
-    /* === 7. ICON BUTTONS STYLING (SPEAKER & COPY) === */
+    
     .gemini-ai-card .button-container {
         position: absolute;
         top: 10px;
@@ -1287,7 +1277,6 @@
 	           <br>
 <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
     <span class="font-bold text-xl">Quick Links:</span>	
-    <hr style="border: 1px solid #4B5563; width: 25%; margin-bottom: 4px;">	
     <div class="container mx-auto space-y-2 mt-4 mb-3">
     <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
     <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
@@ -1298,7 +1287,6 @@
 	
 <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
 	<span class="font-bold text-xl">Important Links:</span>
-	<hr style="border: 1px solid #4B5563; width: 35%; margin-bottom: 4px;">
 	<div class="container mx-auto space-y-2 mt-4 ">
 	<a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
 	<a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
@@ -1379,11 +1367,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.getElementById('copy-button');
     const resultsText = document.getElementById('results-text');
 
-    // === API & SPEECH SYNTHESIS SETUP ===
-    // !!! SECURITY WARNING !!!
-    // It is NOT SAFE to expose your API key in client-side JavaScript.
-    // Anyone visiting your website can see this key and use it, which could cost you money.
-    // For a real application, you should make this API call from a backend server where the key can be kept secret.
+    
     const apiKey = "AIzaSyBeYu3y6PvEgaTM7d7ZqX98eCz5UTc49Mc";
     const synth = window.speechSynthesis;
     let currentUtterance = null;
@@ -1413,7 +1397,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, speed);
     }
 
-    // 2. Gemini API Call
+    
     async function callGeminiAPI(prompt) {
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         try {
@@ -1436,7 +1420,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
     
-    // 3. Text to Speech
+
     function speakText(text) {
         if (synth.speaking) {
             synth.cancel(); 
@@ -1449,9 +1433,7 @@ document.addEventListener('DOMContentLoaded', () => {
         synth.speak(currentUtterance);
     }
 
-    // === EVENT LISTENERS ===
-
-    // 1. Main Submit Button Click
+    
     geminiButton.addEventListener('click', async () => {
         const userTopic = userInput.value.trim();
         if (!userTopic) {
@@ -1543,7 +1525,7 @@ document.addEventListener('DOMContentLoaded', () => {
         typeWriter(resultsText, responseText, 20);
     });
     
-    // 2. Speaker Button Click
+    
     speakerButton.addEventListener('click', () => {
         const textToSpeak = resultsText.innerHTML;
         if (textToSpeak) {
@@ -1551,7 +1533,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // 3. Copy Button Click
+
     copyButton.addEventListener('click', () => {
         const textToCopy = resultsText.innerText; 
         
@@ -1570,3 +1552,4 @@ document.addEventListener('DOMContentLoaded', () => {
 
 </body>
 </html>
+
