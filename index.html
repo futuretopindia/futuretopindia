@@ -594,7 +594,125 @@
     .gemini-ai-card .hidden { display: none !important; }
 
 </style>
-	
+
+<style>
+/* Basic styling for the body */
+body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    /* Removed background-color and other properties that might conflict with your main styles */
+    margin: 0;
+}
+
+/* Main container for the section */
+.security-container {
+    width: 90%;
+    max-width: 1000px;
+    text-align: center;
+    padding: 40px 20px;
+    margin: 0 auto; /* Center the container */
+    background-color: #f8f7ff; /* Light lavender background from the image */
+}
+
+/* Heading style */
+.security-container h2 {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 40px;
+}
+
+/* Wrapper for the carousel to hide overflow */
+.cards-wrapper {
+    overflow: hidden;
+    width: 100%;
+}
+
+/* Carousel container with flexbox */
+.cards-carousel {
+    display: flex;
+    gap: 30px;
+    padding: 20px 0;
+    /* Removed transition as we are using scrollBy */
+    overflow-x: auto; /* Add scroll for touch devices */
+    -ms-overflow-style: none;  /* IE and Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+.cards-carousel::-webkit-scrollbar {
+    display: none; /* Hide scrollbar for Chrome, Safari, and Opera */
+}
+
+
+/* Individual card styling for security section */
+.security-card-item {
+    flex: 0 0 calc(33.333% - 20px); /* Three cards per view */
+    background-color: #ffffff;
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.security-card-item:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Card image styling */
+.security-card-item img {
+    height: 80px;
+    margin-bottom: 20px;
+}
+
+/* Card title styling */
+.security-card-item h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Card paragraph styling */
+.security-card-item p {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* Navigation buttons container */
+.navigation-buttons {
+    margin-top: 30px;
+}
+
+/* Navigation button styling */
+.nav-btn {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin: 0 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.nav-btn:hover {
+    background-color: #f0f0f0;
+}
+
+
+@media (max-width: 768px) {
+    .security-card-item {
+        flex: 0 0 calc(50% - 15px);
+    }
+}
+
+@media (max-width: 480px) {
+    .security-card-item {
+        flex: 0 0 90%; 
+    }
+}
+</style>
 </head>
 
 <body class="font-sans bg-gray-50">
@@ -1127,20 +1245,36 @@
   </div>
 </section>
 
-<script>
-  const toggleButtons = document.querySelectorAll('.toggle-btn');
+<section class="security-container">
+    <h2>Security is at the heart of our business</h2>
+    
+    <div class="cards-wrapper">
+        <div class="cards-carousel">
+            <div class="security-card-item">
+                <img src="image/iso.png" alt="ISO Icon">
+                <h3>ISO 9001 : 2015 </h3>
+                <p>Global information security controls</p>
+            </div>
 
-  toggleButtons.forEach(button => {
-    button.addEventListener('click', () => {
-      const answer = button.nextElementSibling;
-      const icon = button.querySelector('.icon');
+            <div class="security-card-item">
+                <img src="image/dmca.jpg" alt="DMCA Icon">
+                <h3>DMCA Compliance</h3>
+                <p>Protecting digital content rights and intellectual property</p>
+            </div>
 
-      answer.classList.toggle('hidden');
-      icon.textContent = icon.textContent === '+' ? '−' : '+';
-    });
-  });
-</script>
+            <div class="security-card-item">
+                <img src="image/tm.png" alt="Trademark Icon">
+                <h3>TRADEMARK Protection</h3>
+                <p>Safeguarding brand identity and exclusive rights</p>
+            </div>
+        </div>
+    </div>
 
+    <div class="navigation-buttons">
+        <button id="prevBtn" class="nav-btn">←</button>
+        <button id="nextBtn" class="nav-btn">→</button>
+    </div>
+</section>
 <hr style="height: 6px; background-color: #C8E6E6; border: none; width: 100%;">
 
     <section id="contact" class="py-16 px-4 gradient-bg text-white">
@@ -1227,16 +1361,6 @@
 
 <hr style="height: 2px; background-color: #4B5563; border: none; width: 100%;">
 
-
-
-
-
-
-
-
-
-
-
     <footer class="bg-gray-900 text-white py-8 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
@@ -1308,25 +1432,19 @@
         </div>
     </footer>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <script>
+        const faqToggleButtons = document.querySelectorAll('.toggle-btn');
+      
+        faqToggleButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+      
+            answer.classList.toggle('hidden');
+            icon.textContent = icon.textContent === '+' ? '−' : '+';
+          });
+        });
+    </script>
 
     <script>
         // Mobile menu toggle
@@ -1550,10 +1668,34 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const carousel = document.querySelector('.cards-carousel');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        // This check prevents errors if the carousel isn't on the page
+        if (carousel && prevBtn && nextBtn) {
+            const card = document.querySelector('.security-card-item'); // Using the new, specific class
+            
+            // Check if a card exists before trying to calculate width
+            if(card) {
+                const cardStyle = window.getComputedStyle(card);
+                const cardMarginRight = parseInt(cardStyle.marginRight) || 0;
+                const cardGap = 30; // The gap value from CSS
+                
+                const scrollAmount = card.offsetWidth + cardGap;
+
+                nextBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+                });
+            }
+        }
+    });
+</script>
 </body>
 </html>
-
-
-
-
-
