@@ -719,13 +719,21 @@ body {
 
 
 
+   
     <style>
-       
+        /* Body ko control karega jab menu active ho */
         body.menu-active {
             overflow: hidden;
         }
 
-        
+        /* --- NEW RULE TO HIDE MENU ICON --- */
+        /* Jab menu active ho, to hamburger button ko chhipa do */
+        body.menu-active #menu-btn {
+            display: none;
+        }
+        /* ------------------------------------ */
+
+        /* Overlay ka transition */
         #menu-overlay {
             opacity: 0;
             visibility: hidden;
@@ -735,30 +743,50 @@ body {
             opacity: 1;
             visibility: visible;
         }
-
-       
+        
+        /* Menu Panel ka transition aur background */
         #mobile-menu-panel {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            color: #ffffff;
             transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
         }
         body.menu-active #mobile-menu-panel {
             transform: translateX(0);
         }
-        
-        
+
+        /* Menu header aur close button ka color */
+        #mobile-menu-panel h2 {
+            color: #ffffff;
+        }
+        #mobile-menu-panel #close-menu-btn {
+            color: #e0e0e0;
+        }
+        #mobile-menu-panel #close-menu-btn:hover {
+            color: #ffffff;
+        }
+
+        /* Menu links ka initial state */
         #mobile-menu-panel nav a {
             opacity: 0;
             transform: translateY(15px);
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
         }
-
+        #mobile-menu-panel nav a:last-child {
+            border-bottom: none;
+        }
+        #mobile-menu-panel nav a:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
         
+        /* Jab menu active ho, tab links dikhenge */
         body.menu-active #mobile-menu-panel nav a {
             opacity: 1;
             transform: translateY(0);
         }
         
-       
+        /* Staggered animation ke liye delay */
         body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
@@ -770,9 +798,56 @@ body {
         body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+
     </style>
 
+<style>
 
+    /* --- New Desktop Navbar Styles --- */
+
+    /* Jab Navbar scroll ho jaye, tab yeh style apply honge */
+    #main-nav.scrolled {
+        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    }
+
+    /* Desktop navigation links ke liye naya hover effect (animated underline) */
+    .desktop-nav-link {
+        position: relative;
+        text-decoration: none;
+        padding-bottom: 8px; /* Line ke liye jagah */
+    }
+    .desktop-nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background-color: #ffffff;
+        transform: scaleX(0); /* Shuru mein line chhipi rahegi */
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    .desktop-nav-link:hover::after {
+        transform: scaleX(1); /* Hover par line dikhegi */
+        transform-origin: bottom left;
+    }
+
+    /* Desktop dropdown menu ke liye animation */
+    .group .group-hover\:block {
+        transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        opacity: 0;
+        transform: scale(0.95);
+        pointer-events: none;
+    }
+    .group:hover .group-hover\:block {
+        opacity: 1;
+        transform: scale(1);
+        pointer-events: auto;
+    }
+
+</style>
 	
 </head>
 
@@ -783,7 +858,7 @@ body {
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <nav class="gradient-bg text-white shadow-md fixed top-0 w-full z-30">
+   <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
         <div class="container mx-auto px-5 py-3">
             <div class="flex items-center justify-between">
                 <a href="https://futuretopindia.in/">
@@ -793,11 +868,12 @@ body {
                 </a>
 
                 <div class="hidden md:flex items-center space-x-8">
-                    <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Home</a>
-                    <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Portfolio</a>
-                    <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Services</a>
-                    <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Technologies</a>
-                    <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Contact Us</a>
+    <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
+    <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
+    <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
+    <a href="https://futuretopindia.in/technologies" class="desktop-nav-link">Technologies</a>
+    <a href="https://futuretopindia.in/contact" class="desktop-nav-link">Contact Us</a>
+ 
                     <div class="relative group">
                         <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
                             About ▾
@@ -827,26 +903,26 @@ body {
   <div id="mobile-menu-container">
     <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
-    <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 bg-white text-black p-4 z-50">
+    <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 p-4 z-50">
         
         <div class="flex justify-between items-center mb-6">
-            <h2 class="text-xl font-bold text-gray-800">Menu </h2>
-            <button id="close-menu-btn" aria-label="Close menu" class="text-gray-600 hover:text-gray-900">
+            <h2 class="text-xl font-bold">Menu</h2>
+            <button id="close-menu-btn" aria-label="Close menu" class="hover:text-white">
                 <i class="fas fa-times text-2xl"></i>
             </button>
         </div>
 
         <nav class="flex flex-col space-y-2">
-            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-gray-100 rounded px-4">Home</a>
-            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-gray-100 rounded px-4">Our Portfolio</a>
-            <a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-gray-100 rounded px-4">FTI-ai</a>
-            <a href="https://futuretopindia.in/about" class="block py-2 hover:bg-gray-100 rounded px-4">About Us</a>
-            <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-gray-100 rounded px-4">Blogs</a>
-            <a href="https://futuretopindia.in/FAQ" class="block py-2 hover:bg-gray-100 rounded px-4">FAQs</a>
-            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-gray-100 rounded px-4">Services</a>
-            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-gray-100 rounded px-4">Technologies</a>
-            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-gray-100 rounded px-4">Contact Us</a>
-            <a href="https://futuretopindia.in/privacy" class="block py-2 hover:bg-gray-100 rounded px-4">Privacy Policy</a>
+            <a href="https://futuretopindia.in/" class="block py-2 rounded px-4">Home</a>
+            <a href="https://futuretopindia.in/portfolio" class="block py-2 rounded px-4">Our Portfolio</a>
+            <a href="https://futuretopindia.in/fti.ai" class="block py-2 rounded px-4">FTI-ai</a>
+            <a href="https://futuretopindia.in/about" class="block py-2 rounded px-4">About Us</a>
+            <a href="https://futuretopindia.in/blog" class="block py-2 rounded px-4">Blogs</a>
+            <a href="https://futuretopindia.in/FAQ" class="block py-2 rounded px-4">FAQs</a>
+            <a href="https://futuretopindia.in/service" class="block py-2 rounded px-4">Services</a>
+            <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
+            <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
+            <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
 
             <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
                 📞 Call Now
@@ -854,12 +930,11 @@ body {
         </nav>
         
     </div> 
-  </div>
+</div>
 
 
-<hr><hr><hr><hr>
 
-    <section id="home" class="gradient-bg text-white py-20 pt-25 px-4">
+   <section id="home" class="gradient-bg text-white px-4 pt-32 pb-20 md:pt-40">
         <div class="container mx-auto flex flex-col md:flex-row items-center">
 		  <div class="md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Building Your Digital Future with Future Top India</h1>
@@ -1527,7 +1602,17 @@ body {
     </script>
 
 	
-   <script>
+  <script>
+    // --- Navbar Scroll Logic ---
+    const nav = document.getElementById('main-nav');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) { // 50px scroll karne ke baad
+            nav.classList.add('scrolled');
+        } else {
+            nav.classList.remove('scrolled');
+        }
+    });
+
     // --- Mobile Menu Logic ---
     const menuBtn = document.getElementById('menu-btn');
     const closeMenuBtn = document.getElementById('close-menu-btn');
@@ -1789,7 +1874,6 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
-
 
 
 
