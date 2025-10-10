@@ -725,68 +725,77 @@ body {
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <nav class="gradient-bg text-white shadow-md fixed top-0 w-full z-50">
-    <div class="container mx-auto px-5 py-3">
-        <div class="flex items-center justify-between">
-            <a href="https://futuretopindia.in/">
-                <div class="flex items-center">
-                    <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
+    <nav class="gradient-bg text-white shadow-md fixed top-0 w-full z-30">
+        <div class="container mx-auto px-5 py-3">
+            <div class="flex items-center justify-between">
+                <a href="https://futuretopindia.in/">
+                    <div class="flex items-center">
+                        <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
+                    </div>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Home</a>
+                    <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Portfolio</a>
+                    <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Services</a>
+                    <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Technologies</a>
+                    <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-800 rounded-lg px-2">Contact Us</a>
+                    <div class="relative group">
+                        <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
+                            About ▾
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
+                            <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+                            <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                            <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                            <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
+                        📞 Call Now
+                    </a>
                 </div>
-			</a>
 
-    
+                <div class="md:hidden">
+                    <button id="menu-btn" aria-label="Open menu" class="text-white focus:outline-none">
+                        <i class="fas fa-bars text-2xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
 
-            <div class="hidden md:flex items-center space-x-8">
-                <a href="https://futuretopindia.in/" class="block py-2 hover:bg-blue-800 rounded-lg ">Home</a>
-	            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-blue-800 rounded-lg ">Portfolio</a>
-                <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-blue-800 rounded-lg ">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-blue-800 rounded-lg ">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-blue-800 rounded-lg">Contact Us</a>
+    <div id="mobile-menu-container">
+        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
 
-		     <div class="relative group">   
-                <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2  rounded px-2 ">
-                    About ▾
+        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 bg-white text-black p-4 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold text-gray-800">Menu</h2>
+                <button id="close-menu-btn" aria-label="Close menu" class="text-gray-600 hover:text-gray-900">
+                    <i class="fas fa-times text-2xl"></i>
                 </button>
+            </div>
 
-                <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
-                    <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
-                    <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
-                    <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
-                    <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
-                    <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
-                </div>
-              </div>
+            <nav class="flex flex-col space-y-2">
+                <a href="https://futuretopindia.in/" class="block py-2 hover:bg-gray-100 rounded px-4">Home</a>
+                <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-gray-100 rounded px-4">Our Portfolio</a>
+                <a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-gray-100 rounded px-4">FTI-ai</a>
+                <a href="https://futuretopindia.in/about" class="block py-2 hover:bg-gray-100 rounded px-4">About Us</a>
+                <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-gray-100 rounded px-4">Blogs</a>
+                <a href="https://futuretopindia.in/FAQ" class="block py-2 hover:bg-gray-100 rounded px-4">FAQs</a>
+                <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-gray-100 rounded px-4">Services</a>
+                <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-gray-100 rounded px-4">Technologies</a>
+                <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-gray-100 rounded px-4">Contact Us</a>
+                <a href="https://futuretopindia.in/privacy" class="block py-2 hover:bg-gray-100 rounded px-4">Privacy Policy</a>
 
-                <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
+                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
                     📞 Call Now
                 </a>
-            </div>
-
-            <div class="md:hidden">
-                <button id="menu-btn" aria-controls="mobile-menu" aria-expanded="false" class="text-white">
-               <i class="fas fa-bars text-2xl"></i>
-                 </button>
-            </div>
-        </div>
-		
-        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-2">
-            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-teal-700 rounded px-4">Home</a>
-            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-teal-700 rounded px-4">Our Portfolio</a>
-			<a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-teal-700 rounded px-4">FTI-ai</a>
-			<a href="https://futuretopindia.in/about" class="block py-2 hover:bg-teal-700 rounded px-4">About Us</a>
-	        <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-teal-700 rounded px-4">Blogs</a>
-			<a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">FAQs</a>
-            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-teal-700 rounded px-4">Services</a>
-            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-teal-700 rounded px-4">Technologies</a>
-            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-teal-700 rounded px-4">Contact Us</a>
-			<a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-700 rounded px-4">Privacy Policy</a>
-
-            <a href="tel:9864551558" class="block mt-2 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                📞 Call Now
-            </a>
+            </nav>
         </div>
     </div>
-</nav>
+
 
 
 <hr><hr><hr><hr>
@@ -1458,13 +1467,32 @@ body {
         });
     </script>
 
+	
     <script>
-        // Mobile menu toggle
-        document.getElementById('menu-btn').addEventListener('click', function() {
-            document.getElementById('mobile-menu').classList.toggle('hidden');
-        });
+        // --- Mobile Menu Logic ---
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const menuPanel = document.getElementById('mobile-menu-panel');
+        const menuOverlay = document.getElementById('menu-overlay');
 
-        // Smooth scrolling for anchor links
+        function openMenu() {
+            menuPanel.classList.remove('-translate-x-full');
+            menuOverlay.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; 
+        }
+
+        function closeMenu() {
+            menuPanel.classList.add('-translate-x-full');
+            menuOverlay.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+
+        menuBtn.addEventListener('click', openMenu);
+        closeMenuBtn.addEventListener('click', closeMenu);
+        menuOverlay.addEventListener('click', closeMenu);
+
+
+        // --- Existing Smooth Scrolling Logic ---
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
@@ -1473,7 +1501,10 @@ body {
                 });
             });
         });
-	</script>
+    </script>
+
+
+	
 
 	<script>
         
@@ -1708,6 +1739,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
