@@ -716,6 +716,64 @@ body {
     }
 }
 </style>
+
+
+
+    <style>
+       
+        body.menu-active {
+            overflow: hidden;
+        }
+
+        
+        #menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+        }
+        body.menu-active #menu-overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+       
+        #mobile-menu-panel {
+            transform: translateX(-100%);
+            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); 
+        }
+        body.menu-active #mobile-menu-panel {
+            transform: translateX(0);
+        }
+        
+        
+        #mobile-menu-panel nav a {
+            opacity: 0;
+            transform: translateY(15px);
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+
+        
+        body.menu-active #mobile-menu-panel nav a {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+       
+        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+    </style>
+
+
+	
 </head>
 
     
@@ -766,36 +824,37 @@ body {
         </div>
     </nav>
 
-    <div id="mobile-menu-container">
-        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 hidden"></div>
+  <div id="mobile-menu-container">
+    <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
 
-        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 bg-white text-black p-4 z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-bold text-gray-800">Menu</h2>
-                <button id="close-menu-btn" aria-label="Close menu" class="text-gray-600 hover:text-gray-900">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-
-            <nav class="flex flex-col space-y-2">
-                <a href="https://futuretopindia.in/" class="block py-2 hover:bg-gray-100 rounded px-4">Home</a>
-                <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-gray-100 rounded px-4">Our Portfolio</a>
-                <a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-gray-100 rounded px-4">FTI-ai</a>
-                <a href="https://futuretopindia.in/about" class="block py-2 hover:bg-gray-100 rounded px-4">About Us</a>
-                <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-gray-100 rounded px-4">Blogs</a>
-                <a href="https://futuretopindia.in/FAQ" class="block py-2 hover:bg-gray-100 rounded px-4">FAQs</a>
-                <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-gray-100 rounded px-4">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-gray-100 rounded px-4">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-gray-100 rounded px-4">Contact Us</a>
-                <a href="https://futuretopindia.in/privacy" class="block py-2 hover:bg-gray-100 rounded px-4">Privacy Policy</a>
-
-                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                    📞 Call Now
-                </a>
-            </nav>
+    <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 bg-white text-black p-4 z-50">
+        
+        <div class="flex justify-between items-center mb-6">
+            <h2 class="text-xl font-bold text-gray-800">Menu </h2>
+            <button id="close-menu-btn" aria-label="Close menu" class="text-gray-600 hover:text-gray-900">
+                <i class="fas fa-times text-2xl"></i>
+            </button>
         </div>
-    </div>
 
+        <nav class="flex flex-col space-y-2">
+            <a href="https://futuretopindia.in/" class="block py-2 hover:bg-gray-100 rounded px-4">Home</a>
+            <a href="https://futuretopindia.in/portfolio" class="block py-2 hover:bg-gray-100 rounded px-4">Our Portfolio</a>
+            <a href="https://futuretopindia.in/fti.ai" class="block py-2 hover:bg-gray-100 rounded px-4">FTI-ai</a>
+            <a href="https://futuretopindia.in/about" class="block py-2 hover:bg-gray-100 rounded px-4">About Us</a>
+            <a href="https://futuretopindia.in/blog" class="block py-2 hover:bg-gray-100 rounded px-4">Blogs</a>
+            <a href="https://futuretopindia.in/FAQ" class="block py-2 hover:bg-gray-100 rounded px-4">FAQs</a>
+            <a href="https://futuretopindia.in/service" class="block py-2 hover:bg-gray-100 rounded px-4">Services</a>
+            <a href="https://futuretopindia.in/technologies" class="block py-2 hover:bg-gray-100 rounded px-4">Technologies</a>
+            <a href="https://futuretopindia.in/contact" class="block py-2 hover:bg-gray-100 rounded px-4">Contact Us</a>
+            <a href="https://futuretopindia.in/privacy" class="block py-2 hover:bg-gray-100 rounded px-4">Privacy Policy</a>
+
+            <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
+                📞 Call Now
+            </a>
+        </nav>
+        
+    </div> 
+  </div>
 
 
 <hr><hr><hr><hr>
@@ -1468,40 +1527,31 @@ body {
     </script>
 
 	
-    <script>
-        // --- Mobile Menu Logic ---
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const menuPanel = document.getElementById('mobile-menu-panel');
-        const menuOverlay = document.getElementById('menu-overlay');
+   <script>
+    // --- Mobile Menu Logic ---
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
 
-        function openMenu() {
-            menuPanel.classList.remove('-translate-x-full');
-            menuOverlay.classList.remove('hidden');
-            document.body.style.overflow = 'hidden'; 
-        }
+    function toggleMenu() {
+        document.body.classList.toggle('menu-active');
+    }
 
-        function closeMenu() {
-            menuPanel.classList.add('-translate-x-full');
-            menuOverlay.classList.add('hidden');
-            document.body.style.overflow = '';
-        }
-
-        menuBtn.addEventListener('click', openMenu);
-        closeMenuBtn.addEventListener('click', closeMenu);
-        menuOverlay.addEventListener('click', closeMenu);
+    menuBtn.addEventListener('click', toggleMenu);
+    closeMenuBtn.addEventListener('click', toggleMenu);
+    menuOverlay.addEventListener('click', toggleMenu);
 
 
-        // --- Existing Smooth Scrolling Logic ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+    // --- Existing Smooth Scrolling Logic ---
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
             });
         });
-    </script>
+    });
+</script>
 
 
 	
@@ -1739,6 +1789,7 @@ document.addEventListener('DOMContentLoaded', () => {
 </script>
 </body>
 </html>
+
 
 
 
