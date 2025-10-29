@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>more - future top india</title>
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+	
+	<style>
+	/* ... (all your existing CSS from line 12 to 67) ... */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f7f6; /* Light grey background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+.menu-container {
+    width: 100%;
+    max-width: 400px; /* Limit width for a mobile-first look */
+    background-color: #ffffff;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.07);
+}
+
+h1 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+/* --- NEW CSS for Edit Icon --- */
+
+/* MODIFIED: Label ko relative banaya taaki icon ko position kar sakein */
+.avatar-label {
+    cursor: pointer;
+    position: relative; /* Yeh zaroori hai */
+    display: block; /* Isse layout aasan hoga */
+    margin-right: 15px; /* Margin ko .avatar se yahaan move kar diya */
+}
+
+/* MODIFIED: .avatar se margin hata diya */
+.avatar {
+    width: 50px;
+    height: 50px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    /* margin-right: 15px; --- Yahaan se margin hata diya gaya hai --- */
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* NEW: Yeh naye camera icon ki styling hai */
+.avatar-edit-icon {
+    position: absolute; /* Avatar ke upar laane ke liye */
+    bottom: 0;
+    right: 0;
+    width: 22px;   /* Chhota circle */
+    height: 22px;
+    background-color: #333; /* Dark background */
+    color: white;           /* White icon */
+    border-radius: 50%;     /* Ise bhi goal bana diya */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;      /* Icon ka size chhota kiya */
+    border: 2px solid white; /* Isse yeh avatar se alag dikhega */
+    transition: transform 0.2s ease;
+}
+
+/* NEW: Hover effect taaki interactive lage */
+.avatar-label:hover .avatar-edit-icon {
+    transform: scale(1.1); /* Thoda bada hoga jab mouse/finger paas aayega */
+}
+
+/* --- YEH HAI FIX --- */
+/* Jab image lag jaaye, toh purane user icon ko hide kar do */
+.avatar.has-image #avatarIcon {
+    display: none;
+}
+/* --- End NEW CSS --- */
+
+
+.user-info strong {
+    display: block;
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+}
+
+.user-info span {
+    font-size: 14px;
+    color: #888;
+}
+
+/* Menu List Styling */
+.menu-group {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+}
+
+/* ... (all your other existing CSS rules) ... */
+
+.menu-group li {
+    margin-bottom: 8px;
+}
+
+.menu-group a {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    text-decoration: none;
+    color: #222;
+    border-radius: 10px;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+/* This creates the "paper" card look */
+.menu-group a {
+    background-color: #fff;
+    border: 1px solid #eee;
+}
+
+.menu-group a:hover {
+    background-color: #f9f9f9;
+    transform: scale(1.02); /* Slight zoom on hover */
+}
+
+.menu-group .icon {
+    font-size: 18px;
+    color: #007bff; /* Blue icon color */
+    width: 30px; /* Ensures text aligns */
+    margin-right: 15px;
+}
+
+.menu-group a span {
+    flex-grow: 1; /* Pushes the arrow to the right */
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.menu-group .arrow {
+    font-size: 12px;
+    color: #aaa;
+}
+
+/* Special style for Log Out */
+.menu-group a.logout .icon {
+    color: #d9534f; /* Red color */
+}
+
+hr {
+    border: none;
+    border-top: 1px solid #eee;
+    margin: 20px 0;
+}
+
+/* --- Animation Classes --- */
+
+/* 1. This is the starting state (hidden) */
+.anim-item {
+    opacity: 0;
+    transform: translateY(20px); /* Start 20px down */
+    transition: opacity 0.4s ease-out, transform 0.4s ease-out;
+}
+
+/* 2. This is the final state (visible) */
+.anim-item.show {
+    opacity: 1;
+    transform: translateY(0); /* Move back to original position */
+}
+</style>
+
+
+</head>
+<body>
+    <input type="file" id="profileUpload" accept="image/*" style="display: none;">
+
+    <main class="menu-container">
+        <h1>More</h1>
+
+        <div class="user-profile anim-item">
+            <label for="profileUpload" class="avatar-label"> 
+                <div class="avatar" id="avatarDisplay"> 
+                    <i class="fa-solid fa-user" id="avatarIcon"></i> 
+                </div>
+                <div class="avatar-edit-icon">
+                    <i class="fa-solid fa-camera"></i>
+                </div>
+            </label>
+            <div class="user-info">
+                <strong>Future Top India</strong>
+                <span>@futuretopindia</span>
+            </div>
+        </div>
+        <ul class="menu-group">
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/contact">
+                    <i class="icon fa-solid fa-circle-question"></i>
+                    <span>Support</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/blog">
+                    <i class="icon fa-solid fa-blog"></i>
+                    <span>Blog</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/portfolio">
+                    <i class="icon fa-solid fa-briefcase"></i>
+                    <span>Portfolio</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/technologies">
+                    <i class="icon fa-solid fa-laptop-code"></i>
+                    <span>Technology</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+
+        <ul class="menu-group">
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/about">
+                    <i class="icon fa-solid fa-circle-info"></i>
+                    <span>About Us</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/contact">
+                    <i class="icon fa-solid fa-envelope"></i>
+                    <span>Contact Us</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/privacy">
+                    <i class="icon fa-solid fa-shield-halved"></i>
+                    <span>Privacy Policy</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="https://futuretopindia.in/termsandconditions">
+                    <i class="icon fa-solid fa-gavel"></i>
+                    <span>Term & Condition</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+            <li class="anim-item">
+                <a href="#">
+                    <i class="icon fa-solid fa-lightbulb"></i>
+                    <span>Why Choose Us</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+
+        <ul class="menu-group">
+            <li class="anim-item">
+                <a href="#" class="logout">
+                    <i class="icon fa-solid fa-arrow-right-from-bracket"></i>
+                    <span>Log Out</span>
+                    <i class="arrow fa-solid fa-chevron-right"></i>
+                </a>
+            </li>
+        </ul>
+    </main>
+
+    <script>
+	
+	// Wait for the document (HTML) to be fully loaded
+       document.addEventListener("DOMContentLoaded", () => {
+    
+    // --- This is your existing animation code ---
+    const itemsToAnimate = document.querySelectorAll('.anim-item');
+    itemsToAnimate.forEach((item, index) => {
+        setTimeout(() => {
+            item.classList.add('show');
+        }, index * 100); // 100ms delay between each item
+    });
+
+
+    // --- NEW: Code for Profile Picture Upload ---
+
+    // 1. Get references to the HTML elements
+    const profileUpload = document.getElementById('profileUpload');
+    const avatarDisplay = document.getElementById('avatarDisplay');
+
+    // 2. (Bonus) Function to load saved image from localStorage
+    function loadProfileImage() {
+        const savedImage = localStorage.getItem('profileImage');
+        if (savedImage) {
+            avatarDisplay.style.backgroundImage = `url(${savedImage})`;
+            avatarDisplay.classList.add('has-image');
+        }
+    }
+    
+    // 3. Call the load function on page load
+    loadProfileImage();
+
+    // 4. Listen for when a new file is selected
+    profileUpload.addEventListener('change', (event) => {
+        const file = event.target.files[0];
+
+        if (file) {
+            const reader = new FileReader();
+
+            // 5. When the file is read, show it
+            reader.onload = (e) => {
+                const imageUrl = e.target.result;
+                // Set as background
+                avatarDisplay.style.backgroundImage = `url(${imageUrl})`;
+                // Add class to hide icon
+                avatarDisplay.classList.add('has-image');
+                
+                // 6. (Bonus) Save the image to localStorage
+                localStorage.setItem('profileImage', imageUrl);
+            };
+
+            // 7. Read the file as a Data URL
+            reader.readAsDataURL(file);
+        }
+    });
+
+});
+</script>
+</body>
+</html>
