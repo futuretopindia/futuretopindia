@@ -77,6 +77,19 @@
         body {
             font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
             margin: 0;
+            
+            /* ==== START: CSS for Mobile Navigation Bar ==== */
+           
+            padding-bottom: 70px; 
+            /* ==== END: CSS for Mobile Navigation Bar ==== */
+        }
+        @media (min-width: 1024px) { /* lg breakpoint */
+            body {
+                /* ==== START: CSS for Mobile Navigation Bar ==== */
+                /* Desktop par yeh padding hata deta hai */
+                padding-bottom: 0; 
+                /* ==== END: CSS for Mobile Navigation Bar ==== */
+            }
         }
         body.menu-active {
             overflow: hidden;
@@ -123,6 +136,16 @@
             z-index: 50;
             animation: pulse 2s infinite;
         }
+        
+        /* ==== START: CSS for Mobile Navigation Bar ==== */
+        /* Yeh WhatsApp button ko naye mobile bar se thoda upar rakhta hai */
+        @media (max-width: 1023px) { /* Below lg breakpoint */
+            .floating-button {
+                bottom: 85px; /* 70px (nav height) + 15px (original bottom) */
+            }
+        }
+        /* ==== END: CSS for Mobile Navigation Bar ==== */
+
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.1); }
@@ -535,6 +558,23 @@
         body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
         body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+    
+        /* ==== START: New CSS for Animated/Stylish Mobile Bar ==== */
+        .mobile-nav-item:hover {
+            transform: translateY(-4px); /* Hover par icon upar bounce hoga */
+            color: #2563eb; /* Tailwind text-blue-600 */
+        }
+        
+        .mobile-nav-middle-btn {
+            transform: translateY(-1rem); /* Button ko upar uthata hai (Tailwind -translate-y-4) */
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .mobile-nav-middle-btn:hover {
+            transform: translateY(-1.25rem) scale(1.1); /* Hover par aur upar uthega aur bada hoga */
+            background-color: #1d4ed8; /* Tailwind bg-blue-700 */
+        }
+        /* ==== END: New CSS for Animated/Stylish Mobile Bar ==== */
+    
     </style>
 </head>
 
@@ -606,9 +646,6 @@
                 <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
                 <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
                 <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
-                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                    📞 Call Now
-                </a>
             </nav>
         </div> 
     </div>
@@ -617,12 +654,13 @@
         <div class="container mx-auto flex flex-col md:flex-row items-center">
             <div class="md:w-1/2 mb-10 md:mb-0">
                 <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-4">Building Your Digital Future with Future Top India</h1>
-                <p class="text-xl mb-4"><strong>Transform your ideas into reality with our one-stop solution for websites, mobile apps, and digital marketing — everything your brand needs to grow.</strong></p>
+                <p class="text-xl mb-10">Transform your ideas into reality with our one-stop solution for websites, mobile apps, and digital marketing — everything your brand needs to grow.</p>
                 <div class="flex space-x-4 mb-16">
                    <a href="https://futuretopindia.in/contact" class="custom-button">Create Now</a>
                     <a href="https://futuretopindia.in/service" class="border border-white text-white px-6 py-3 rounded-full font-bold hover:bg-white hover:text-blue-700 transition duration-300 ease-in-out">Our Services</a>
                 </div>
             </div>
+     
             <div class="md:w-1/2 mb-16">
                 <img src="image/main.png" alt="Future Top India - Web and Mobile App Development Services" width="1200" height="800" fetchpriority="high" class="border border-blue-100 rounded-lg shadow-xl">
             </div>
@@ -820,7 +858,7 @@
                     <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/adf6c39f-6305-4982-8816-e2d27e331af9.png" alt="Flutter logo" class="w-10 h-10 mr-3"><span>Flutter</span></div>
                     <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55d13b75-c771-47c7-a470-1c03bcfa1ef3.png" alt="React Native logo" class="w-10 h-10 mr-3"><span>React Native</span></div>
                     <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/Kotlin.jpg" alt="Kotlin logo" class="w-10 h-10 mr-3"><span>Kotlin</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12e85de7-f078-43cc-bd0c-b50fca43c394.png" alt="Swift logo" class="w-10 h-10 mr-3"><span>Swift</span></div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="imageka-Core.png" alt="Swift logo" class="w-10 h-10 mr-3"><span>Swift</span></div>
                 </div>
             </div>
         </div>
@@ -1058,6 +1096,36 @@
         </div>
     </footer>
 
+          <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40" style="box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);">
+             <div class="flex justify-around items-center h-16">
+            
+            <a href="https://futuretopindia.in/" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+              <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            
+            <a href="https://futuretopindia.in/service" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <span class="text-xs mt-1">Service</span>
+            </a>
+            
+            <div style="flex: 1;" class="flex justify-center"> <a href="https://futuretopindia.in/contact" target="_blank" class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg mobile-nav-middle-btn">
+                    <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+                </a>
+            </div>
+            
+            <a href="tel:9864551558" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+                <span class="text-xs mt-1">Call</span>
+            </a>
+            
+            <button id="menu-btn-mobile-bar" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+                <span class="text-xs mt-1">More</span>
+            </button>
+            
+        </div>
+    </div>
     <script>
     document.addEventListener('DOMContentLoaded', () => {
 
@@ -1090,6 +1158,12 @@
             document.body.classList.toggle('menu-active');
         }
         menuBtn.addEventListener('click', toggleMenu);
+
+        
+        const menuBtnMobileBar = document.getElementById('menu-btn-mobile-bar');
+        if (menuBtnMobileBar) {
+            menuBtnMobileBar.addEventListener('click', toggleMenu);
+        }
         closeMenuBtn.addEventListener('click', toggleMenu);
         menuOverlay.addEventListener('click', toggleMenu);
 
@@ -1124,7 +1198,7 @@
         const copyButton = document.getElementById('copy-button');
         const resultsText = document.getElementById('results-text');
 
-        // It is strongly recommended to move this API key to a secure server-side environment.
+       
         const apiKey = "AIzaSyBeYu3y6PvEgaTM7d7ZqX98eCz5UTc49Mc"; 
         const synth = window.speechSynthesis;
         let currentUtterance = null;
@@ -1152,7 +1226,7 @@
         }
 
         async function callGeminiAPI(prompt) {
-            const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
+            const apiUrl = ` https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
             try {
                 const response = await fetch(apiUrl, {
                     method: 'POST',
@@ -1256,6 +1330,3 @@
     </script>
 </body>
 </html>
-
-
-
