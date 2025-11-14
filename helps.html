@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Future Top India - Help Center & Support</title>
+    <meta name="title" content="Future Top India - Help Center & Support">
+    <meta name="description" content="Find answers, guides, and support for Future Top India's services. Search our FAQ for website development, app costs, and technical help.">
+    <meta name="keywords" content="Future Top India help, support center, FAQ, website development help, app support, technical support, billing questions, software company Guwahati">
+    <meta name="author" content="Future Top India">
+    <meta name="robots" content="index, follow">
+    
+    <link rel="canonical" href="https://futuretopindia.in/helps" />
+    <link rel="icon" href="https://futuretopindia.in/image/favicon.png" type="image/png" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://futuretopindia.in/helps">
+    <meta property="og:title" content="Future Top India - Help Center & Support">
+    <meta property="og:description" content="Find answers, tutorials, and support for all your questions.">
+    <meta property="og:image" content="https://futuretopindia.in/image/og-home-banner.jpg">
+    <meta property="og:site_name" content="Future Top India">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://futuretopindia.in/helps">
+    <meta name="twitter:title" content="Future Top India - Help Center & Support">
+    <meta name="twitter:description" content="Find answers, tutorials, and support for all your questions.">
+    <meta name="twitter:image" content="https://futuretopindia.in/image/og-home-banner.jpg">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8VGCPZDH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CT8VGCPZDH');
+    </script>
+
+    <style>
+        /* Base styles */
+        html { scroll-behavior: smooth; }
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding-bottom: 70px; /* For mobile nav bar */
+        }
+        @media (min-width: 1024px) { body { padding-bottom: 0; } }
+        body.menu-active { overflow: hidden; }
+        .gradient-bg { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); }
+
+        /* Navigation Styles (Copied from your index.html for consistency) */
+        #main-nav { background: linear-gradient(135deg, #182c6e 0%, #1e4ed8 100%); border-bottom: 1px solid rgba(255, 255, 255, 0.2); }
+        #main-nav.scrolled { box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); }
+        .desktop-nav-link { position: relative; text-decoration: none; padding-bottom: 8px; }
+        .desktop-nav-link::after { content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px; background-color: #ffffff; transform: scaleX(0); transform-origin: bottom right; transition: transform 0.3s ease-out; }
+        .desktop-nav-link:hover::after { transform: scaleX(1); transform-origin: bottom left; }
+        .group .group-hover\:block { transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out; opacity: 0; transform: scale(0.95); pointer-events: none; }
+        .group:hover .group-hover\:block { opacity: 1; transform: scale(1); pointer-events: auto; }
+        
+        /* Mobile Menu Styles (Copied from your index.html) */
+        #menu-overlay { opacity: 0; visibility: hidden; transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out; }
+        body.menu-active #menu-overlay { opacity: 1; visibility: visible; }
+        #mobile-menu-panel { background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%); color: #ffffff; transform: translateX(-100%); transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+        body.menu-active #mobile-menu-panel { transform: translateX(0); }
+        body.menu-active #mobile-menu-panel nav a { opacity: 1; transform: translateY(0); }
+        #mobile-menu-panel nav a { opacity: 0; transform: translateY(15px); transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease; border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
+        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
+        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+
+        /* Mobile Bottom Bar Styles (Copied from your index.html) */
+        .mobile-nav-item:hover { transform: translateY(-4px); color: #2563eb; }
+        .mobile-nav-middle-btn { transform: translateY(-1rem); transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1); }
+        .mobile-nav-middle-btn:hover { transform: translateY(-1.25rem) scale(1.1); background-color: #1d4ed8; }
+
+        /* --- Custom Styles for Help Page --- */
+
+        /* Live Search Bar */
+        .help-search-input:focus {
+            border-color: #2563eb;
+            box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+        }
+        /* Style for the new clear button */
+        .help-search-input::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        /* Help Category Cards */
+        .help-category-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .help-category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Animated Accordion (The "React-like" animation) */
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0, 1, 0, 1); /* Slide-shut animation */
+        }
+        .faq-answer.open {
+            max-height: 500px; /* Large enough for any content */
+            transition: max-height 1s ease-in-out; /* Slide-open animation */
+        }
+        .faq-toggle-btn .icon {
+            transition: transform 0.3s ease;
+        }
+        .faq-toggle-btn.open .icon {
+            transform: rotate(45deg); /* Rotates '+' to an 'x' */
+        }
+
+        /* == NEW CSS FOR SEARCH == */
+        /* This class is added by JS to hide items/groups that don't match */
+        .hidden-by-search {
+            display: none !important;
+        }
+
+        /* Video Tutorial Cards */
+        .video-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(37, 99, 235, 0.15);
+        }
+        .video-play-icon {
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        .video-card:hover .video-play-icon {
+            transform: scale(1.1);
+            background-color: #2563eb;
+        }
+
+        /* Support Option Cards */
+        .support-option-card {
+             transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .support-option-card:hover {
+            transform: translateY(-5px);
+            border-color: #2563eb;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50">
+    
+    <a href="https://wa.me/919864551558" target="_blank" class="floating-button fixed bottom-[85px] lg:bottom-[30px] right-[30px] z-50 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition animation-pulse">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-5 py-3">
+            <div class="flex items-center justify-between">
+                <a href="https://futuretopindia.in/">
+                    <div class="flex items-center">
+                        <img src="https://futuretopindia.in/image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10" onerror="this.src='https://placehold.co/150x50/1e3a8a/ffffff?text=FTI+Logo'; this.onerror=null;">
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
+                    <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
+                    <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
+                    <a href="https://futuretopindia.in/technologies" class="desktop-nav-link">Technologies</a>
+                    <a href="https://futuretopindia.in/contact" class="desktop-nav-link">Contact Us</a>
+ 
+                    <div class="relative group">
+                        <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
+                            About ▾
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
+                            <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+                            <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                            <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                            <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
+                        📞 Call Now
+                    </a>
+                </div>
+
+               
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu-container">
+        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
+        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 p-4 z-50">
+            <div class="flex justify-between items-center mb-6">
+                <h2 class="text-xl font-bold">Menu</h2>
+                <button id="close-menu-btn" aria-label="Close menu" class="hover:text-white">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-2">
+                <a href="https://futuretopindia.in/" class="block py-2 rounded px-4">Home</a>
+                <a href="https://futuretopindia.in/portfolio" class="block py-2 rounded px-4">Our Portfolio</a>
+                <a href="https://futuretopindia.in/fti.ai" class="block py-2 rounded px-4">FTI-ai</a>
+                <a href="https://futuretopindia.in/about" class="block py-2 rounded px-4">About Us</a>
+                <a href="https://futuretopindia.in/blog" class="block py-2 rounded px-4">Blogs</a>
+                <a href="https://futuretopindia.in/FAQ" class="block py-2 rounded px-4">FAQs</a>
+                <a href="https://futuretopindia.in/service" class="block py-2 rounded px-4">Services</a>
+                <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
+                <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
+                <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
+            </nav>
+        </div> 
+    </div>
+
+    <main>
+        <section class="gradient-bg text-white py-20 pt-32 md:pt-40 px-4">
+            <div class="container mx-auto text-center">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Help Center</h1>
+                <p class="text-xl md:text-2xl opacity-90">How can we help you today?</p>
+                
+                <div class="max-w-2xl mx-auto mt-12">
+                    <div class="relative">
+                        <input type="search" id="help-search" placeholder="Search questions... e.g., 'cost', 'support', 'process'" class="help-search-input w-full p-4 pl-12 pr-12 rounded-full text-gray-900 shadow-lg focus:outline-none">
+                        <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400">
+                            <i class="fas fa-search"></i>
+                        </span>
+                        <button id="clear-search-btn" class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-700 hidden cursor-pointer">
+                            <i class="fas fa-times-circle text-lg"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Explore by Topic</h2>
+                <div class="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+                    <a href="#faq-getting-started" class="help-category-card block bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
+                        <i class="fas fa-rocket text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-semibold text-lg text-gray-900">Getting Started</h3>
+                    </a>
+                    <a href="#faq-services" class="help-category-card block bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
+                        <i class="fas fa-briefcase text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-semibold text-lg text-gray-900">Our Services</h3>
+                    </a>
+                    <a href="#faq-billing" class="help-category-card block bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
+                        <i class="fas fa-credit-card text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-semibold text-lg text-gray-900">Billing & Payments</h3>
+                    </a>
+                    <a href="#faq-support" class="help-category-card block bg-white p-6 rounded-lg shadow-md border border-gray-200 text-center">
+                        <i class="fas fa-cogs text-4xl text-blue-600 mb-4"></i>
+                        <h3 class="font-semibold text-lg text-gray-900">Project & Support</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-4xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Frequently Asked Questions</h2>
+                
+                <p id="no-results-message" class="hidden text-center text-gray-600 text-lg mb-8">
+                    No matching questions found. Please try different keywords or check our contact options below.
+                </p>
+
+                <div class="faq-category-group">
+                    <h3 id="faq-getting-started" class="text-2xl font-semibold text-gray-800 mb-6 pt-6">
+                        <i class="fas fa-rocket mr-2 text-blue-600"></i>Getting Started
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">How do I start a project with Future Top India?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Just contact us through phone, email, or our website form, tell us your requirements, and we will send you a proposal. You can call <a href="tel:+919864551558" class="text-blue-600 font-medium hover:underline">+91 98645 51558</a> or visit our <a href="https://futuretopindia.in/contact" class="text-blue-600 font-medium hover:underline">Contact Page</a>.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">What is your development process?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Our process is transparent and collaborative. It typically involves: <br> <strong>1. Discovery & Planning</strong> (gathering requirements), <br> <strong>2. Design (UI/UX)</strong>, <br> <strong>3. Development</strong> (coding), <br> <strong>4. Testing & QA</strong> (finding bugs), <br> <strong>5. Deployment</strong> (launch), and <br> <strong>6. Support & Maintenance</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category-group">
+                    <h3 id="faq-services" class="text-2xl font-semibold text-gray-800 mb-6 pt-10">
+                        <i class="fas fa-briefcase mr-2 text-blue-600"></i>Our Services
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">What services does Future Top India provide?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">We provide a one-stop solution for mobile apps, website development, digital marketing services, API development, and SEO for your brand. This includes everything from simple websites to complex e-commerce platforms and custom software.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">Can you redesign my existing website?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Yes, absolutely. We can improve the design, speed, mobile-friendliness, and SEO of your current website to make it more modern, effective, and capable of attracting more customers.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">What technologies do you use?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">We use a wide range of modern tools like HTML, CSS, JavaScript, PHP, MySQL, WordPress, React, Node.js, and Flutter, among others. You can see a more detailed list on our <a href="https://futuretopindia.in/technologies" class="text-blue-600 font-medium hover:underline">Technologies Page</a>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category-group">
+                    <h3 id="faq-billing" class="text-2xl font-semibold text-gray-800 mb-6 pt-10">
+                        <i class="fas fa-credit-card mr-2 text-blue-600"></i>Billing & Payments
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">How much do your services cost?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Pricing depends entirely on the service and features you need. A simple website will cost less than a complex e-commerce app. We offer affordable packages for startups, small businesses, and large companies. Please contact us for a free, detailed quote.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">Will I own my website or app after it is built?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Yes, 100%. After the full payment is completed, you will have complete ownership of your website, app, or software, including all source code and files.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">Can you integrate payment gateways?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Yes, we can integrate multiple payment gateways like Razorpay, PayPal, Stripe, and others into your e-commerce site or app, often for free as part of the development package.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-category-group">
+                    <h3 id="faq-support" class="text-2xl font-semibold text-gray-800 mb-6 pt-10">
+                        <i class="fas fa-cogs mr-2 text-blue-600"></i>Project & Support
+                    </h3>
+                    <div class="space-y-4">
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">How long does it take to complete a project?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">The time depends on the project type. Small websites may take only 1-2 weeks, while bigger projects like custom apps or large software may take 1-3 months. We will provide a clear timeline in our project proposal.</p>
+                            </div>
+                        </div>
+                        <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">Do you provide support after the project is completed?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Yes, we provide ongoing maintenance and technical support to make sure everything works smoothly long after the launch. We believe in building long-term partnerships with our clients.</p>
+                            </div>
+                        </div>
+                         <div class="faq-item bg-white rounded-lg shadow-md border border-gray-200 overflow-hidden">
+                            <button class="faq-toggle-btn w-full flex justify-between items-center p-5 md:p-6 text-left">
+                                <span class="font-semibold text-lg text-gray-900">Do you provide services outside India?</span>
+                                <span class="icon text-xl text-blue-600 font-bold">+</span>
+                            </button>
+                            <div class="faq-answer px-5 md:px-6">
+                                <p class="pb-5 text-gray-700 leading-relaxed">Yes, we work with clients from all over the world. We use online communication tools like email, WhatsApp, and video calls to manage projects and deliver them remotely.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 px-4">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-3xl font-bold text-center mb-12 text-gray-800">Visual Guides & Tutorials</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="video-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <a href="#" class="block relative" onclick="event.preventDefault(); alert('Video tutorial coming soon!');">
+                            <img src="https://placehold.co/600x340/3b82f6/ffffff?text=How+to+Start+Your+Project" alt="Video tutorial on starting a project" class="w-full h-auto">
+                            <div class="video-play-icon absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                                <div class="bg-white text-blue-600 rounded-full h-16 w-16 flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-play text-2xl pl-1"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-900 mb-2">How to Start Your Project with FTI</h3>
+                            <p class="text-gray-600">A quick 2-minute guide on our consultation and kickoff process.</p>
+                        </div>
+                    </div>
+                    <div class="video-card bg-white rounded-lg shadow-md overflow-hidden">
+                        <a href="#" class="block relative" onclick="event.preventDefault(); alert('Video tutorial coming soon!');">
+                            <img src="https://placehold.co/600x340/1e3a8a/ffffff?text=Our+Development+Process" alt="Video tutorial on the development process" class="w-full h-auto">
+                            <div class="video-play-icon absolute inset-0 flex items-center justify-center bg-black bg-opacity-40">
+                                <div class="bg-white text-blue-600 rounded-full h-16 w-16 flex items-center justify-center shadow-lg">
+                                    <i class="fas fa-play text-2xl pl-1"></i>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="p-6">
+                            <h3 class="font-semibold text-lg text-gray-900 mb-2">Understanding Our Development Process</h3>
+                            <p class="text-gray-600">See how we take your idea from concept to launch.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-16 md:py-20 px-4 bg-gray-100">
+            <div class="container mx-auto max-w-6xl text-center">
+                <h2 class="text-3xl font-bold text-gray-800 mb-12">Need More Help?</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <a href="mailto:futuretopindia@gmail.com" class="support-option-card block bg-white p-8 rounded-lg shadow-md border-b-4 border-gray-200">
+                        <i class="fas fa-envelope text-5xl text-blue-600 mb-6"></i>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Email Us</h3>
+                        <p class="text-gray-600">Get a detailed response for your questions.</p>
+                    </a>
+                    <a href="tel:+919864551558" class="support-option-card block bg-white p-8 rounded-lg shadow-md border-b-4 border-gray-200">
+                        <i class="fas fa-phone-alt text-5xl text-green-600 mb-6"></i>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Call Us</h3>
+                        <p class="text-gray-600">Speak directly with our team for urgent queries.</p>
+                    </a>
+                    <a href="https://futuretopindia.in/fti.ai" class="support-option-card block bg-white p-8 rounded-lg shadow-md border-b-4 border-gray-200">
+                        <i class="fas fa-robot text-5xl text-purple-600 mb-6"></i>
+                        <h3 class="font-semibold text-xl text-gray-900 mb-2">Chat with FTI-ai</h3>
+                        <p class="text-gray-600">Get instant answers from our AI assistant.</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <a href="https://futuretopindia.in/"><img src="https://futuretopindia.in/image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3" onerror="this.style.display='none'"></a>
+                        <a href="https://futuretopindia.in/"><i class="not-italic"><span class="font-bold text-xl">FTI • Pvt Ltd</span></i></a>
+                    </div>
+                    <i class="not-italic"><p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p></i>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/share/198qDFavKp/" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://x.com/futuretopindia?t=4NUCIRuch4mBFslfDozGeQ&s=09" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/futuretopindia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+            <br>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Quick Links:</span>
+                <div class="container mx-auto space-y-2 mt-4 mb-3">
+                    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+                    <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+                    <a href="https://futuretopindia.in/contact" class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+                    <a href="https://futuretopindia.in/blog" class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Important Links:</span>
+                <div class="container mx-auto space-y-2 mt-4">
+                    <a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+                    <a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+                    <a href="https://futuretopindia.in/portfolio" class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+                    <a href="https://futuretopindia.in/privacy" class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+                    <a href="https://futuretopindia.in/termsandconditions" class="text-blue-500 hover:underline hover:text-blue-300 block">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>©2022-25 by <a href="http://futuretopindia.in/" class="text-blue-500 hover:underline">Future Top India</a> | All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40" style="box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);">
+        <div class="flex justify-around items-center h-16">
+            <a href="https://futuretopindia.in/" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+              <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="https://futuretopindia.in/service" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <span class="text-xs mt-1">Service</span>
+            </a>
+            <div style="flex: 1;" class="flex justify-center"> 
+                <a href="https://futuretopindia.in/contact" target="_blank" class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg mobile-nav-middle-btn">
+                    <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+                </a>
+            </div>
+            <a href="tel:9864551558" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+                <span class="text-xs mt-1">Call</span>
+            </a>
+            <a href="https://futuretopindia.in/more" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+                <span class="text-xs mt-1">More</span>
+            </a>
+        </div>
+    </div>
+    
+    <script>
+    document.addEventListener('DOMContentLoaded', () => {
+
+        // --- Navbar Scroll Logic (from index.html) ---
+        const nav = document.getElementById('main-nav');
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // --- Mobile Menu Logic (from index.html) ---
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const menuOverlay = document.getElementById('menu-overlay');
+        function toggleMenu() {
+            document.body.classList.toggle('menu-active');
+        }
+        if(menuBtn) menuBtn.addEventListener('click', toggleMenu);
+        if(closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+        if(menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+
+        // --- Animated Accordion Logic ---
+        const faqToggleButtons = document.querySelectorAll('.faq-toggle-btn');
+        faqToggleButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling; // The .faq-answer div
+                const isOpen = answer.classList.contains('open');
+
+                if (isOpen) {
+                    answer.classList.remove('open');
+                    button.classList.remove('open');
+                } else {
+                    // This is a nice touch: close other accordions first
+                    faqToggleButtons.forEach(btn => {
+                        btn.nextElementSibling.classList.remove('open');
+                        btn.classList.remove('open');
+                    });
+                    
+                    // Then open the one you clicked
+                    answer.classList.add('open');
+                    button.classList.add('open');
+                }
+            });
+        });
+        
+        // --- == NEW & IMPROVED Live Search Functionality == ---
+        const searchInput = document.getElementById('help-search');
+        const clearSearchBtn = document.getElementById('clear-search-btn');
+        const categoryGroups = document.querySelectorAll('.faq-category-group'); // Get the new groups
+        const noResultsMessage = document.getElementById('no-results-message');
+
+        if (searchInput) {
+            
+            function performSearch() {
+                const searchTerm = searchInput.value.toLowerCase().trim();
+                let totalResults = 0;
+
+                // Show/hide clear button
+                if (searchTerm.length > 0) {
+                    clearSearchBtn.classList.remove('hidden');
+                } else {
+                    clearSearchBtn.classList.add('hidden');
+                }
+
+                categoryGroups.forEach(group => {
+                    let groupResults = 0; // Count for this specific category
+                    const itemsInGroup = group.querySelectorAll('.faq-item');
+
+                    itemsInGroup.forEach(item => {
+                        // This now searches ALL text in the item (question + answer)
+                        const itemText = item.textContent.toLowerCase(); 
+                        
+                        if (itemText.includes(searchTerm)) {
+                            item.classList.remove('hidden-by-search');
+                            groupResults++;
+                            totalResults++;
+                        } else {
+                            item.classList.add('hidden-by-search');
+                        }
+                    });
+
+                    // Now, show/hide the whole category (h3 + items)
+                    if (groupResults === 0 && searchTerm !== "") {
+                        group.classList.add('hidden-by-search');
+                    } else {
+                        group.classList.remove('hidden-by-search');
+                    }
+                });
+
+                // Show or hide the 'no results' message
+                if (totalResults === 0 && searchTerm !== "") {
+                    noResultsMessage.classList.remove('hidden');
+                } else {
+                    noResultsMessage.classList.add('hidden');
+                }
+            }
+            
+            // Listen for typing
+            searchInput.addEventListener('input', performSearch);
+
+            // Listen for clear button click
+            clearSearchBtn.addEventListener('click', () => {
+                searchInput.value = "";
+                performSearch(); // Re-run the search (which will now be empty)
+                searchInput.focus(); // Put the cursor back in the search bar
+            });
+        }
+        
+        // --- Smooth Scroll for Category Links ---
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                // Check if the link is a category link
+                if (this.hash.startsWith('#faq-')) {
+                    e.preventDefault();
+                    const targetId = this.hash;
+                    const targetElement = document.querySelector(targetId);
+                    
+                    if (targetElement) {
+                        const navHeight = document.getElementById('main-nav')?.offsetHeight || 70; // Get nav height or use fallback
+                        const targetPosition = targetElement.getBoundingClientRect().top + window.pageYOffset - navHeight - 20; 
+
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
+
+    });
+    </script>
+</body>
+</html>
