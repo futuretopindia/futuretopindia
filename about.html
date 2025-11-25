@@ -11,18 +11,18 @@
     <meta name="keywords" content="Future Top India, About Future Top India, Software company Assam, Rakibur Islam, website developer Guwahati, best app developer India, IT firm Guwahati, custom software, startup India, app builder Assam, Indian IT startup, digital solutions Assam, web design India, future top india">
     <meta name="author" content="Mr. Rakibur Islam CEO of Future Top India, Future Top India">
     <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://futuretopindia.in/about.html" />
+    <link rel="canonical" href="https://futuretopindia.in/about" />
 
     <link rel="icon" href="https://futuretopindia.in/image/favicon.png" type="image/png">
 
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://futuretopindia.in/about.html">
+    <meta property="og:url" content="https://futuretopindia.in/about">
     <meta property="og:title" content="About Us - Future Top India | Software, App & Web Development Experts">
     <meta property="og:description" content="Explore the story of Future Top India and CEO Rakibur Islam. Delivering powerful digital solutions from Guwahati to all of India.">
     <meta property="og:image" content="https://futuretopindia.in/image/ceo.jpg">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://futuretopindia.in/about.html">
+    <meta name="twitter:url" content="https://futuretopindia.in/about">
     <meta name="twitter:title" content="About Us - Future Top India | Software, App & Web Development Experts">
     <meta name="twitter:description" content="Discover Future Top India's mission and tech vision. From websites to custom software, we serve all of India with innovation.">
     <meta name="twitter:image" content="https://futuretopindia.in/image/ceo.jpg">
@@ -105,6 +105,199 @@
             border-color: #2563eb;
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
+
+				
+		/* ==== Video Section Animation ==== */
+.video-animate {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-glow:hover {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.5); /* Blue glow on hover */
+}
+
+
+/* ==== Stylish Story Button ==== */
+.story-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px; /* Thoda aur space diya upar se */
+    margin-bottom: 20px;
+}
+
+.story-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Logo aur text ke beech ka gap badhaya */
+    
+    /* BACKGROUND & COLORS (Default State Updated) */
+    background: #ffffff;
+    color: #2563eb; /* Text ab shuru se hi BLUE rahega */
+    border: 2px solid #2563eb; /* Border bhi shuru se BLUE aur mota (2px) */
+    
+    /* SIZE (Bada kar diya) */
+    padding: 8px 30px; /* Padding badha di taaki button bada dikhe */
+    border-radius: 60px; /* Fully Rounded */
+    
+    /* TEXT STYLE */
+    font-weight: 800; /* Font aur mota kiya */
+    font-size: 18px; /* Text size 14px se 18px kar diya */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    /* SHADOW & GLOW (Default Glow) */
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3); /* Blue shadow default mein bhi dikhegi */
+    
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Animation - Mouse le jane par background Blue ho jayega */
+.story-btn:hover {
+    background: #2563eb; /* Hover pe background Blue */
+    color: #ffffff; /* Text White */
+    transform: translateY(-5px) scale(1.05); /* Thoda aur bada hoga */
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5); /* Glow badh jayega */
+}
+
+/* Logo Animation inside button */
+.story-btn img {
+    height: 32px; /* Logo ka size bhi bada kiya (24px se 32px) */
+    width: auto;
+    transition: transform 0.5s ease;
+}
+
+.story-btn:hover img {
+    transform: rotate(360deg) scale(1.1);
+    filter: brightness(0) invert(1); /* Hover pe logo white ho jayega */
+}
+
+/* Shine Effect Animation */
+.story-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: 0.6s;
+}
+
+.story-btn:hover::after {
+    left: 100%;
+}
+
+
+
+
+/* ==== CEO Profile Layer Animation ==== */
+.profile-wrapper {
+    position: relative;
+    width: 180px; /* Photo se thoda bada */
+    height: 180px;
+    margin: 0 auto; /* Center karne ke liye */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Ye wo Blue Layer hai jo ghoomega */
+.profile-wrapper::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 4px solid transparent; /* Baaki hissa transparent */
+    border-top-color: #2563eb; /* Sirf upar ka hissa Blue (Layer) */
+    border-right-color: #2563eb; /* Thoda aur Blue */
+    animation: spin-slow 3s linear infinite; /* Animation speed */
+    box-shadow: 0 0 15px rgba(37, 99, 235, 0.5); /* Glow Effect */
+    z-index: 1;
+}
+
+/* Ye ek aur patli layer hai styling ke liye */
+.profile-wrapper::after {
+    content: "";
+    position: absolute;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: 2px dashed #cbd5e1; /* Gray dashed line */
+    animation: spin-reverse 6s linear infinite;
+    z-index: 0;
+}
+
+/* Photo ki styling adjust karein */
+.profile-pic {
+    width: 150px; /* Photo size */
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid white; /* Photo ka border */
+    position: relative;
+    z-index: 2; /* Layer ke upar dikhe */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+/* Ghumne wala Animation */
+@keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+@keyframes spin-reverse {
+    0% { transform: rotate(360deg); }
+    100% { transform: rotate(0deg); }
+}
+
+
+
+/* ==== CEO Card ==== */
+.ceo-card {
+    position: relative;
+    background: #ffffff;
+    border-radius: 20px; /* Thoda gol kinara */
+    border: 2px solid rgba(37, 99, 235, 0.1); /* Halka border shuru mein */
+    transition: all 0.3s ease;
+    
+    /* Animation add kar rahe hain */
+    animation: card-glow 3s infinite alternate; 
+}
+
+/* Ye Animation box ko Blue Glow karega */
+@keyframes card-glow {
+    0% {
+        border-color: rgba(37, 99, 235, 0.3); /* Light Blue Border */
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); /* Halka Shadow */
+    }
+    100% {
+        border-color: #2563eb; /* Dark Blue Border */
+        box-shadow: 0 0 25px rgba(37, 99, 235, 0.6), /* Blue Glow bahar */
+                    inset 0 0 10px rgba(37, 99, 235, 0.1); /* Blue Glow andar */
+    }
+}
+
+/* Hover karne par aur tez chamkega */
+.ceo-card:hover {
+    transform: translateY(-5px); /* Thoda upar uthega */
+    animation-duration: 1.5s; /* Tez animation */
+}
+
     </style>
 	
 	<style>
@@ -305,9 +498,43 @@ From startups to established enterprises, our expert team combines creativity an
 	  </p>
     </div>
   </section>
+
+
+
+
+
+	
   
-  <section class="max-w-4xl mx-auto px-4 py-8 bg-white rounded-lg shadow-md mt-8 text-center">
-    <img src="image/CEO.jpg" alt="Future Top India CEO, Mr. Rakibur Islam" class="profile-pic mx-auto mb-4">
+  <section class="max-w-4xl mx-auto px-6 pb-10 video-animate" style="animation-delay: 0.3s;">
+    <div class="relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white video-glow transition-all duration-300 transform hover:scale-[1.02]">
+        
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/EAKd_geXxbY?rel=0&autoplay=0" 
+                title="Future Top India Intro" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+    
+    <div class="story-btn-container">
+    <a href="javascript:void(0)" class="story-btn">
+        <img src="image/sublogo.png" alt="FTI Logo">
+        <span>Watch Our Story</span>
+    </a>
+</div>
+  </section>
+  
+  
+  
+ <section class="max-w-4xl mx-auto px-4 py-8 bg-white rounded-lg shadow-md mt-8 text-center ceo-card">
+<div class="profile-wrapper mb-4">
+    <img src="image/CEO.jpg" alt="Future Top India CEO, Mr. Rakibur Islam" class="profile-pic">
+</div>
     <h2 class="text-2xl font-bold text-blue-700">Mr. Rakibur Islam</h2>
     <p class="text-md text-gray-600">CEO & Founder, Future Top India</p>
   </section>
@@ -539,6 +766,7 @@ From startups to established enterprises, our expert team combines creativity an
 
 
 	
+
 
 
 
