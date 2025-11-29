@@ -1,0 +1,904 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Careers - Join Future Top India | Build the Future</title>
+
+    <meta name="description" content="Join Future Top India. We are hiring developers, designers, and marketers. Apply now to work with the best IT company in Guwahati.">
+    <meta name="keywords" content="jobs in Guwahati, software developer jobs, web design careers, Future Top India careers, hiring developers Assam, IT jobs India">
+    <meta name="author" content="Future Top India">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8VGCPZDH"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-CT8VGCPZDH');
+    </script>
+
+    <style>
+        /* ==== Custom Fonts & Base ==== */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap');
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8fafc;
+            overflow-x: hidden; /* Prevent horizontal scroll */
+            padding-bottom: 70px; /* Space for Mobile Bottom Nav */
+        }
+        @media (min-width: 1024px) { body { padding-bottom: 0; } }
+
+        /* ==== Navigation ==== */
+        #main-nav {
+            background: linear-gradient(135deg, #182c6e 0%, #1e4ed8 100%); 
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+        }
+        .desktop-nav-link { position: relative; padding-bottom: 8px; }
+        .desktop-nav-link::after {
+            content: ''; position: absolute; bottom: 0; left: 0; width: 100%; height: 2px;
+            background-color: #ffffff; transform: scaleX(0); transition: transform 0.3s ease-out;
+        }
+        .desktop-nav-link:hover::after { transform: scaleX(1); }
+
+        /* ==== Hero Animation ==== */
+        .hero-bg {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .hero-blob {
+            position: absolute;
+            background: rgba(37, 99, 235, 0.4);
+            filter: blur(80px);
+            border-radius: 50%;
+            animation: float 10s infinite ease-in-out;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) scale(1); }
+            50% { transform: translateY(-20px) scale(1.1); }
+        }
+
+        /* ==== Job Card (Glassmorphism) ==== */
+        .job-card {
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(226, 232, 240, 0.8);
+            border-radius: 16px;
+            padding: 2rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+        .job-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+            border-color: #3b82f6;
+        }
+        .job-card::before {
+            content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%;
+            background: #2563eb; transform: scaleY(0); transition: transform 0.3s ease;
+        }
+        .job-card:hover::before { transform: scaleY(1); }
+        
+        /* ==== Modal (Pop-up) Animation ==== */
+        .modal {
+            opacity: 0; visibility: hidden; transition: all 0.3s ease-in-out;
+        }
+        .modal.active { opacity: 1; visibility: visible; }
+        .modal-content {
+            transform: scale(0.95); opacity: 0; transition: all 0.3s ease-in-out;
+        }
+        .modal.active .modal-content { transform: scale(1); opacity: 1; }
+
+        /* ==== Animations ==== */
+        .fade-in-up { animation: fadeInUp 0.8s ease-out forwards; opacity: 0; transform: translateY(20px); }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+        
+        /* ==== Mobile Menu Fixed Logic ==== */
+        #mobile-menu-panel {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+            transform: translateX(-100%);
+            transition: transform 0.3s ease-in-out;
+            will-change: transform;
+        }
+        
+        #menu-overlay {
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease-in-out, visibility 0.3s;
+        }
+
+        /* Active State handled via body class */
+        body.menu-active #mobile-menu-panel { transform: translateX(0); }
+        body.menu-active #menu-overlay { opacity: 1; visibility: visible; }
+        body.menu-active { overflow: hidden; } /* Stop scrolling when menu is open */
+
+        /* Mobile Bottom Nav Hover */
+        .mobile-nav-item:hover { transform: translateY(-4px); color: #2563eb; }
+        
+        /* Floating Button Z-Index Fix */
+        .floating-button { z-index: 40; position: fixed; bottom: 90px; right: 20px; }
+        @media (min-width: 1024px) { .floating-button { bottom: 40px; } }
+
+    </style>
+	
+	<style>
+			/* ==== Video Section Animation ==== */
+.video-animate {
+    animation: fadeInUp 1s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.video-glow:hover {
+    box-shadow: 0 0 25px rgba(37, 99, 235, 0.5); /* Blue glow on hover */
+}
+
+
+/* ==== Stylish Story Button ==== */
+.story-btn-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px; /* Thoda aur space diya upar se */
+    margin-bottom: 20px;
+}
+
+.story-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px; /* Logo aur text ke beech ka gap badhaya */
+    
+    /* BACKGROUND & COLORS (Default State Updated) */
+    background: #ffffff;
+    color: #2563eb; /* Text ab shuru se hi BLUE rahega */
+    border: 2px solid #2563eb; /* Border bhi shuru se BLUE aur mota (2px) */
+    
+    /* SIZE (Bada kar diya) */
+    padding: 8px 30px; /* Padding badha di taaki button bada dikhe */
+    border-radius: 60px; /* Fully Rounded */
+    
+    /* TEXT STYLE */
+    font-weight: 800; /* Font aur mota kiya */
+    font-size: 18px; /* Text size 14px se 18px kar diya */
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+    /* SHADOW & GLOW (Default Glow) */
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3); /* Blue shadow default mein bhi dikhegi */
+    
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Hover Animation - Mouse le jane par background Blue ho jayega */
+.story-btn:hover {
+    background: #2563eb; /* Hover pe background Blue */
+    color: #ffffff; /* Text White */
+    transform: translateY(-5px) scale(1.05); /* Thoda aur bada hoga */
+    box-shadow: 0 15px 35px rgba(37, 99, 235, 0.5); /* Glow badh jayega */
+}
+
+/* Logo Animation inside button */
+.story-btn img {
+    height: 32px; /* Logo ka size bhi bada kiya (24px se 32px) */
+    width: auto;
+    transition: transform 0.5s ease;
+}
+
+.story-btn:hover img {
+    transform: rotate(360deg) scale(1.1);
+    filter: brightness(0) invert(1); /* Hover pe logo white ho jayega */
+}
+
+/* Shine Effect Animation */
+.story-btn::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.5), transparent);
+    transition: 0.6s;
+}
+
+.story-btn:hover::after {
+    left: 100%;
+}
+
+</style>
+</head>
+
+<body class="font-sans bg-gray-50">
+
+    <a href="https://wa.me/919864551558" target="_blank" class="floating-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+        <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
+
+    <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-5 py-3">
+            <div class="flex items-center justify-between">
+                <a href="https://futuretopindia.in/">
+                    <div class="flex items-center">
+                        <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10" onerror="this.style.display='none'"> 
+                        </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
+                    <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
+                    <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
+                    <a href="https://futuretopindia.in/technologies" class="desktop-nav-link">Technologies</a>
+                    <a href="https://futuretopindia.in/contact" class="desktop-nav-link">Contact Us</a>
+ 
+                    <div class="relative group">
+                        <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
+                            About ▾
+                        </button>
+                        <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40 pt-1">
+                            <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+                            <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                            <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                            <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
+                        📞 Call Now
+                    </a>
+                </div>
+
+  
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu-container">
+        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40 backdrop-blur-sm"></div>
+        
+        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-72 p-6 z-50 text-white shadow-2xl overflow-y-auto">
+            <div class="flex justify-between items-center mb-8 border-b border-blue-400 pb-4">
+                <h2 class="text-2xl font-bold">Menu</h2>
+                <button id="close-menu-btn" aria-label="Close menu" class="hover:text-blue-200 transition">
+                    <i class="fas fa-times text-2xl"></i>
+                </button>
+            </div>
+            <nav class="flex flex-col space-y-3">
+                <a href="https://futuretopindia.in/" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Home</a>
+                <a href="https://futuretopindia.in/portfolio" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Our Portfolio</a>
+                <a href="https://futuretopindia.in/fti.ai" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">FTI-ai</a>
+                <a href="https://futuretopindia.in/about" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">About Us</a>
+                <a href="https://futuretopindia.in/blog" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Blogs</a>
+                <a href="https://futuretopindia.in/FAQ" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">FAQs</a>
+                <a href="https://futuretopindia.in/service" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Services</a>
+                <a href="https://futuretopindia.in/technologies" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Technologies</a>
+                <a href="https://futuretopindia.in/contact" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Contact Us</a>
+                <a href="https://futuretopindia.in/privacy" class="block py-2 px-4 rounded hover:bg-white hover:text-blue-600 transition">Privacy Policy</a>
+            </nav>
+        </div> 
+    </div>
+
+    <section class="hero-bg  pt-32 pb-20 px-4 text-white text-center  mx-auto relative video-animate" style="animation-delay: 0.3s;">
+        <div class="hero-blob w-64 h-64 top-10 left-10"></div>
+        <div class="hero-blob w-48 h-48 bottom-10 right-10 bg-purple-500 opacity-30"></div>
+        
+        <div class="container mx-auto relative z-10 fade-in-up">
+            <span class="bg-blue-600 bg-opacity-30 text-blue-200 text-sm font-bold px-4 py-1 rounded-full border border-blue-500 mb-4 inline-block">
+                WE ARE HIRING
+            </span>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+                Build the Future with <br> <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-300 to-cyan-300">Future Top India</span>
+            </h1>
+            <p class="text-lg md:text-xl text-gray-300 max-w-2xl mx-auto mb-10">
+                Join a team of innovators, creators, and tech enthusiasts. We don't just write code; we solve real-world problems.
+            </p>
+            <a href="#jobs" class="bg-white text-blue-900 font-bold py-3 px-8 mb-10 rounded-full shadow-lg hover:bg-gray-100 hover:scale-105 transition transform inline-flex items-center">
+                View Openings <i class="fas fa-arrow-down ml-2"></i>
+            </a>
+        </div>
+    
+
+
+
+
+    <div class=" max-w-4xl mx-auto relative w-full rounded-2xl overflow-hidden shadow-2xl border-4 border-white video-glow transition-all duration-300 transform hover:scale-[1.02]">
+        
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+            <iframe 
+                style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
+                src="https://www.youtube.com/embed/EAKd_geXxbY?rel=0&autoplay=0" 
+                title="Future Top India Intro" 
+                frameborder="0" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+    </div>
+    
+    <div class="story-btn-container">
+    <a href="javascript:void(0)" class="story-btn">
+        <img src="image/sublogo.png" alt="FTI Logo">
+        <span>Watch Our Story</span>
+    </a>
+</div>
+  </section>
+  
+  
+  
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+                <div class="p-6 rounded-xl bg-blue-50 hover:bg-blue-100 transition fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Latest Tech Stack</h3>
+                    <p class="text-gray-600">Work with React, Flutter, Node.js, AI, and Cloud technologies.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-purple-50 hover:bg-purple-100 transition fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="w-16 h-16 bg-purple-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Great Culture</h3>
+                    <p class="text-gray-600">Friendly environment, flexible timings, and team growth focus.</p>
+                </div>
+                <div class="p-6 rounded-xl bg-green-50 hover:bg-green-100 transition fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="w-16 h-16 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl mx-auto mb-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-2">Career Growth</h3>
+                    <p class="text-gray-600">Mentorship from experts and opportunities to lead projects.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="jobs" class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto max-w-6xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-900">Current Openings</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-2 mb-4"></div>
+                <p class="text-gray-600">Find the role that fits you best.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">Development</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Frontend Developer (React, Next.js, Vue)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">We are looking for a skilled HTML, CSS, JS, React, Next.js, Vue developer to build high-performance web applications.</p>
+                    <button onclick="openModal('Frontend Developer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+				
+				
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">Development</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Backend Developer (PHP, Node.js, Express, Laravel, MySQL, MongoDB)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Develops server-side logic, APIs, and database structures. Ensures secure, efficient data processing and application performance.</p>
+                    <button onclick="openModal('Backend Developer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+								
+				
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">Development</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Full-Stack Developer (Handles both Frontend and Backend)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Handles both frontend and backend development. Capable of managing complete end-to-end project execution.</p>
+                    <button onclick="openModal('Full-Stack Developer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+				
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-blue-100 text-blue-700 text-xs font-bold px-2 py-1 rounded uppercase">Development</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">DevOps Engineer (Servers, deployment, CI/CD)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Manages deployment pipelines, server infrastructure, automation, and CI/CD processes. Improves efficiency and scalability.</p>
+                    <button onclick="openModal('DevOps Engineer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+				
+				
+         	
+				
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-red-200 text-red-700 text-xs font-bold px-2 py-1 rounded uppercase">Tester</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">QA Tester (Quality Assurance)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Tests websites, apps, and software to identify bugs. Ensures final product quality, stability, and reliability.</p>
+                    <button onclick="openModal('QA Tester')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+				
+														
+				
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded uppercase">Mobile</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Mobile App Developer (Android, iOS)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Develops high-quality Android and iOS applications. Ensures smooth performance, clean UI, and optimized mobile functionality.</p>
+                    <button onclick="openModal('Mobile App Developer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+				
+				
+												
+				
+		
+
+				
+
+		
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-green-100 text-green-700 text-xs font-bold px-2 py-1 rounded uppercase">Mobile</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Flutter Developer</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Create beautiful cross-platform mobile apps using Flutter and Dart.</p>
+                    <button onclick="openModal('Flutter Developer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded uppercase">Design</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">UI/UX Designer</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Contract/Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Design intuitive and modern user interfaces for web and mobile apps.</p>
+                    <button onclick="openModal('UI/UX Designer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-purple-100 text-purple-700 text-xs font-bold px-2 py-1 rounded uppercase">Design</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Graphic Designer (Logos, posters, branding, thumbnails)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Contract/Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Designs logos, branding materials, social media creatives, and marketing collateral. Strengthens brand identity and visual appeal.</p>
+                    <button onclick="openModal('Graphic Designer')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded uppercase">Marketing</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Digital Marketing Executive (Google Ads, SEO, Meta Ads)</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Manages SEO, Google Ads, Meta Ads, and social media promotions. Focuses on driving leads, visibility, and brand engagement.</p>
+                    <button onclick="openModal('Digital Marketing Executive')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+
+
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded uppercase">Marketing</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Sales Manager</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Oversees the sales team, sets targets, monitors performance, and manages high-value client interactions. Drives business growth.</p>
+                    <button onclick="openModal('Sales Manager')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+
+
+                <div class="job-card fade-in-up" style="animation-delay: 0.4s;">
+                    <div class="flex justify-between items-start mb-4">
+                        <div>
+                            <span class="bg-yellow-100 text-yellow-700 text-xs font-bold px-2 py-1 rounded uppercase">Marketing</span>
+                            <h3 class="text-xl font-bold mt-2 text-gray-800">Sales Executive / Sales Representative</h3>
+                        </div>
+                        <img src="https://futuretopindia.in/image/favicon.png" alt="FTI" class="h-10 w-10 opacity-50">
+                    </div>
+                    <div class="flex items-center text-sm text-gray-500 mb-6 space-x-4">
+                        <span><i class="fas fa-map-marker-alt mr-1"></i> Guwahati / Remote</span>
+                        <span><i class="fas fa-clock mr-1"></i> Full Time</span>
+                    </div>
+                    <p class="text-gray-600 mb-6 text-sm">Handles client calls, follow-ups, lead conversion, and onboarding. Plays a key role in generating revenue.</p>
+                    <button onclick="openModal('Sales Executive / Sales Representative')" class="w-full bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition">
+                        Apply Now
+                    </button>
+                </div>
+
+
+
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <div id="applyModal" class="modal fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-60 backdrop-blur-sm px-4">
+        <div class="modal-content bg-white w-full max-w-lg rounded-2xl shadow-2xl overflow-hidden relative max-h-[90vh] overflow-y-auto">
+            
+            <div class="bg-blue-600 p-6 text-white flex justify-between items-center sticky top-0 z-10">
+                <div>
+                    <h3 class="text-xl font-bold">Apply Now 🚀</h3>
+                    <p class="text-sm text-blue-100" id="modalRoleText">Join Future Top India</p>
+                </div>
+                <button onclick="closeModal()" class="text-white hover:bg-blue-700 rounded-full w-8 h-8 flex items-center justify-center transition">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+
+
+
+
+
+            <div class="p-6 md:p-8">
+                <form id="jobForm" action="https://formspree.io/f/xnnbynog" method="POST" class="space-y-4">
+                    
+                    <input type="hidden" name="Role_Applied" id="roleInput">
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-1">*Full Name:</label>
+                        <input type="text" name="Name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" placeholder="Mr Rakib Khan">
+                    </div>
+					
+					<div>
+                        <label class="block text-gray-700 font-medium mb-1">*Your Skill:</label>
+                        <input type="text" name="Name" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 focus:ring-2 focus:ring-blue-100 transition" placeholder="Full Stack Developer, Flutter, Backend etc..">
+                    </div>
+					
+
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">*Email ID:</label>
+                            <input type="email" name="Email" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="info@gamil.com">
+                        </div>
+                        <div>
+                            <label class="block text-gray-700 font-medium mb-1">*Phone No:</label>
+                            <input type="tel" name="Phone" required class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="+91 98765...">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-1">
+                            Resume / Portfolio Upload (Option)
+                        </label>
+
+                     <input type="file" name="resume_file" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition">
+					 <p class="text-xs text-gray-400 mt-1">
+                 * Any file allowed (PDF, image, docs, etc.).
+                     </p>
+                  </div>
+				  
+				  
+				   <div>
+                        <label class="block text-gray-700 font-medium mb-1">Resume / Portfolio Link</label>
+                        <input type="url" name="Resume_Link" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="Google Drive, LinkedIn, or Portfolio URL">
+                        <p class="text-xs text-gray-400 mt-1">* Please upload resume to Drive and share the link here.</p>
+                    </div>
+					
+
+                    <div>
+                        <label class="block text-gray-700 font-medium mb-1">*Why should we hire you?</label>
+                        <textarea name="Message" rows="3" class="w-full border border-gray-300 rounded-lg px-4 py-3 focus:outline-none focus:border-blue-500 transition" placeholder="Tell us briefly about your skills..."></textarea>
+                    </div>
+
+                    <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-blue-700 text-white font-bold py-3 rounded-lg hover:shadow-lg hover:scale-[1.02] transition transform">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-200">
+         <div class="flex justify-around items-center h-16">
+        
+        <a href="https://futuretopindia.in/" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+          <i class="fa-solid fa-house text-xl"></i>
+            <span class="text-xs mt-1">Home</span>
+        </a>
+        
+        <a href="https://futuretopindia.in/service" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+            <i class="fa-solid fa-briefcase text-xl"></i>
+            <span class="text-xs mt-1">Service</span>
+        </a>
+        
+        <div style="flex: 1;" class="flex justify-center -mt-6"> 
+            <a href="https://futuretopindia.in/contact" class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg mobile-nav-middle-btn hover:bg-blue-700 transition">
+                <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+            </a>
+        </div>
+        
+        <a href="tel:9864551558" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+            <i class="fa-solid fa-phone-volume text-xl"></i>
+            <span class="text-xs mt-1">Call</span>
+        </a>
+        
+        <a href="https://futuretopindia.in/more" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+            <i class="fa-solid fa-ellipsis text-xl"></i>
+            <span class="text-xs mt-1">More</span>
+        </a>
+        
+        </div>
+    </div>
+
+    
+     <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <a href="https://futuretopindia.in/"><img src="image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3"></a>
+                        <a href="https://futuretopindia.in/"><i class="not-italic"><span class="font-bold text-xl">FTI • Pvt Ltd</span></i></a>
+                    </div>
+                    <i class="not-italic"><p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p></i>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/share/198qDFavKp/" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://x.com/futuretopindia?t=4NUCIRuch4mBFslfDozGeQ&s=09" class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh" class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/futuretopindia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+            <br>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Quick Links:</span>
+                <div class="container mx-auto space-y-2 mt-4 mb-3">
+                    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+                    <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+                    <a href="https://futuretopindia.in/contact" class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+                    <a href="https://futuretopindia.in/blog" class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Important Links:</span>
+                <div class="container mx-auto space-y-2 mt-4">
+                    <a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+                    <a href="https://futuretopindia.in/helps" class="text-blue-500 hover:underline hover:text-blue-300 block">Helps</a>
+                    <a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+                    <a href="https://futuretopindia.in/portfolio" class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+                    <a href="https://futuretopindia.in/privacy" class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+                    <a href="https://futuretopindia.in/termsandconditions" class="text-blue-500 hover:underline hover:text-blue-300 block">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>©2022-25 by <a href="http://futuretopindia.in/" class="text-blue-500 hover:underline">Future Top India</a> | All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+	
+	
+    <script>
+        // --- Mobile Menu Logic (FIXED) ---
+        const menuBtn = document.getElementById('menu-btn');
+        const closeMenuBtn = document.getElementById('close-menu-btn');
+        const overlay = document.getElementById('menu-overlay'); // Fixed ID reference
+        const body = document.body;
+        
+        function toggleMenu() {
+            body.classList.toggle('menu-active');
+        }
+        
+        menuBtn.addEventListener('click', toggleMenu);
+        closeMenuBtn.addEventListener('click', toggleMenu);
+        overlay.addEventListener('click', toggleMenu); // Click outside closes menu
+
+        // --- Modal Logic ---
+        const modal = document.getElementById('applyModal');
+        const roleInput = document.getElementById('roleInput');
+        const roleText = document.getElementById('modalRoleText');
+
+        function openModal(role) {
+            roleInput.value = role;
+            roleText.innerText = "Applying for: " + role;
+            modal.classList.add('active');
+            body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            modal.classList.remove('active');
+            body.style.overflow = 'auto';
+        }
+
+        // Close modal if clicked outside (Background click)
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        // --- Form Submission (AJAX) ---
+        const form = document.getElementById('jobForm');
+        form.addEventListener("submit", function(ev) {
+            ev.preventDefault();
+            const button = form.querySelector('button');
+            const originalText = button.innerHTML;
+            
+            button.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            button.disabled = true;
+
+            const data = new FormData(form);
+            fetch(form.action, {
+                method: form.method,
+                body: data,
+                headers: {
+                    'Accept': 'application/json'
+                }
+            }).then(response => {
+                if (response.ok) {
+                    button.innerHTML = "Application Sent! ✅";
+                    button.classList.remove('from-blue-600', 'to-blue-700');
+                    button.classList.add('bg-green-600');
+                    form.reset();
+                    setTimeout(() => {
+                        closeModal();
+                        button.innerHTML = originalText;
+                        button.disabled = false;
+                        button.classList.add('from-blue-600', 'to-blue-700');
+                        button.classList.remove('bg-green-600');
+                        // Optional: Show a nicer toast instead of alert
+                        alert("Thank you! Your application has been received successfully.");
+                    }, 2000);
+                } else {
+                    alert("Oops! There was a problem submitting your form. Please try again.");
+                    button.innerHTML = originalText;
+                    button.disabled = false;
+                }
+            }).catch(error => {
+                alert("Oops! Network error. Please check your connection.");
+                button.innerHTML = originalText;
+                button.disabled = false;
+            });
+        });
+    </script>
+</body>
+</html>
