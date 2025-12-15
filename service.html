@@ -107,43 +107,7 @@
             transform-origin: bottom left;
         }
         
-        /* Mobile Side Menu */
-        #menu-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-        body.menu-active #menu-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-        #mobile-menu-panel {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: #ffffff;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        body.menu-active #mobile-menu-panel {
-            transform: translateX(0);
-        }
-        #mobile-menu-panel nav a {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        body.menu-active #mobile-menu-panel nav a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        /* Staggered animation for menu items */
-        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.1s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.15s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.2s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.25s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.3s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.35s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.4s; }
+
         
         /* ==== Mobile Bottom Bar Animation ==== */
         .mobile-nav-item:hover {
@@ -317,109 +281,86 @@
 </Style>
 
 <Style>
+/* ==== SERVICE CARD STYLES ==== */
+        .service-card-modern {
+            position: relative;
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
 
-/* ==== AI-TECH BUBBLE CARD STYLES ==== */
-.ai-service-card {
-    position: relative;
-    background: #ffffff;
-    border-radius: 24px;
-    padding: 40px 30px;
-    overflow: hidden;
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    border: 1px solid #f3f4f6;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.03);
-    z-index: 1;
-    height: 100%;
-}
+        /* Lift Effect */
+        .service-card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            border-color: #bfdbfe;
+        }
 
-/* Hover Effect - Lift Up */
-.ai-service-card:hover {
-    transform: translateY(-12px);
-    box-shadow: 0 25px 50px rgba(37, 99, 235, 0.25);
-    border-color: transparent;
-}
+        /* Top Right Corner Animation (The "Uncommon" Part) */
+        .card-corner-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            background: #eff6ff; /* Light Blue */
+            border-bottom-left-radius: 100%;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 15px;
+            cursor: pointer;
+        }
+        
+        .card-arrow {
+            font-size: 1.2rem;
+            color: #2563eb;
+            transition: all 0.4s ease;
+            transform: rotate(-45deg); /* Pointing to corner */
+            margin-right: 5px;
+            margin-top: 5px;
+        }
 
-/* Dynamic Gradient Background on Hover */
-.ai-service-card::before {
-    content: "";
-    position: absolute;
-    top: 0; left: 0; right: 0; bottom: 0;
-    background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
-    opacity: 0;
-    z-index: -1;
-    transition: opacity 0.4s ease;
-}
-.ai-service-card:hover::before { opacity: 1; }
+        /* Hover State for Corner */
+        .service-card-modern:hover .card-corner-link {
+            background: #2563eb; /* Dark Blue */
+            width: 80px; 
+            height: 80px;
+        }
+        .service-card-modern:hover .card-arrow {
+            color: #fff;
+            transform: rotate(0deg) translate(2px, -2px); /* Arrow straightens out */
+        }
 
-/* AI Bubble Icon Wrapper */
-.ai-bubble-wrapper {
-    position: relative;
-    width: 80px;
-    height: 80px;
-    margin-bottom: 25px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* Icon Styling */
+        .modern-icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #2563eb;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.05);
+        }
+        .service-card-modern:hover .modern-icon-box {
+            background: #2563eb;
+            color: white;
+            transform: rotate(5deg);
+        }
 
-/* The Glowing Pulse Bubble */
-.ai-pulse-ring {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    border: 2px solid rgba(37, 99, 235, 0.2);
-    animation: ripple 2s linear infinite;
-}
-
-.ai-icon-bg {
-    width: 60px;
-    height: 60px;
-    background: #eff6ff;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    z-index: 2;
-    transition: all 0.4s ease;
-}
-
-.ai-icon-bg i {
-    font-size: 1.8rem;
-    color: #2563eb;
-    transition: all 0.4s ease;
-}
-
-/* Hover Effects on Icon */
-.ai-service-card:hover .ai-icon-bg {
-    background: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(10px);
-    transform: scale(1.1) rotate(10deg);
-}
-.ai-service-card:hover .ai-icon-bg i { color: #ffffff; }
-.ai-service-card:hover .ai-pulse-ring { border-color: rgba(255, 255, 255, 0.3); }
-
-/* Typography Changes on Hover */
-.ai-title {
-    font-size: 1.5rem;
-    font-weight: 800;
-    color: #111827;
-    margin-bottom: 12px;
-    transition: color 0.3s ease;
-}
-.ai-desc {
-    color: #6b7280;
-    line-height: 1.6;
-    transition: color 0.3s ease;
-}
-.ai-service-card:hover .ai-title, .ai-service-card:hover .ai-desc { color: #ffffff; }
-
-/* Animation Keyframes */
-@keyframes ripple {
-    0% { transform: scale(0.8); opacity: 1; }
-    100% { transform: scale(1.5); opacity: 0; }
-}
 /* ==== END: Amazing Service Card Styles ==== */
 </Style>
 
@@ -493,6 +434,42 @@
       "position": 3,
       "name": "SEO Optimization",
       "description": "Rank higher on Google with our SEO strategies."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Desktop Software",
+      "description": "Robust custom desktop applications for Windows, macOS, and Linux platforms."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "SaaS Platforms",
+      "description": "Scalable Software-as-a-Service solutions with subscription management and cloud integration."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Admin Panels",
+      "description": "Powerful custom dashboards to manage your business data, users, and analytics efficiently."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "SMM Panels",
+      "description": "Automated Social Media Marketing tools and platforms designed for agencies and resellers."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "ERP / CRM",
+      "description": "Streamline operations with custom Enterprise Resource Planning and CRM systems."
+    },
+	{
+      "@type": "ListItem",
+      "position": 3,
+      "name": "Design Services",
+      "description": "Creative UI/UX design, graphics, logo branding, and marketing materials that stand out."
     }
   ]
 }
@@ -637,97 +614,134 @@
     <!-- Services Section -->
      <section id="services" class="py-20 px-4 bg-gray-50">
         <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Premium Services</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full"></div>
+            </div>
             
-           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-     <a href="https://futuretopindia.in/web-development" class="card block no-underline text-inherit">
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.1s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-globe"></i></div>
-        </div>
-        <h3 class="ai-title">Web Development</h3>
-        <p class="ai-desc">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
-    </div>
-		</a>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
 
-		<a href="https://futuretopindia.in/mobile-app-development" class="card block no-underline text-inherit">
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.2s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-mobile-alt"></i></div>
-        </div>
-        <h3 class="ai-title">Mobile Applications</h3>
-        <p class="ai-desc">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
-    </div>
-       </a>
-	<a href="https://futuretopindia.in/seo-optimization" class="card block no-underline text-inherit">
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.3s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-magnifying-glass"></i></div>
-        </div>
-        <h3 class="ai-title">SEO Optimization</h3>
-        <p class="ai-desc">Strategic SEO techniques to increase quality traffic to your website and rank higher on search engines.</p>
-    </div>
-        </a>
-		
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.1s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-laptop-code"></i></div>
-        </div>
-        <h3 class="ai-title">Desktop Software</h3>
-        <p class="ai-desc">Robust custom desktop applications for Windows, macOS, and Linux platforms.</p>
-    </div>
+                <a href="https://futuretopindia.in/web-development?service=web" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link">
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Web Development</h3>
+                            <p class="text-gray-600 leading-relaxed">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+                        </div>
+                    </div>
+                </a>
 
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.2s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-cloud"></i></div>
-        </div>
-        <h3 class="ai-title">SaaS Platforms</h3>
-        <p class="ai-desc">Scalable Software-as-a-Service solutions with subscription management and cloud integration.</p>
-    </div>
+                <a href="https://futuretopindia.in/mobile-app-development?service=app" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Mobile Applications</h3>
+                            <p class="text-gray-600 leading-relaxed">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
+                        </div>
+                    </div>
+                </a>
 
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.3s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-chart-line"></i></div>
-        </div>
-        <h3 class="ai-title">Admin Panels</h3>
-        <p class="ai-desc">Powerful custom dashboards to manage your business data, users, and analytics efficiently.</p>
-    </div>
+                <a href="https://futuretopindia.in/seo-optimization?service=seo" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-magnifying-glass"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SEO Optimization</h3>
+                            <p class="text-gray-600 leading-relaxed">Strategic SEO techniques to increase quality traffic to your website and rank higher on search engines.</p>
+                        </div>
+                    </div>
+                </a>
 
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.1s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-users"></i></div>
-        </div>
-        <h3 class="ai-title">SMM Panels</h3>
-        <p class="ai-desc">Automated Social Media Marketing tools and platforms designed for agencies and resellers.</p>
-    </div>
+                <a href="https://futuretopindia.in/desktop-software?service=desktop" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Desktop Software</h3>
+                            <p class="text-gray-600 leading-relaxed">Robust custom desktop applications for Windows, macOS, and Linux platforms.</p>
+                        </div>
+                    </div>
+                </a>
 
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.2s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-project-diagram"></i></div>
-        </div>
-        <h3 class="ai-title">ERP / CRM</h3>
-        <p class="ai-desc">Streamline operations with custom Enterprise Resource Planning and Customer Relationship Management systems.</p>
-    </div>
+                <a href="https://futuretopindia.in/contact?service=saas" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SaaS Platforms</h3>
+                            <p class="text-gray-600 leading-relaxed">Scalable Software-as-a-Service solutions with subscription management and cloud integration.</p>
+                        </div>
+                    </div>
+                </a>
 
-    <div class="ai-service-card fade-in-up" style="animation-delay: 0.3s;">
-        <div class="ai-bubble-wrapper">
-            <div class="ai-pulse-ring"></div>
-            <div class="ai-icon-bg"><i class="fas fa-paint-brush"></i></div>
-        </div>
-        <h3 class="ai-title">Design Services</h3>
-        <p class="ai-desc">Creative UI/UX design, graphics, logo branding, and marketing materials that stand out.</p>
-    </div>
+                <a href="https://futuretopindia.in/contact?service=admin" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Admin Panels</h3>
+                            <p class="text-gray-600 leading-relaxed">Powerful custom dashboards to manage your business data, users, and analytics efficiently.</p>
+                        </div>
+                    </div>
+                </a>
 
-</div>
+                <a href="https://futuretopindia.in/contact?service=smm" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SMM Panels</h3>
+                            <p class="text-gray-600 leading-relaxed">Automated Social Media Marketing tools and platforms designed for agencies and resellers.</p>
+                        </div>
+                    </div>
+                </a>
 
-            
+                <a href="https://futuretopindia.in/contact?service=erp" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">ERP / CRM</h3>
+                            <p class="text-gray-600 leading-relaxed">Streamline operations with custom Enterprise Resource Planning and CRM systems.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/contact?service=design" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Design Services</h3>
+                            <p class="text-gray-600 leading-relaxed">Creative UI/UX design, graphics, logo branding, and marketing materials that stand out.</p>
+                        </div>
+                    </div>
+                </a>
+
+            </div>
         </div>
     </section>
    
@@ -1034,7 +1048,6 @@
 
 </body>
 </html>
-
 
 
 
