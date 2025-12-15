@@ -711,36 +711,60 @@
         </div>
     </div>
 
-   <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        // 1. FAQ Toggle Logic
-        const faqToggleButtons = document.querySelectorAll('.toggle-btn');
+   
+    <script>
+    // 1. toggleAnswer फ़ंक्शन को Global Scope में रखें (event listener के बाहर)
+    // ताकि HTML का onclick इसे ढूंढ सके।
+    function toggleAnswer(button) {
+        // जिस बटन पर क्लिक किया, उसका जवाब (Answer div) ढूंढें
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.icon');
+
+        // बाकी सभी खुले हुए जवाबों को बंद करें (Accordion effect)
+        const allAnswers = document.querySelectorAll('.answer');
         
-        faqToggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('.icon');
+        allAnswers.forEach(otherAnswer => {
+            // अगर यह वो वाला answer नहीं है जिस पर क्लिक हुआ है, तो उसे बंद कर दें
+            if (otherAnswer !== answer) {
+                otherAnswer.classList.add('hidden');
                 
-                // Toggle Logic
-                if (answer.classList.contains('hidden')) {
-                    // Open the answer
-                    answer.classList.remove('hidden');
-                    icon.textContent = '−'; // Minus sign
-                    icon.classList.add('bg-blue-600', 'text-white'); // Active Icon Style
-                    icon.classList.remove('bg-blue-50', 'text-blue-600');
-                } else {
-                    // Close the answer
-                    answer.classList.add('hidden');
-                    icon.textContent = '+'; // Plus sign
-                    icon.classList.remove('bg-blue-600', 'text-white'); // Reset Icon Style
-                    icon.classList.add('bg-blue-50', 'text-blue-600');
+                // उसके आइकन को भी वापस '+' और डिफ़ॉल्ट रंग में बदलें
+                const otherBtn = otherAnswer.previousElementSibling;
+                const otherIcon = otherBtn.querySelector('.icon');
+                if (otherIcon) {
+                    otherIcon.textContent = '+';
+                    otherIcon.classList.remove('bg-blue-600', 'text-white');
+                    otherIcon.classList.add('bg-blue-50', 'text-blue-600');
                 }
-            });
+            }
         });
 
-        // 2. Navbar Scroll Effect (Sticky Nav)
+        // जिस पर क्लिक किया है, उसे टॉगल (खोलें/बंद) करें
+        if (answer.classList.contains('hidden')) {
+            // खोलें (Open)
+            answer.classList.remove('hidden');
+            
+            // आइकन को '-' करें और नीला (active) रंग दें
+            icon.textContent = '−'; // माइनस साइन
+            icon.classList.remove('bg-blue-50', 'text-blue-600');
+            icon.classList.add('bg-blue-600', 'text-white');
+        } else {
+            // बंद करें (Close)
+            answer.classList.add('hidden');
+            
+            // आइकन को '+' करें और डिफ़ॉल्ट रंग दें
+            icon.textContent = '+';
+            icon.classList.remove('bg-blue-600', 'text-white');
+            icon.classList.add('bg-blue-50', 'text-blue-600');
+        }
+    }
+
+    // 2. केवल Navbar और अन्य लोडिंग लॉजिक को DOMContentLoaded के अंदर रखें
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // Navbar Scroll Effect (Sticky Nav)
         const nav = document.getElementById('main-nav');
-        if(nav) {
+        if (nav) {
             window.addEventListener('scroll', () => {
                 if (window.scrollY > 50) {
                     nav.classList.add('shadow-lg', 'bg-blue-900'); // Scrolled State
@@ -750,10 +774,11 @@
             });
         }
     });
-    </script>
+</script>
 </body>
 
 </html>
+
 
 
 
