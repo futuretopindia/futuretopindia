@@ -1,0 +1,791 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desktop Software Development | Future Top India</title>
+
+    <meta name="title" content="Desktop Software Development | Future Top India">
+    <meta name="description"
+        content="Custom desktop application development for Windows, macOS, and Linux. We build secure, high-performance, and offline-capable software tailored to your business workflow.">
+    <meta name="keywords"
+        content="Desktop Application Development, Custom Software Windows, macOS Software, Linux Apps, Enterprise Software, C#, Java, Electron, Python, Offline Software, Future Top India Software">
+    <meta name="author" content="Future Top India">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://futuretopindia.in/service/desktop-software" />
+    <link rel="icon" href="https://futuretopindia.in/image/favicon.png" type="image/png" />
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://futuretopindia.in/service/desktop-software">
+    <meta property="og:title" content="Desktop Software Development | Future Top India">
+    <meta property="og:description"
+        content="Custom desktop application development for Windows, macOS, and Linux. We build secure, high-performance, and offline-capable software.">
+    <meta property="og:image" content="https://futuretopindia.in/image/og-software-banner.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Desktop Software Development | Future Top India">
+    <meta name="twitter:description"
+        content="Custom desktop application development for Windows, macOS, and Linux. We build secure, high-performance, and offline-capable software.">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-CT8VGCPZDH"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-CT8VGCPZDH');
+    </script>
+
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            margin: 0;
+            padding-bottom: 70px;
+            /* Mobile Nav Spacing */
+            overflow-x: hidden;
+        }
+
+        @media (min-width: 1024px) {
+            body {
+                padding-bottom: 0;
+            }
+        }
+
+        body.menu-active {
+            overflow: hidden;
+        }
+
+        /* ==== Shared Styles ==== */
+        .gradient-bg {
+            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        }
+
+        /* Animations */
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .price-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+
+        .price-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            border-color: #3b82f6;
+        }
+
+        .check-list li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 0.75rem;
+        }
+
+        .check-list li i {
+            color: #10b981;
+            /* Green-500 */
+            margin-right: 0.75rem;
+            margin-top: 0.25rem;
+        }
+
+        .tech-grid-item {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.5rem;
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+            transition: all 0.3s;
+        }
+
+        .tech-grid-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Mobile Nav Styles */
+        .mobile-nav-item:hover {
+            transform: translateY(-4px);
+            color: #2563eb;
+        }
+
+        .mobile-nav-middle-btn {
+            transform: translateY(-1rem);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .mobile-nav-middle-btn:hover {
+            transform: translateY(-1.25rem) scale(1.1);
+            background-color: #1d4ed8;
+        }
+
+        /* Nav Styles */
+        #main-nav {
+            background: linear-gradient(135deg, #182c6e 0%, #1e4ed8 100%);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        #main-nav.scrolled {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .desktop-nav-link {
+            position: relative;
+            text-decoration: none;
+            padding-bottom: 8px;
+        }
+
+        .desktop-nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background-color: #ffffff;
+            transform: scaleX(0);
+            transform-origin: bottom right;
+            transition: transform 0.3s ease-out;
+        }
+
+        .desktop-nav-link:hover::after {
+            transform: scaleX(1);
+            transform-origin: bottom left;
+        }
+
+        .group:hover .group-hover\:block {
+            display: block;
+        }
+    </style>
+</head>
+
+<body class="font-sans bg-gray-50 text-gray-800">
+
+    <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
+        <div class="container mx-auto px-5 py-3">
+            <div class="flex items-center justify-between">
+                <a href="https://futuretopindia.in/">
+                    <div class="flex items-center">
+                        <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
+                    </div>
+                </a>
+
+                <div class="hidden lg:flex items-center space-x-8">
+                    <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
+                    <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
+                    <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
+                    <a href="https://futuretopindia.in/technologies" class="desktop-nav-link">Technologies</a>
+                    <a href="https://futuretopindia.in/helps" class="desktop-nav-link">Helps</a>
+
+                    <div class="relative group">
+                        <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
+                            About ▾
+                        </button>
+                        <div
+                            class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
+                            <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About
+                                Us</a>
+                            <a href="https://futuretopindia.in/fti.ai"
+                                class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
+                            <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://futuretopindia.in/contact"
+                                class="block px-4 py-2 hover:bg-teal-100">Contact Us</a>
+                            <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
+                            <a href="https://futuretopindia.in/privacy"
+                                class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
+                        </div>
+                    </div>
+                    <a href="tel:9864551558"
+                        class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
+                        📞 Call Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <section class="gradient-bg text-white pt-36 pb-24 px-4 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-full h-full pointer-events-none overflow-hidden">
+            <i class="fas fa-desktop absolute text-6xl bottom-10 right-10 text-white opacity-10"></i>
+            <div
+                class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-400 rounded-full blur-3xl opacity-20">
+            </div>
+        </div>
+
+        <div class="container mx-auto text-center relative z-10">
+            <span
+                class="inline-flex items-center gap-2 py-1.5 px-5 rounded-full bg-white bg-opacity-10 border border-white/20 backdrop-blur-md text-yellow-300 text-sm font-semibold mb-6 fade-in-up shadow-sm">
+                <i class="fas fa-rocket"></i> Fast, Secure & Reliable
+            </span>
+
+            <h1 class="text-4xl md:text-6xl font-bold leading-tight mb-6 fade-in-up delay-100">
+                Custom Desktop Solutions <br>
+                <span
+                    class="text-transparent bg-clip-text bg-gradient-to-r from-yellow-300 to-yellow-500 filter drop-shadow-sm">For
+                    Any OS Platform</span>
+            </h1>
+
+            <p class="text-lg md:text-2xl mb-10 max-w-2xl mx-auto text-blue-100 fade-in-up delay-200 leading-relaxed">
+                Robust custom desktop applications for Windows, macOS, and Linux platforms designed to streamline your business operations.
+            </p>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 fade-in-up delay-300">
+                <a href="https://futuretopindia.in/Book-a-Demo"
+                    class="w-full md:w-auto bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-full shadow-lg hover:bg-yellow-300 hover:scale-105 transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-laptop-code mr-2"></i> Request a Quote
+                </a>
+                <a href="tel:9864551558"
+                    class="w-full md:w-auto bg-transparent border-2 border-white/40 text-white font-bold py-4 px-8 rounded-full hover:bg-white hover:text-blue-700 hover:border-white transition duration-300 flex items-center justify-center">
+                    <i class="fas fa-phone-alt mr-2"></i> Talk to Developer
+                </a>
+            </div>
+
+            <p
+                class="mt-8 text-sm text-blue-200 opacity-90 fade-in-up delay-300 flex justify-center items-center gap-2">
+                <i class="fab fa-windows text-blue-300"></i> <i class="fab fa-apple text-gray-300"></i> <i class="fab fa-linux text-yellow-400"></i> Cross-platform & Native Development
+            </p>
+        </div>
+    </section>
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800">Why Choose Desktop Applications?</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-2 rounded"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row gap-8 items-stretch justify-center">
+
+                <div class="md:w-1/2 flex flex-col h-full">
+                    <div
+                        class="bg-red-50 p-8 rounded-2xl border-l-4 border-red-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full">
+                        <div class="flex items-center mb-4">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-exclamation-triangle text-2xl text-red-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-red-800">Limitations of Web-Only Apps</h3>
+                        </div>
+
+                        <p class="mb-6 text-gray-700 leading-relaxed">While web apps are popular, relying solely on browsers can limit your operational efficiency:</p>
+
+                        <ul class="space-y-4 mt-auto">
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-700 font-medium">Dependent on constant internet connectivity.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-700 font-medium">Limited access to local hardware (Printers, Scanners).</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-700 font-medium">Security risks associated with public cloud data.</span>
+                            </li>
+                            <li class="flex items-start">
+                                <i class="fas fa-times-circle text-red-500 mt-1 mr-3 text-lg"></i>
+                                <span class="text-gray-700 font-medium">Performance lag with complex data processing.</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2 flex flex-col h-full">
+                    <div
+                        class="bg-blue-50 p-8 rounded-2xl border-l-4 border-blue-500 shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1 h-full relative overflow-hidden">
+                        <div class="absolute inset-0 opacity-10 pointer-events-none">
+                            <i
+                                class="fas fa-microchip text-9xl text-blue-300 transform -rotate-45 -translate-y-1/2 translate-x-1/2"></i>
+                        </div>
+                        <div class="flex items-center mb-4 relative z-10">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-cogs text-2xl text-blue-600"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-blue-800">The Power of Native Software</h3>
+                        </div>
+
+                        <p class="mb-6 text-gray-600 leading-relaxed relative z-10">We engineer powerful desktop software that maximizes hardware potential and security.</p>
+
+                        <ul class="space-y-4 mt-auto relative z-10">
+                            <li class="flex items-start bg-blue-100/50 p-3 rounded-lg border border-blue-200">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-lg"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Offline Capabilities</strong>
+                                    <span class="text-sm text-gray-700">Work without interruption, even without an internet connection.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start bg-blue-100/50 p-3 rounded-lg border border-blue-200">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-lg"></i>
+                                <div>
+                                    <strong class="block text-gray-900">High Performance</strong>
+                                    <span class="text-sm text-gray-700">Utilize full CPU/GPU power for heavy calculations and tasks.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start bg-blue-100/50 p-3 rounded-lg border border-blue-200">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-lg"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Enhanced Security</strong>
+                                    <span class="text-sm text-gray-700">Keep sensitive data stored locally and securely encrypted.</span>
+                                </div>
+                            </li>
+                            <li class="flex items-start bg-blue-100/50 p-3 rounded-lg border border-blue-200">
+                                <i class="fas fa-check-circle text-green-500 mt-1 mr-3 text-lg"></i>
+                                <div>
+                                    <strong class="block text-gray-900">Seamless Integration</strong>
+                                    <span class="text-sm text-gray-700">Direct integration with OS file systems and peripherals.</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">Software Development Packages</h2>
+                <p class="text-gray-500 mt-3 max-w-xl mx-auto">From simple utilities to complex enterprise systems, we have a development model for you.</p>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+
+                <div
+                    class="price-card bg-white rounded-2xl p-8 relative overflow-hidden border-gray-500 flex flex-col h-full hover:shadow-xl hover:border-blue-500 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 bg-gray-300 text-gray-900 text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        BASIC</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Utility & Tools</h3>
+                    <p class="text-sm text-gray-900 mb-6">Lightweight tools for automation or specific tasks.</p>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-blue-600">Start @ ₹15k</span><span class="text-gray-500 text-sm">
+                            (Estimated)</span>
+                    </div>
+
+                    <div
+                        class="text-sm font-semibold text-gray-900 mb-6 bg-gray-100 inline-block px-3 py-1 rounded-full">
+                        <i class="fas fa-calendar-alt mr-1"></i> Timeline: 2-3 Weeks
+                    </div>
+
+                    <ul class="check-list text-sm font-bold text-gray-900 space-y-3 mb-8">
+                        <li><i class="fas fa-check"></i> Single Platform (Win/Mac)</li>
+                        <li><i class="fas fa-check"></i> Basic UI/UX Design</li>
+                        <li><i class="fas fa-check"></i> Local File Handling</li>
+                        <li><i class="fas fa-check"></i> Lightweight Architecture</li>
+                        <li><i class="fas fa-check"></i> Setup & Installation Guide</li>
+                        <li><i class="fas fa-check"></i> 1 Month Bug Support</li>
+                    </ul>
+
+                    <a href="https://futuretopindia.in/Book-a-Demo"
+                        class="block w-full text-center bg-blue-600 text-white font-bold py-3 rounded-lg hover:bg-blue-700 transition mt-auto">Get
+                        Quote</a>
+                </div>
+
+
+                <div
+                    class="price-card bg-white rounded-2xl p-8 relative overflow-hidden border-orange-300 flex flex-col h-full hover:shadow-xl hover:border-orange-500 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 bg-orange-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        POPULAR</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Business Application</h3>
+                    <p class="text-sm text-gray-900 mb-6">Complete management systems like POS, CRM, or ERP.</p>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-orange-600">Custom</span><span
+                            class="text-gray-500 text-sm"> / Project</span>
+                    </div>
+
+                    <div
+                        class="text-sm font-semibold text-gray-900 mb-6 bg-gray-100 inline-block px-3 py-1 rounded-full">
+                        <i class="fas fa-clock mr-1"></i> Timeline: 1-2 Months
+                    </div>
+
+                    <ul class="check-list text-sm font-bold text-gray-900 space-y-3 mb-8">
+                        <li><i class="fas fa-check"></i> Cross-Platform (Electron/Flutter)</li>
+                        <li><i class="fas fa-check"></i> Modern Dashboard UI</li>
+                        <li><i class="fas fa-check"></i> Database Integration (SQL/NoSQL)</li>
+                        <li><i class="fas fa-check"></i> User Authentication & Roles</li>
+                        <li><i class="fas fa-check"></i> PDF/Excel Report Generation</li>
+                        <li><i class="fas fa-check"></i> 6 Months Technical Support</li>
+                    </ul>
+                    <a href="https://futuretopindia.in/Book-a-Demo"
+                        class="block w-full text-center bg-orange-600 text-white font-bold py-3 rounded-lg hover:bg-orange-700 transition mt-auto">Discuss Requirements</a>
+                </div>
+
+                <div
+                    class="price-card bg-white rounded-2xl p-8 relative overflow-hidden border-green-300 flex flex-col h-full hover:shadow-xl hover:border-green-500 transition-all duration-300">
+                    <div
+                        class="absolute top-0 right-0 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">
+                        PREMIUM</div>
+                    <h3 class="text-xl font-bold text-gray-900 mb-2">Enterprise Suite</h3>
+                    <p class="text-sm text-gray-900 mb-6">Scalable, networked solutions for large organizations.</p>
+
+                    <div class="mb-6">
+                        <span class="text-4xl font-bold text-green-700">Custom</span><span
+                            class="text-gray-500 text-sm"> / Scope Based</span>
+                    </div>
+
+                    <div
+                        class="text-sm font-semibold text-gray-900 mb-6 bg-gray-100 inline-block px-3 py-1 rounded-full">
+                        <i class="fas fa-tasks mr-1"></i> Timeline: 3+ Months
+                    </div>
+
+                    <ul class="check-list text-sm font-bold text-gray-900 space-y-3 mb-8">
+                        <li><i class="fas fa-check"></i> Advanced Cloud Sync</li>
+                        <li><i class="fas fa-check"></i> Hardware Integration (IoT/POS)</li>
+                        <li><i class="fas fa-check"></i> API Development & Integration</li>
+                        <li><i class="fas fa-check"></i> Multi-User Real-time Sync</li>
+                        <li><i class="fas fa-check"></i> Enterprise Security Standards</li>
+                        <li><i class="fas fa-check"></i> Annual Maintenance Contract</li>
+                    </ul>
+                    <a href="https://futuretopindia.in/Book-a-Demo"
+                        class="block w-full text-center bg-green-700 text-white font-bold py-3 rounded-lg hover:bg-green-800 transition mt-auto">Request
+                        Proposal</a>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <span class="text-sm font-semibold text-blue-600 uppercase tracking-wider">Our Process</span>
+                <h2 class="text-3xl font-bold text-gray-800 mt-2">4-Step Development Cycle</h2>
+                <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+            </div>
+
+            <div class="flex flex-col md:flex-row items-center justify-center gap-10">
+
+                <div
+                    class="flex-1 text-center group w-full max-w-xs p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition duration-300 shadow-lg shadow-blue-500/50">
+                        1</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-blue-700 transition-colors">Planning & Analysis</h3>
+                    <p class="text-gray-600 text-sm">We deep dive into your requirements, defining the scope, technology stack, and user flow.</p>
+                </div>
+
+                <div class="text-2xl text-blue-400 opacity-50">
+                    <span class="hidden md:block"><i class="fas fa-chevron-right"></i></span>
+                    <span class="block md:hidden animate-bounce"><i class="fas fa-chevron-down"></i></span>
+                </div>
+
+                <div
+                    class="flex-1 text-center group w-full max-w-xs p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-yellow-400 text-blue-900 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition duration-300 shadow-lg shadow-yellow-500/50">
+                        2</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-yellow-700 transition-colors">
+                        Design & Architecture</h3>
+                    <p class="text-gray-600 text-sm">Our team creates intuitive UI wireframes and designs a robust backend architecture.</p>
+                </div>
+
+                <div class="text-2xl text-blue-400 opacity-50">
+                    <span class="hidden md:block"><i class="fas fa-chevron-right"></i></span>
+                    <span class="block md:hidden animate-bounce"><i class="fas fa-chevron-down"></i></span>
+                </div>
+
+                <div
+                    class="flex-1 text-center group w-full max-w-xs p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-green-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition duration-300 shadow-lg shadow-green-500/50">
+                        3</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-green-700 transition-colors">
+                        Coding & Testing</h3>
+                    <p class="text-gray-600 text-sm">Agile development ensures clean code, while rigorous testing eliminates bugs and security gaps.</p>
+                </div>
+
+                <div class="text-2xl text-blue-400 opacity-50">
+                    <span class="hidden md:block"><i class="fas fa-chevron-right"></i></span>
+                    <span class="block md:hidden animate-bounce"><i class="fas fa-chevron-down"></i></span>
+                </div>
+
+                <div
+                    class="flex-1 text-center group w-full max-w-xs p-6 bg-white rounded-xl shadow-lg hover:shadow-2xl transition duration-300">
+                    <div
+                        class="w-16 h-16 bg-red-500 text-white rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4 group-hover:scale-110 transition duration-300 shadow-lg shadow-red-500/50">
+                        4</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2 group-hover:text-red-700 transition-colors">Deploy & Support</h3>
+                    <p class="text-gray-600 text-sm">We handle installation, user training, and provide ongoing updates to keep your software running smoothly.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <section class="py-16 px-4 bg-white">
+    <div class="container mx-auto max-w-4xl">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl font-bold text-gray-800 mt-2">Software Development FAQs</h2>
+            <div class="w-20 h-1 bg-blue-600 mx-auto mt-4 rounded"></div>
+        </div>
+
+        <div class="space-y-4">
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                <button class="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-lg group focus:outline-none" onclick="toggleAnswer(this)">
+                    <span class="text-gray-800 group-hover:text-blue-700 transition-colors">What technologies do you use for desktop apps?</span>
+                    <span class="icon flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 text-xl font-bold group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">+</span>
+                </button>
+                <div class="px-6 pb-6 hidden answer text-gray-600 leading-relaxed border-t border-gray-100 pt-4 bg-gray-50/50">
+                    We choose the tech stack based on requirements. For cross-platform apps (Windows/Mac/Linux), we use **Electron**, **Flutter**, or **React Native**. For native Windows performance, we use **C# / .NET**. For native macOS, we use **Swift**. We also support Python for data-heavy tools.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                <button class="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-lg group focus:outline-none" onclick="toggleAnswer(this)">
+                    <span class="text-gray-800 group-hover:text-blue-700 transition-colors">Can the software work offline and sync later?</span>
+                    <span class="icon flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 text-xl font-bold group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">+</span>
+                </button>
+                <div class="px-6 pb-6 hidden answer text-gray-600 leading-relaxed border-t border-gray-100 pt-4 bg-gray-50/50">
+                    Yes! One of the biggest advantages of desktop software is offline capability. We can build applications that store data locally in a database (like SQLite) and automatically sync with the cloud server once the internet connection is restored.
+                </div>
+            </div>
+
+            <div class="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100">
+                <button class="flex justify-between items-center w-full px-6 py-4 text-left font-semibold text-lg group focus:outline-none" onclick="toggleAnswer(this)">
+                    <span class="text-gray-800 group-hover:text-blue-700 transition-colors">Will the software work on old computers?</span>
+                    <span class="icon flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-600 text-xl font-bold group-hover:bg-blue-600 group-hover:text-white transition-all duration-300">+</span>
+                </button>
+                <div class="px-6 pb-6 hidden answer text-gray-600 leading-relaxed border-t border-gray-100 pt-4 bg-gray-50/50">
+                    We optimize our code for performance. During the "Planning" phase, we discuss your target hardware. We can build lightweight applications compatible with older versions of Windows (like Windows 7/10) or optimize for the latest hardware depending on your needs.
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+  
+	
+	
+	
+	
+	
+	  <section class="relative py-24 px-4 overflow-hidden bg-blue-900">
+        <div class="absolute top-0 left-1/4 w-96 h-96 bg-blue-600 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse"></div>
+        <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-indigo-500 rounded-full mix-blend-multiply filter blur-3xl opacity-20 animate-pulse" style="animation-delay: 2s;"></div>
+        
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(#ffffff 1px, transparent 1px); background-size: 30px 30px;"></div>
+
+        <div class="container mx-auto text-center relative z-10">
+            
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 text-white leading-tight">Ready to Build Your <span class="text-yellow-400">Custom Software?</span>
+            </h2>
+            
+            <p class="text-xl mb-10 max-w-2xl mx-auto text-blue-100 leading-relaxed">
+                Let's discuss how a tailored desktop application can transform your business efficiency.
+            </p>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-5">
+                 <a href="https://futuretopindia.in/Book-a-Demo"
+                    class="group flex items-center justify-center bg-yellow-400 text-blue-900 font-bold py-4 px-8 rounded-full shadow-xl hover:bg-yellow-300 transition duration-300 hover:-translate-y-1 hover:shadow-yellow-400/50">
+                    <span>Start Your Project</span>
+                    <i class="fas fa-arrow-right ml-2 transition-transform group-hover:translate-x-1"></i>
+                </a>
+
+                <a href="https://wa.me/919864551558" target="_blank" class="flex items-center text-white font-semibold hover:text-yellow-300 transition gap-2 border border-white/20 py-4 px-8 rounded-full hover:bg-white/20">
+                    <i class="fab fa-whatsapp text-2xl"></i>
+                    <span>Chat on WhatsApp</span>
+                </a>
+            </div>
+
+            <p class="mt-6 text-sm text-blue-300 flex justify-center items-center gap-2">
+    <i class="fas fa-shield-alt"></i>
+    NDA Protected • 100% Code Ownership & Confidentiality
+</p>
+
+
+        </div>
+    </section>
+	
+	
+	
+	
+	
+    <footer class="bg-gray-900 text-white py-8 px-4">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-6 md:mb-0">
+                    <div class="flex items-center mb-4">
+                        <a href="https://futuretopindia.in/"><img src="image/sublogo.png"
+                                alt="Future Top India Favicon logo" class="h-10 mr-3"></a>
+                        <a href="https://futuretopindia.in/"><i class="not-italic"><span class="font-bold text-xl">FTI •
+                                    Pvt Ltd</span></i></a>
+                    </div>
+                    <i class="not-italic">
+                        <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for
+                            your brand.</p>
+                    </i>
+                </div>
+                <div class="flex space-x-6">
+                    <a href="https://www.facebook.com/share/198qDFavKp/"
+                        class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="https://x.com/futuretopindia?t=4NUCIRuch4mBFslfDozGeQ&s=09"
+                        class="text-gray-400 hover:text-white transition"><i class="fab fa-twitter text-xl"></i></a>
+                    <a href="https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh"
+                        class="text-gray-400 hover:text-white transition"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="https://www.linkedin.com/in/futuretopindia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+                        class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
+                </div>
+            </div>
+            <br>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Quick Links:</span>
+                <div class="container mx-auto space-y-2 mt-4 mb-3">
+                    <a href="https://futuretopindia.in/"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+                    <a href="https://futuretopindia.in/about"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+                    <a href="https://futuretopindia.in/contact"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+                    <a href="https://futuretopindia.in/blog"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Important Links:</span>
+                <div class="container mx-auto space-y-2 mt-4">
+                    <a href="https://futuretopindia.in/FAQ"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+                    <a href="https://futuretopindia.in/helps"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Helps</a>
+                    <a href="https://futuretopindia.in/technologies"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+                    <a href="https://futuretopindia.in/portfolio"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+                    <a href="https://futuretopindia.in/privacy"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+                    <a href="https://futuretopindia.in/termsandconditions"
+                        class="text-blue-500 hover:underline hover:text-blue-300 block">Terms and Conditions</a>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
+                <p>©2022-25 by <a href="http://futuretopindia.in/" class="text-blue-500 hover:underline">Future Top
+                        India</a> | All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40"
+        style="box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);">
+        <div class="flex justify-around items-center h-16">
+            <a href="https://futuretopindia.in/"
+                class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item"
+                style="flex: 1;">
+                <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            <a href="https://futuretopindia.in/service"
+                class="flex flex-col items-center justify-center text-blue-600 transition-all duration-300 mobile-nav-item"
+                style="flex: 1;">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <span class="text-xs mt-1">Service</span>
+            </a>
+            <div style="flex: 1;" class="flex justify-center">
+                <a href="https://futuretopindia.in/contact" target="_blank"
+                    class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg mobile-nav-middle-btn">
+                    <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+                </a>
+            </div>
+            <a href="tel:9864551558"
+                class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item"
+                style="flex: 1;">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+                <span class="text-xs mt-1">Call</span>
+            </a>
+            <a href="https://futuretopindia.in/more"
+                class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item"
+                style="flex: 1;">
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+                <span class="text-xs mt-1">More</span>
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+    // 1. toggleAnswer Function
+    function toggleAnswer(button) {
+        // Find answer div
+        const answer = button.nextElementSibling;
+        const icon = button.querySelector('.icon');
+
+        // Close other answers (Accordion effect)
+        const allAnswers = document.querySelectorAll('.answer');
+        
+        allAnswers.forEach(otherAnswer => {
+            if (otherAnswer !== answer) {
+                otherAnswer.classList.add('hidden');
+                
+                const otherBtn = otherAnswer.previousElementSibling;
+                const otherIcon = otherBtn.querySelector('.icon');
+                if (otherIcon) {
+                    otherIcon.textContent = '+';
+                    otherIcon.classList.remove('bg-blue-600', 'text-white');
+                    otherIcon.classList.add('bg-blue-50', 'text-blue-600');
+                }
+            }
+        });
+
+        // Toggle current
+        if (answer.classList.contains('hidden')) {
+            // Open
+            answer.classList.remove('hidden');
+            icon.textContent = '−'; 
+            icon.classList.remove('bg-blue-50', 'text-blue-600');
+            icon.classList.add('bg-blue-600', 'text-white');
+        } else {
+            // Close
+            answer.classList.add('hidden');
+            icon.textContent = '+';
+            icon.classList.remove('bg-blue-600', 'text-white');
+            icon.classList.add('bg-blue-50', 'text-blue-600');
+        }
+    }
+
+    // 2. DOM Ready Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        
+        // Navbar Scroll Effect
+        const nav = document.getElementById('main-nav');
+        if (nav) {
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('shadow-lg', 'bg-blue-900'); // Scrolled State
+                } else {
+                    nav.classList.remove('shadow-lg', 'bg-blue-900'); // Top State
+                }
+            });
+        }
+    });
+</script>
+</body>
+
+</html>
