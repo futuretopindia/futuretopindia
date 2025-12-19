@@ -10,18 +10,18 @@
   <meta name="keywords" content="blog page, blog articles, latest blogs, trending blog posts, informative blogs, blog writing tips, professional blogs, personal blog site, SEO friendly blogs, website blog section, website development blog, web design tips blog, mobile app development blog, latest technology blogs, software development articles, AI and machine learning blog, digital marketing blog, ecommerce development tips, SEO tips and tricks blog, future of web development blog, how to create a responsive website blog, best SEO tips for beginners, how to develop an eCommerce app step by step, top web development trends 2025, how to secure your website from hackers, ultimate guide to mobile app development, best programming languages for web development, step-by-step guide for digital marketing, how to start blogging for tech, why your business needs a website">
   <meta name="author" content="Future Top India">
   <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://futuretopindia.in/blog">
+  <link rel="canonical" href="https://blogs.futuretopindia.in">
 
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://futuretopindia.in/blog">
+  <meta property="og:url" content="https://blogs.futuretopindia.in">
   <meta property="og:title" content="Future Top India Blogs – Web, App & Marketing Tips">
   <meta property="og:description" content="Latest blogs on SEO, web development, app design, AI, and marketing.">
-  <meta property="og:image" content="https://futuretopindia.in/images/blog-cover.jpg">
+  <meta property="og:image" content="https://blogs.futuretopindia.in/images/blog-cover.jpg">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Future Top India Blogs – Web & App Tips">
   <meta name="twitter:description" content="Read our blogs on SEO, apps, web, and marketing strategies.">
-  <meta name="twitter:image" content="https://futuretopindia.in/images/blog-cover.jpg">
+  <meta name="twitter:image" content="https://blogs.futuretopindia.in/images/blog-cover.jpg">
 
   <script type="application/ld+json">
   {
@@ -38,7 +38,7 @@
   }
   </script>
 
-  <link rel="icon" href="https://futuretopindia.in/image/favicon.png" type="image/png">
+  <link rel="icon" href="https://blogs.futuretopindia.in/images/favicon.png" type="image/png">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
   <script src="https://cdn.tailwindcss.com"></script>
@@ -57,7 +57,7 @@
         font-family: sans-serif;
     }
     .gradient-bg {
-        background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
+        background: linear-gradient(135deg, #061b52 0%, #2563eb 100%);
     }
     .tag-list {
         display: flex;
@@ -66,7 +66,7 @@
         gap: 10px;
         margin: 20px auto;
         max-width: 1100px;
-        padding-top: 100px; 
+        padding-top: 100px; /* Adjusted padding for fixed header */
     }
     .tag {
         border: 1px solid #ccc;
@@ -139,216 +139,40 @@
         font-style: normal;
     }
   </style>
-
-
-
-	<style>
-	
-        /* Navigation Styles */
-        #main-nav {
-            background: linear-gradient(135deg, #182c6e 0%, #1e4ed8 100%); 
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2); 
-        }
-        #main-nav.scrolled {
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-        }
-        .desktop-nav-link {
-            position: relative;
-            text-decoration: none;
-            padding-bottom: 8px;
-        }
-        .desktop-nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background-color: #ffffff;
-            transform: scaleX(0);
-            transform-origin: bottom right;
-            transition: transform 0.3s ease-out;
-        }
-        .desktop-nav-link:hover::after {
-            transform: scaleX(1);
-            transform-origin: bottom left;
-        }
-        .group .group-hover\:block {
-            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-            opacity: 0;
-            transform: scale(0.95);
-            pointer-events: none;
-        }
-        .group:hover .group-hover\:block {
-            opacity: 1;
-            transform: scale(1);
-            pointer-events: auto;
-        }
-        #menu-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
-        }
-        body.menu-active #menu-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-        #mobile-menu-panel {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: #ffffff;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        body.menu-active #mobile-menu-panel {
-            transform: translateX(0);
-        }
-        #mobile-menu-panel h2 { color: #ffffff; }
-        #mobile-menu-panel #close-menu-btn { color: #e0e0e0; }
-        #mobile-menu-panel #close-menu-btn:hover { color: #ffffff; }
-        #mobile-menu-panel nav a {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        #mobile-menu-panel nav a:last-child { border-bottom: none; }
-        #mobile-menu-panel nav a:hover { background-color: rgba(255, 255, 255, 0.1); }
-        body.menu-active #mobile-menu-panel nav a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
-    </style>
 </head>
-
-<body class="font-sans bg-gray-50">
-    
-    <a href="https://wa.me/919864551558" target="_blank" class="floating-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
-        <i class="fab fa-whatsapp text-2xl"></i>
-    </a>
-
-    <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
-        <div class="container mx-auto px-5 py-3">
-            <div class="flex items-center justify-between">
-                <a href="https://futuretopindia.in/">
-                    <div class="flex items-center">
-                        <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
-                    </div>
-                </a>
-
-                <div class="hidden lg:flex items-center space-x-8">
-                    <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
-                    <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
-                    <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
-                    <a href="https://futuretopindia.in/technologies" class="desktop-nav-link">Technologies</a>
-                    <a href="https://futuretopindia.in/helps" class="desktop-nav-link">Helps</a>
- 
-                    <div class="relative group">
-                        <button id="aboutDropdownBtn" class="hover:bg-blue-800 focus:outline-none py-2 rounded px-2">
-                            About ▾
-                        </button>
-                        <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
-                            <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
-                            <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
-                            <a href="https://futuretopindia.in/blog" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
-						    <a href="https://futuretopindia.in/contact" class="block px-4 py-2 hover:bg-teal-100">Contact Us</a>
-                            <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
-                            <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
-                        </div>
-                    </div>
-                    <a href="tel:9864551558" class="ml-4 bg-green-500 hover:bg-green-600 text-white font-semibold py-3 px-4 rounded-full shadow-lg transition duration-300">
-                        📞 Call Now
-                    </a>
-                </div>
-
-                <div class="lg:hidden">
-                    <button id="menu-btn" aria-label="Open menu" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <div id="mobile-menu-container">
-        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
-        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 p-4 z-50">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-bold">Menu</h2>
-                <button id="close-menu-btn" aria-label="Close menu" class="hover:text-white">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col space-y-2">
-                <a href="https://futuretopindia.in/" class="block py-2 rounded px-4">Home</a>
-                <a href="https://futuretopindia.in/portfolio" class="block py-2 rounded px-4">Our Portfolio</a>
-                <a href="https://futuretopindia.in/fti.ai" class="block py-2 rounded px-4">FTI-ai</a>
-                <a href="https://futuretopindia.in/about" class="block py-2 rounded px-4">About Us</a>
-                <a href="https://futuretopindia.in/blog" class="block py-2 rounded px-4">Blogs</a>
-                <a href="https://futuretopindia.in/FAQ" class="block py-2 rounded px-4">FAQs</a>
-                <a href="https://futuretopindia.in/service" class="block py-2 rounded px-4">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
-                <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
-                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                    📞 Call Now
-                </a>
-            </nav>
-        </div> 
-	</div>
-	
-
-
-	
-    <center>
-        <h1 class="text-3xl md:text-4xl font-bold pt-28"> Future Top India 
-			<br>  Latest Blogs</h1>
-    </center>
-
-    <div class="text-center px-4">
-        <h2 class="text-2xl font-bold text-gray-600 mt-4">Blog Page – Trending Blog Posts & SEO Friendly Articles</h2>
-        <p class="max-w-3xl mx-auto mt-2 text-gray-600">Explore <strong>informative blogs</strong>, <strong>SEO tips</strong>, <strong>app development guides</strong>, <strong>digital marketing strategies</strong>, and <strong>AI trends</strong> for 2025 and beyond.</p>
-    </div>
-
-	<div class="tag-list pt-4">
+  
+<body class="bg-gray-100 text-gray-800">
+    <header class="gradient-bg text-white py-4 text-center shadow-lg fixed top-0 w-full z-50">
+        <a href="https://futuretopindia.in/" class="absolute items-center top-4 -translate-y-1/2 text-2xl transition hover:scale-110">
+            <i class="fa-solid fa-house"></i>
+        </a> <br>
+        <h1 class="text-3xl md:text-4xl font-bold">📘 Future Top India - Latest Blogs</h1>
+    </header>
+<hr class="pt-50">
+    <div class="tag-list pt-30">
         <a class="tag" href="#">SEO Tips</a>
         <a class="tag" href="#">App Development</a>
         <a class="tag" href="#">Digital Marketing</a>
         <a class="tag" href="#">AI & Machine Learning</a>
         <a class="tag" href="#">Future of Web</a>
-	</div>
+    </div>
+
+    <div class="text-center px-4">
+        <h1 class="text-2xl font-bold mt-4">Blogs Page – Trending Blog Posts & SEO Friendly Articles</h1>
+        <p class="max-w-3xl mx-auto mt-2 text-gray-600"><center>Explore <strong>informative blogs</strong>, <strong>SEO tips</strong>, <strong>app development guides</strong>, <strong>digital marketing strategies</strong>, and <strong>AI trends</strong> for 2025 and beyond.</center></p>
+    </div>
 
     <div class="blog-container" id="blogList"></div>
 
-
-	<!-- Footer -->
-    <footer class="bg-gray-900 text-white py-8 px-4">
+         <footer class="bg-gray-900 text-white py-8 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center mb-4">
-                        <a href="https://futuretopindia.in/">            
-                            <img src="https://futuretopindia.in/image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3">
-                        </a>
-                        <a href="https://futuretopindia.in/">		
-                            <i> 
-                            <span class="font-bold text-xl">FTI • Pvt Ltd </span>
-                            </i>
-                        </a>
+                        <a href="https://futuretopindia.in/"><img src="https://blogs.futuretopindia.in/images/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3"></a>
+                        <a href="https://futuretopindia.in/"><i class="not-italic"><span class="font-bold text-xl">FTI • Pvt Ltd</span></i></a>
                     </div>
-                    <i>	             
-                        <p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p>         
-                    </i>
+                    <i class="not-italic"><p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p></i>
                 </div>
                 <div class="flex space-x-6">
                     <a href="https://www.facebook.com/share/198qDFavKp/" class="text-gray-400 hover:text-white transition"><i class="fab fa-facebook-f text-xl"></i></a>
@@ -357,135 +181,131 @@
                     <a href="https://www.linkedin.com/in/futuretopindia?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="text-gray-400 hover:text-white transition"><i class="fab fa-linkedin-in text-xl"></i></a>
                 </div>
             </div>
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 border-t border-gray-700 mt-8 pt-6">
-                <div>
-                    <span class="font-bold text-xl">Quick Links:</span>	
-                    <div class="space-y-2 mt-4">
-                        <a href="https://futuretopindia.in/" class="text-blue-400 hover:underline hover:text-blue-300 block">Home</a>
-                        <a href="https://futuretopindia.in/about" class="text-blue-400 hover:underline hover:text-blue-300 block">About</a>
-                        <a href="https://futuretopindia.in/contact" class="text-blue-400 hover:underline hover:text-blue-300 block">Contact Us</a>
-                        <a href="https://futuretopindia.in/blog" class="text-blue-400 hover:underline hover:text-blue-300 block">Blogs</a>
-                    </div>
+            <br>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Quick Links:</span>
+                <div class="container mx-auto space-y-2 mt-4 mb-3">
+                    <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline hover:text-blue-300 block">Home</a>
+                    <a href="https://futuretopindia.in/about" class="text-blue-500 hover:underline hover:text-blue-300 block">About</a>
+                    <a href="https://futuretopindia.in/contact" class="text-blue-500 hover:underline hover:text-blue-300 block">Contact Us</a>
+                    <a href="https://blogs.futuretopindia.in" class="text-blue-500 hover:underline hover:text-blue-300 block">Blogs</a>
                 </div>
-                <div>
-                    <span class="font-bold text-xl">Important Links:</span>
-                    <div class="space-y-2 mt-4">
-                        <a href="https://futuretopindia.in/FAQ" class="text-blue-400 hover:underline hover:text-blue-300 block">FAQs</a>
-                        <a href="https://futuretopindia.in/technologies" class="text-blue-400 hover:underline hover:text-blue-300 block">Technologies</a>
-                        <a href="https://futuretopindia.in/portfolio" class="text-blue-400 hover:underline hover:text-blue-300 block">Our Portfolio</a>
-                        <a href="https://futuretopindia.in/privacy" class="text-blue-400 hover:underline hover:text-blue-300 block">Privacy Policy</a>
-						<a href="https://futuretopindia.in/termsandconditions" class="text-blue-500 hover:underline hover:text-blue-300 block">Terms and Conditions</a>
-                    </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-2 text-white-500">
+                <span class="font-bold text-xl">Important Links:</span>
+                <div class="container mx-auto space-y-2 mt-4">
+                    <a href="https://futuretopindia.in/FAQ" class="text-blue-500 hover:underline hover:text-blue-300 block">FAQs</a>
+                    <a href="https://futuretopindia.in/helps" class="text-blue-500 hover:underline hover:text-blue-300 block">Helps</a>
+                    <a href="https://futuretopindia.in/technologies" class="text-blue-500 hover:underline hover:text-blue-300 block">Technologies</a>
+                    <a href="https://futuretopindia.in/portfolio" class="text-blue-500 hover:underline hover:text-blue-300 block">Our Portfolio</a>
+                    <a href="https://futuretopindia.in/privacy" class="text-blue-500 hover:underline hover:text-blue-300 block">Privacy Policy</a>
+                    <a href="https://futuretopindia.in/termsandconditions" class="text-blue-500 hover:underline hover:text-blue-300 block">Terms and Conditions</a>
                 </div>
             </div>
             <div class="border-t border-gray-700 mt-8 pt-8 text-center text-gray-400">
-                <p>©2022-25 by 
-                <a href="http://futuretopindia.in/" class="text-blue-400 hover:underline">Future Top India</a>
-                | All Rights Reserved.</p>
+                <p>©2022-25 by <a href="https://futuretopindia.in/" class="text-blue-500 hover:underline">Future Top India</a> | All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
     <script>
         const blogs = [
-			{
-                title: "AI Companions & Virtual Assistants: The Future of Human Interaction",
-                desc: "AI companions ab sirf simple commands ke liye nahi hain. Ye evolve hokar personalized, empathetic partners ban rahe hain. Hum ek aise future ki taraf badh rahe hain jahan AI sirf ek tool nahi, balki ek dost hoga.",
-                image: "https://futuretopindia.in/image/ai-companions-guide.png",
-                link: "https://futuretopindia.in/blogs/AI-Companions-and-Virtual-Assistants-Future-of-Human-Interaction-Future-Top-India"
-            }, 
-			{
-                title: "Why Every Future Pharmacist Should Learn Programming & Software Development",
-                desc: "AI aur digital health ke zamaane me pharmacist ki role sirf medicines dispense karne tak limited nahi raha. Aaj ke future pharmacist ko data samajhna, clinical systems ke sath kaam karna, aur chhote-mote automation banana bhi aana chahiye.",
-                image: "https://futuretopindia.in/image/pharmacist-programming-guide.png",
-                link: "https://futuretopindia.in/blogs/Why-Every-Future-Pharmacist-Should-Learn-Programming-&-Software-Development—Hinglish-Guide-Future-Top-India"
-            },
-
-		    {
-                title: "Explain AI System Hinglish Guide by Future Top India",
-                desc: "Systems that learn from data and perform tasks jinke liye normal computers me explicit rules likhne padte. Yaha learning automated hoti hai.",
-                image: "https://futuretopindia.in/image/ai-system-cover.png",
-                link: "https://futuretopindia.in/blogs/Explain-AI-System—Hinglish-Guide"
-            },
             {
                 title: "Education App Development in India",
                 desc: "Education App Development in India: How Much Does It Cost to Develop an Education App in India?",
-                image: "https://futuretopindia.in/image/blog1.png",
-                link: "https://futuretopindia.in/blogs/Education App Development in India"
+                image: "https://blogs.futuretopindia.in/images/blog1.png",
+                link: "https://blogs.futuretopindia.in/Education App Development in India"
             },
             {
                 title: "How We Build Modern Application",
                 desc: "Discover our approach to building websites, apps and tools using the latest technologies.",
-                image: "https://futuretopindia.in/image/blog2.png",
-                link: "https://futuretopindia.in/blogs/How We Build Modern Applications"
+                image: "https://blogs.futuretopindia.in/images/blog2.png",
+                link: "https://blogs.futuretopindia.in/How We Build Modern Applications"
             },
             {
                 title: "Best Payment Gateways for Indian & Global Sellers",
                 desc: "Having a reliable payment gateway helps you accept payments securely, build trust with customers, and avoid delays. Whether you're a freelancer, store owner, or SaaS business, the right gateway makes a huge difference.",
-                image: "https://futuretopindia.in/image/pg.webp",
-                link: "https://futuretopindia.in/blogs/best-payment-gateways"
+                image: "https://blogs.futuretopindia.in/images/pg.webp",
+                link: "https://blogs.futuretopindia.in/best-payment-gateways"
             },
             {
                 title: "💸 Money Transfer App Development Guide (2025)",
                 desc: "In today’s fast-paced digital economy, the ability to send and receive money instantly through mobile apps has become not just a convenience, but a necessity.",
-                image: "https://futuretopindia.in/image/money-transfer-app.jpg",
-                link: "https://futuretopindia.in/blogs/money-transfer-app"
+                image: "https://blogs.futuretopindia.in/images/money-transfer-app.jpg",
+                link: "https://blogs.futuretopindia.in/money-transfer-app"
             },
             {
                 title: "E‑Commerce Website Kaise Banaye — Step-by-Step Guide to Start Your Online Store in 2025",
                 desc: "Future Top India की पूरी guide — Domain, Hosting, Platform, Product Sourcing, Payments, SEO, Marketing और Scale करने तक।",
-                image: "https://futuretopindia.in/image/blog4.png",
-                link: "https://futuretopindia.in/blogs/e-commerce Website Kaise Banaye"
+                image: "https://blogs.futuretopindia.in/images/blog4.png",
+                link: "https://blogs.futuretopindia.in/e-commerce Website Kaise Banaye"
             },
             {
                 title: "Why Every Business Needs a Mobile App in 2025",
                 desc: "आज के customers सिर्फ website नहीं, एक personalized mobile experience चाहते हैं। चाहे आप e-commerce, education, healthcare या services में हों — mobile app आपकी reach, engagement और sales बढ़ाता है।",
-                image: "https://futuretopindia.in/image/blog5.png",
-                link: "https://futuretopindia.in/blogs/Why-Every-Business-Needs-Mobile-App"
+                image: "https://blogs.futuretopindia.in/images/blog5.png",
+                link: "https://blogs.futuretopindia.in/Why-Every-Business-Needs-Mobile-App"
             },
             {
                 title: "SEO for Beginners: How to Rank Your Website (2025)",
                 desc: "SEO (Search Engine Optimization) का मतलब है आपकी website को ऐसा optimize करना कि Google जैसे search engines उसे आसानी से समझें और users की queries के लिए ऊपर दिखाएँ।",
-                image: "https://futuretopindia.in/image/blog6.png",
-                link: "https://futuretopindia.in/blogs/SEO-for-Beginners-How-to-Rank-Your-Website-(2025)"
+                image: "https://blogs.futuretopindia.in/images/blog6.png",
+                link: "https://blogs.futuretopindia.in/SEO-for-Beginners-How-to-Rank-Your-Website-(2025)"
+            },
+            {
+                title: "Explain AI System Hinglish Guide by Future Top India",
+                desc: "Systems that learn from data and perform tasks jinke liye normal computers me explicit rules likhne padte. Yaha learning automated hoti hai.",
+                image: "https://blogs.futuretopindia.in/images/ai-system-cover.png",
+                link: "https://blogs.futuretopindia.in/Explain-AI-System—Hinglish-Guide"
             },
             {
                 title: "How to Secure Your Website from Hackers — Hinglish Full Guide",
                 desc: "Website security ke basics se lekar advanced tips tak — SSL, Firewall, Encryption, Monitoring sab kuch. by Future Top India",
-                image: "https://futuretopindia.in/image/website-security-cover.png",
-                link: "https://futuretopindia.in/blogs/How-to-Secure-Your-Website-from-Hackers—Hinglish-Guide"
+                image: "https://blogs.futuretopindia.in/images/website-security-cover.png",
+                link: "https://blogs.futuretopindia.in/How-to-Secure-Your-Website-from-Hackers—Hinglish-Guide"
             },
             {
                 title: "The Role of AI in Healthcare, Finance, and Education — Hinglish Full Guide",
                 desc: "Artificial Intelligence (AI) ne technology ki duniya ko badal diya hai. Healthcare, Finance aur Education jaise sectors me AI ka use din-ba-din badh raha hai.",
-                image: "https://futuretopindia.in/image/ai-health-finance-education.png",
-                link: "https://futuretopindia.in/blogs/The-Role-of-AI-in-Healthcare,-Finance,-and-Education—Hinglish-Full-Guide"
+                image: "https://blogs.futuretopindia.in/images/ai-health-finance-education.png",
+                link: "https://blogs.futuretopindia.in/The-Role-of-AI-in-Healthcare,-Finance,-and-Education—Hinglish-Full-Guide"
+            },
+            {
+                title: "Why Every Future Pharmacist Should Learn Programming & Software Development",
+                desc: "AI aur digital health ke zamaane me pharmacist ki role sirf medicines dispense karne tak limited nahi raha. Aaj ke future pharmacist ko data samajhna, clinical systems ke sath kaam karna, aur chhote-mote automation banana bhi aana chahiye.",
+                image: "https://blogs.futuretopindia.in/images/pharmacist-programming-guide.png",
+                link: "https://blogs.futuretopindia.in/Why-Every-Future-Pharmacist-Should-Learn-Programming-&-Software-Development—Hinglish-Guide-Future-Top-India"
             },
             {
                 title: "The Role of UI/UX in Mobile App Development — Hinglish Guide",
                 desc: "UI (User Interface) = app ka look & feel: colors, buttons, typography. UX (User Experience) = user ko app use karte time jo feeling aati hai, kitna easy aur smooth hai.",
-                image: "https://futuretopindia.in/image/ui-ux-mobile-app-guide.png",
-                link: "https://futuretopindia.in/blogs/The-Role-of-UI&UX-in-Mobile-App-Development—Hinglish-Guide-Future-Top-India"
+                image: "https://blogs.futuretopindia.in/images/ui-ux-mobile-app-guide.png",
+                link: "https://blogs.futuretopindia.in/The-Role-of-UI&UX-in-Mobile-App-Development—Hinglish-Guide-Future-Top-India"
             },
             {
                 title: "How to Build a Career in Software Development from Zero — Hinglish Guide",
                 desc: "Software development aaj ki high-demand skill hai. Aap chahe student ho, non-tech background se ho, ya career switch kar rahe ho — sahi roadmap se aap 6–12 months me entry-level role crack kar sakte ho.",
-                image: "https://futuretopindia.in/image/software-career-from-zero.png",
-                link: "https://futuretopindia.in/blogs/How-to-Build-a-Career-in-Software-Development-from-Zero—Hinglish-Guide-Future-Top-India"
+                image: "https://blogs.futuretopindia.in/images/software-career-from-zero.png",
+                link: "https://blogs.futuretopindia.in/How-to-Build-a-Career-in-Software-Development-from-Zero—Hinglish-Guide-Future-Top-India"
             },
             {
                 title: "From Basics to Advanced: The Ultimate Cybersecurity Guide",
                 desc: "Cybersecurity basically aapke digital assets—jaise computer, phone, data, aur networks—ko chori, damage, ya unauthorized access se bachane ki practice hai.",
-                image: "https://futuretopindia.in/image/ultimate-cybersecurity-guide.png",
-                link: "https://futuretopindia.in/blogs/From-Basics-to-Advanced-The-Ultimate-Cybersecurity-Guide—Hinglish-Future-Top-India"
+                image: "https://blogs.futuretopindia.in/images/ultimate-cybersecurity-guide.png",
+                link: "https://blogs.futuretopindia.in/From-Basics-to-Advanced-The-Ultimate-Cybersecurity-Guide—Hinglish-Future-Top-India"
             },
             {
                 title: "Career Opportunities for B.Sc Nursing Students in Health IT & Software Development",
                 desc: "Health IT yani healthcare me information technology ka use — EHR/EMR systems, e-prescriptions, telemedicine, patient portals, etc. Objective: better care, safer workflows, data-driven decisions.",
-                image: "https://futuretopindia.in/image/bsc-nursing-health-it-guide.png",
-                link: "https://futuretopindia.in/blogs/Career-Opportunities-for-B.Sc-Nursing-Students-in-Health-IT-&-Software-Development-Future-Top-India"
-            }
-            
+                image: "https://blogs.futuretopindia.in/images/bsc-nursing-health-it-guide.png",
+                link: "https://blogs.futuretopindia.in/Career-Opportunities-for-B.Sc-Nursing-Students-in-Health-IT-&-Software-Development-Future-Top-India"
+            },
+            {
+                title: "AI Companions & Virtual Assistants: The Future of Human Interaction",
+                desc: "AI companions ab sirf simple commands ke liye nahi hain. Ye evolve hokar personalized, empathetic partners ban rahe hain. Hum ek aise future ki taraf badh rahe hain jahan AI sirf ek tool nahi, balki ek dost hoga.",
+                image: "https://blogs.futuretopindia.in/images/ai-companions-guide.png",
+                link: "https://blogs.futuretopindia.in/AI-Companions-and-Virtual-Assistants-Future-of-Human-Interaction-Future-Top-India"
+            } 
         ];
 
         const container = document.getElementById("blogList");
@@ -503,63 +323,9 @@
             container.appendChild(blogCard);
         });
     </script>
-
-
-
-	<script>
-
-
-        // --- Navbar Scroll Logic ---
-        const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // --- Mobile Menu Logic ---
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const menuOverlay = document.getElementById('menu-overlay');
-        function toggleMenu() {
-            document.body.classList.toggle('menu-active');
-        }
-        menuBtn.addEventListener('click', toggleMenu);
-        closeMenuBtn.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // --- Smooth Scrolling for Anchor Links ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetElement = document.querySelector(this.getAttribute('href'));
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-
-    </script>
-
-			
-
-			
 </body>
+
 </html>
-
-
-
-
-
-
-
-
-
-
-
 
 
 
