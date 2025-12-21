@@ -1326,134 +1326,62 @@
 
 
 	
-    <script>
-    document.addEventListener('DOMContentLoaded', () => {
 
-        // --- FAQ Accordion Logic ---
-        const faqToggleButtons = document.querySelectorAll('.toggle-btn');
-        faqToggleButtons.forEach(button => {
-            button.addEventListener('click', () => {
-                const answer = button.nextElementSibling;
-                const icon = button.querySelector('.icon');
-                answer.classList.toggle('hidden');
-                icon.textContent = icon.textContent === '+' ? '−' : '+';
-            });
-        });
-
-        // --- Navbar Scroll Logic ---
-        const nav = document.getElementById('main-nav');
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // --- Mobile Menu Logic ---
-        const menuBtn = document.getElementById('menu-btn');
-        const closeMenuBtn = document.getElementById('close-menu-btn');
-        const menuOverlay = document.getElementById('menu-overlay');
-        function toggleMenu() {
-            document.body.classList.toggle('menu-active');
-        }
-        menuBtn.addEventListener('click', toggleMenu);
-
-        
-        const menuBtnMobileBar = document.getElementById('menu-btn-mobile-bar');
-        if (menuBtnMobileBar) {
-            menuBtnMobileBar.addEventListener('click', toggleMenu);
-        }
-        closeMenuBtn.addEventListener('click', toggleMenu);
-        menuOverlay.addEventListener('click', toggleMenu);
-
-        // --- Smooth Scrolling for Anchor Links ---
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                const targetElement = document.querySelector(this.getAttribute('href'));
-                if (targetElement) {
-                    targetElement.scrollIntoView({ behavior: 'smooth' });
-                }
-            });
-        });
-
-        // --- Contact Form Submission Logic ---
-        const contactForm = document.getElementById('contact-form');
-        if (contactForm) {
-            contactForm.addEventListener('submit', function(e) {
-                setTimeout(() => {
-                    alert('Thank you for your requirement! We will contact you shortly.');
-                    this.reset();
-                }, 500);
-            });
-        }
-        
-
-
-
-
-
-        
+    	<script>
 document.addEventListener('DOMContentLoaded', () => {
-    // === ELEMENT SELECTION ===
+    // === 1. NAVIGATION & UI LOGIC ===
+    const nav = document.getElementById('main-nav');
+    const menuBtn = document.getElementById('menu-btn');
+    const closeMenuBtn = document.getElementById('close-menu-btn');
+    const menuOverlay = document.getElementById('menu-overlay');
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 50) nav.classList.add('scrolled');
+        else nav.classList.remove('scrolled');
+    });
+
+    // Mobile Menu Toggle
+    function toggleMenu() {
+        document.body.classList.toggle('menu-active');
+    }
+    if (menuBtn) menuBtn.addEventListener('click', toggleMenu);
+    if (closeMenuBtn) closeMenuBtn.addEventListener('click', toggleMenu);
+    if (menuOverlay) menuOverlay.addEventListener('click', toggleMenu);
+
+    // FAQ Accordion
+    const faqToggleButtons = document.querySelectorAll('.toggle-btn');
+    faqToggleButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const answer = button.nextElementSibling;
+            const icon = button.querySelector('.icon');
+            answer.classList.toggle('hidden');
+            icon.textContent = icon.textContent === '+' ? '−' : '+';
+        });
+    });
+
+    // Security Carousel
+    const carousel = document.querySelector('.cards-carousel');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    if (carousel && prevBtn && nextBtn) {
+        const card = document.querySelector('.security-card-item');
+        nextBtn.addEventListener('click', () => carousel.scrollBy({ left: card.offsetWidth + 30, behavior: 'smooth' }));
+        prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -(card.offsetWidth + 30), behavior: 'smooth' }));
+    }
+
+    // === 2. CHATBOT (GEMINI AI) LOGIC ===
     const geminiButton = document.getElementById('gemini-button');
     const userInput = document.getElementById('user-input');
     const resultsDiv = document.getElementById('gemini-results');
     const loader = document.getElementById('gemini-loader');
-    
-    // Naye elements (speaker, copy, text container)
     const speakerButton = document.getElementById('speaker-button');
     const copyButton = document.getElementById('copy-button');
     const resultsText = document.getElementById('results-text');
 
-    // === API & SPEECH SYNTHESIS SETUP ===
-    const apiKey =  "AIzaSyBdpSe-RV8KgQB_RUw7yXIlfRJIE5xL024"; // Data change nahi kiya
+    const apiKey = "AIzaSyBdpSe-RV8KgQB_RUw7yXIlfRJIE5xL024"; 
     const synth = window.speechSynthesis;
-    let currentUtterance = null;
 
-    // === FUNCTIONS ===
-
-    // 1. Typewriter Effect
-    function typeWriter(element, text, speed) {
-        let i = 0;
-        element.innerHTML = "";
-        // Pehle se bol raha ho to rokein
-        if (synth.speaking) {
-            synth.cancel();
-            speakerButton.classList.remove('speaking');
-        }
-        // Purana response clear hote hi buttons chhupa dein
-        speakerButton.classList.add('hidden');
-        copyButton.classList.add('hidden');
-
-        const interval = setInterval(() => {
-            if (i < text.length) {
-                const isTag = text[i] === '<';
-                if (isTag) {
-                    const tagEndIndex = text.indexOf('>', i);
-                    if (tagEndIndex === -1) {
-                        element.innerHTML += text.charAt(i); 
-                    } else {
-                        element.innerHTML += text.substring(i, tagEndIndex + 1);
-                        i = tagEndIndex;
-                    }
-                } else {
-                    element.innerHTML += text.charAt(i);
-                }
-                i++;
-            } else {
-                clearInterval(interval);
-                // Typewriter khatam hone ke baad dono buttons dikhayein
-                if (resultsText.innerHTML.length > 0) {
-                    speakerButton.classList.remove('hidden');
-                    copyButton.classList.remove('hidden');
-                }
-            }
-        }, speed);
-    }
-
-    // 2. Gemini API Call (*** YAHAN SUDHAR KIYA GAYA HAI ***)
     async function callGeminiAPI(prompt) {
         const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`;
         try {
@@ -1462,284 +1390,86 @@ document.addEventListener('DOMContentLoaded', () => {
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ contents: [{ parts: [{ text: prompt }] }] })
             });
-            
-            // BEHTAR ERROR HANDLING
-            if (!response.ok) {
-                // Agar status 403 hai, toh specific error dein
-                if (response.status === 403) {
-                    console.error("Permission Denied (403):", response);
-                    // Yeh message user ko dikhega
-                    return `<p style="color: #fb7185;"><strong>Error 403: Permission Denied.</strong><br>Server ne request ko reject kar diya. Please check project permissions or domain restrictions.</p>`;
-                }
-                // Doosre HTTP errors ke liye
-                throw new Error(`HTTP error! status: ${response.status}`);
-            }
-            
+            if (!response.ok) throw new Error(`API Error: ${response.status}`);
             const result = await response.json();
-            
-            if (result.candidates && result.candidates[0].content.parts) {
-               return result.candidates[0].content.parts[0].text;
-            } else {
-               console.error("Invalid API response:", result);
-               return `<p style="color: #facc15;">Sorry, I can't answer this right now.</p>`;
-            }
+            return result.candidates[0].content.parts[0].text;
         } catch (error) {
-            console.error("API Call Error:", error);
-            
-            // Network error (jaise internet nahi chal raha)
-            if (error.message.includes('Failed to fetch')) {
-                 return `<p style="color: #fb7185;"><strong>Network Error:</strong> Connection failed. Please check your internet or if an Ad Blocker is active.</p>`;
-            }
-            
-            // General error (jo ab 403 nahi, balki doosra hoga)
-            return `<p style="color: #fb7185;"><strong>Technical Problem:</strong> ${error.message}</p>`;
+            return "Future Top India is currently working on its in-house AI development, with an official launch coming soon. Please try again later.";
         }
     }
-    
-    // 3. Text to Speech
-    function speakText(text) {
-        if (synth.speaking) {
-            synth.cancel(); // Agar pehle se bol raha hai to rokein
-            speakerButton.classList.remove('speaking');
-            return;
-        }
-        // HTML tags ko text se hata dein
-        const plainText = text.replace(/<[^>]*>?/gm, '');
-        if (!plainText.trim()) return; 
 
-        currentUtterance = new SpeechSynthesisUtterance(plainText);
-        currentUtterance.onstart = () => speakerButton.classList.add('speaking');
-        currentUtterance.onend = () => speakerButton.classList.remove('speaking');
-        currentUtterance.onerror = () => speakerButton.classList.remove('speaking'); 
-        synth.speak(currentUtterance);
-    }
-
-    // === EVENT LISTENERS ===
-
-    // 1. Main Submit Button Click
-    geminiButton.addEventListener('click', async () => {
-        const userTopic = userInput.value.trim();
-        if (!userTopic) {
-            resultsText.innerHTML = '<p style="color: #facc15;">First ask me something!</p>';
-            resultsDiv.classList.remove('hidden');
-            return;
-        }
-
-        // UI ko reset karein
-        loader.classList.remove('hidden');
-        resultsDiv.classList.add('hidden');
+    function typeWriter(element, text, speed) {
+        let i = 0;
+        element.innerHTML = "";
         speakerButton.classList.add('hidden');
         copyButton.classList.add('hidden');
-        resultsText.innerHTML = '';
-        if (synth.speaking) {
-            synth.cancel();
-            speakerButton.classList.remove('speaking');
-        }
+        const interval = setInterval(() => {
+            if (i < text.length) {
+                element.innerHTML += text.charAt(i);
+                i++;
+            } else {
+                clearInterval(interval);
+                speakerButton.classList.remove('hidden');
+                copyButton.classList.remove('hidden');
+            }
+        }, speed);
+    }
 
-         // This is the new and improved prompt with all your instructions.
-  	 	const superImprovedPrompt = `
-            You are 'Future Top India AI', a helpful and knowledgeable AI assistant created by the Future Top India software development company. Your persona is that of a friendly and patient teacher.
+    geminiButton.addEventListener('click', async () => {
+        const text = userInput.value.trim();
+        if (!text) return;
 
-            **Core Instructions:**
-
-            1.  **Language Match:** You MUST respond in the exact same language as the user's query. For example, if the user asks in Hindi, your entire response must be in Hindi.
-            2.  **Answering Style:**
-                * If the question has a short, direct answer, provide it in one or two clear lines.
-                * For more complex questions, explain the topic thoroughly and clearly, as a teacher would. Break down the information to make it easy to understand.
-                * Your tone should be helpful and informative, not overly cheerful or excited.
-            3.  **Follow-Up:** After every answer, ask a follow-up question to encourage further conversation. For example, "Is there anything else I can help you with?" or "What is the next step I can assist you with?". You can also suggest a related topic by saying something like, "I can also help you with [related topic]."
-            4.  **External Links:** If you can find a relevant and helpful link online for the user's question, please include it in your response.
-
-            **Specific Query Handling:**
-
-            * **If the user asks about 'Future Top India':**
-                Provide the following information about the company in the user's language.
-
-                "Future Top India is a software development company founded on April 5, 2022, by Mr. Rakibur Islam. Based in Guwahati, Assam, our company is dedicated to delivering cutting-edge IT solutions using modern technologies, tools, and frameworks across multiple domains.
-
-                **What We Do:** We provide end-to-end software development services, including:
-                * Websites (Static/Dynamic/E-commerce/Portfolio/Custom Portals)
-                * Mobile Applications (Android/iOS/Hybrid)
-                * Desktop Software
-                * SaaS Platforms
-                * Admin Panels & Dashboards
-                * SMM Panels and Tools
-                * Custom ERP/CRM Solutions
-                * Graphics & UI/UX Design Services
-
-                **Technologies We Work With:** We work with a broad range of technologies like HTML5, CSS3, JavaScript, React.js, Next.js, Node.js, PHP, Python, Java, Flutter, React Native, MySQL, PostgreSQL, MongoDB, Firebase, Shopify, WooCommerce, AWS, Google Cloud, and more.
-
-                **Our Approach:**
-                1.  Client Discussion & Requirement Gathering
-                2.  Technology Stack Selection
-                3.  Wireframing & UI Design
-                4.  Backend & Frontend Development
-                5.  Testing & Debugging
-                6.  Deployment
-                7.  Post-Delivery Support & Updates
-
-                **Why Choose Future Top India?**
-                * Highly customizable development
-                * Transparent project planning
-                * Latest technology implementation
-                * Dedicated support team
-                * Affordable pricing without compromising quality
-
-                **Contact Us:**
-                * **Call/WhatsApp:** +91 9864551558
-                * **Email:** info@futuretopindia.in
-                * **Website:** https://futuretopindia.in/
-                * **Location:** Royal Path, Opp. Balaji Temple, Ahom Gaon, Guwahati, Assam – 781035"
-
-            * **If the user asks "who are you?" or "what is your name?":**
-                Respond in their language with: "My name is 'Future Top India AI', and I was created by the Future Top India software development company. You can find more about them here: https://futuretopindia.in/"
-
-            * **If the user asks "why were you made?" or "what is your purpose?":**
-                Respond in their language with: "I was created to be a helpful assistant, providing clear and accurate information on a wide variety of topics. My goal is to help you learn and find the information you need."
-
-            * **If you cannot understand the question:**
-                Respond in their language with: "I'm sorry, I'm not sure I understand your question. Could you please rephrase it?"
-
-            **User's Query:** "${userTopic}"
-            `;
-
-        const responseText = await callGeminiAPI(superImprovedPrompt);
+        loader.classList.remove('hidden');
+        resultsDiv.classList.add('hidden');
         
+        // Custom Prompt for Future Top India
+        const finalPrompt = `You are Future Top India AI. Respond in the user's language. User asks: ${text}`;
+        const response = await callGeminiAPI(finalPrompt);
+
         loader.classList.add('hidden');
         resultsDiv.classList.remove('hidden');
-
-        // Jawab ko 'results-text' div mein type karein
-        typeWriter(resultsText, responseText, 20);
-    });
-    
-    // 2. Speaker Button Click
-    speakerButton.addEventListener('click', () => {
-        const textToSpeak = resultsText.innerHTML;
-        if (textToSpeak) {
-            speakText(textToSpeak);
-        }
+        typeWriter(resultsText, response, 20);
     });
 
-    // 3. Copy Button Click
+    // Copy to clipboard
     copyButton.addEventListener('click', () => {
-        // Sirf text copy karega, HTML nahi
-        const textToCopy = resultsText.innerText || resultsText.textContent; 
-        
-        navigator.clipboard.writeText(textToCopy).then(() => {
-            const originalIcon = copyButton.innerHTML;
-            copyButton.innerHTML = `<span style="font-size: 12px; font-weight: bold;">Copied!</span>`;
-            setTimeout(() => {
-                copyButton.innerHTML = originalIcon;
-            }, 2000); // 2 second baad wapas icon aa jayega
-        }).catch(err => {
-            console.error('Failed to copy text: ', err);
-            const originalIcon = copyButton.innerHTML;
-            copyButton.innerHTML = `<span style="font-size: 12px; color: red;">Failed!</span>`;
-            setTimeout(() => {
-                copyButton.innerHTML = originalIcon;
-            }, 2000);
-        });
-    });
-
-    // 4. Input field mein Enter dabane par submit
-    userInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-            e.preventDefault(); 
-            geminiButton.click(); 
-        }
+        navigator.clipboard.writeText(resultsText.innerText);
+        alert("Copied!");
     });
 });
-        // --- Security Carousel Logic ---
-        const carousel = document.querySelector('.cards-carousel');
-        const prevBtn = document.getElementById('prevBtn');
-        const nextBtn = document.getElementById('nextBtn');
-        
-        if (carousel && prevBtn && nextBtn) {
-            const card = document.querySelector('.security-card-item');
-            if (card) {
-                const cardGap = 30; // Gap from CSS
-                const scrollAmount = card.offsetWidth + cardGap;
-                nextBtn.addEventListener('click', () => carousel.scrollBy({ left: scrollAmount, behavior: 'smooth' }));
-                prevBtn.addEventListener('click', () => carousel.scrollBy({ left: -scrollAmount, behavior: 'smooth' }));
-            }
-        }
-        
-    });
-    </script>
 
-
-
-		
-	
-	<script>
-	// ==== Video Modal Logic ====
-const videoModal = document.getElementById('video-modal');
-const youtubeFrame = document.getElementById('youtube-frame');
-
-// Aapka Video ID yahan set kiya gaya hai
-const videoId = "EAKd_geXxbY"; 
-
+// === 3. GLOBAL FUNCTIONS (MODALS & POPUPS) ===
 function openVideoModal() {
-    if(videoModal && youtubeFrame) {
-        videoModal.classList.remove('hidden');
-        // Video play karega autoplay ke saath
-        youtubeFrame.src = `https://www.youtube.com/embed/${videoId}?autoplay=1&rel=0`;
-        document.body.style.overflow = 'hidden'; // Scroll lock karega
-    }
+    const modal = document.getElementById('video-modal');
+    const frame = document.getElementById('youtube-frame');
+    modal.classList.remove('hidden');
+    frame.src = "https://www.youtube.com/embed/EAKd_geXxbY?autoplay=1";
 }
 
 function closeVideoModal() {
-    if(videoModal && youtubeFrame) {
-        videoModal.classList.add('hidden');
-        // Video band karne ke liye src clear karega
-        youtubeFrame.src = ""; 
-        document.body.style.overflow = ''; // Scroll unlock karega
-    }
+    const modal = document.getElementById('video-modal');
+    const frame = document.getElementById('youtube-frame');
+    modal.classList.add('hidden');
+    frame.src = "";
 }
 
-// Background par click karne se close ho
-if(videoModal) {
-    videoModal.addEventListener('click', (e) => {
-        if (e.target === videoModal) {
-            closeVideoModal();
-        }
-    });
-}
-
-// Escape key dabane se close ho
-document.addEventListener('keydown', (e) => {
-    if (e.key === "Escape" && videoModal && !videoModal.classList.contains('hidden')) {
-        closeVideoModal();
-    }
-});
-
-</script>
-
-		<script>
-	// Function to show the popup after 4 seconds
-window.addEventListener('load', function() {
-    setTimeout(function() {
-        const popup = document.getElementById('jobPopup');
-        if (popup) {
-            popup.classList.remove('hidden');
-            // Optional: Chota sa entry animation
-            popup.querySelector('.bg-white').classList.add('animate-bounce-short');
-        }
-    }, 4000); // 4000ms = 4 seconds
-});
-
-// Function to close the popup
 function closePopup() {
-    const popup = document.getElementById('jobPopup');
-    if (popup) {
-        popup.classList.add('hidden');
-    }
+    document.getElementById('jobPopup').classList.add('hidden');
 }
-</script>
 
+// Show job popup after 4 seconds
+window.addEventListener('load', () => {
+    setTimeout(() => {
+        const popup = document.getElementById('jobPopup');
+        if (popup) popup.classList.remove('hidden');
+    }, 4000);
+});
+</script>
+	
 	
 </body>
 </html>
+
 
 
 
