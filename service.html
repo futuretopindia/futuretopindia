@@ -924,7 +924,58 @@
         </div>
     </section>
 	
+
+
 	
+	
+	
+	
+	
+	
+	
+<div id="jobPopup" class="fixed inset-0 z-50 flex items-center justify-center hidden bg-black bg-opacity-60 px-4">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full overflow-hidden transform transition-all relative">
+        
+        <div class="absolute top-0 left-0 bg-red-500 text-white text-[15px] font-bold px-3 py-1 rounded-br-lg shadow-sm">
+            AD
+        </div>
+
+        <button onclick="closePopup()" class="absolute top-3 right-3 text-gray-900 hover:text-red-500 transition-colors">
+            <i class="fa-solid fa-circle-xmark text-2xl"></i>
+        </button>
+        
+        <div class="p-8 text-center">
+            <div class="bg-blue-50 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-4 border-4 border-white shadow-md">
+                <i class="fa-solid fa-briefcase text-3xl text-blue-600"></i>
+            </div>
+            
+            <h2 class="text-2xl font-bold text-gray-800 mb-2">We Are Hiring! 🚀</h2>
+            <p class="text-gray-900 mb-6 leading-relaxed">
+                Hamari team join karein. Nayi job vacancies ab open hain <strong>Future Top India</strong> mein.
+            </p>
+            
+            <a href="https://futuretopindia.in/careers" class="dynamic-login-btn w-full text-center py-3 rounded-xl font-bold block shadow-lg">
+                Check Vacancies
+            </a>
+            
+            <button onclick="closePopup()" class="mt-5 text-sm text-gray-400 hover:text-gray-600 transition">
+                No thanks, I'm just reading
+            </button>
+        </div>
+    </div>
+</div>
+	
+	
+	
+	
+	
+	
+	
+	
+
+
+
+		
 
     <hr style="height: 2px; background-color: #4B5563; border: none; width: 100%;">
 
@@ -1046,8 +1097,33 @@
     });
     </script>
 
+	<script>
+	// Function to show the popup after 4 seconds
+window.addEventListener('load', function() {
+    setTimeout(function() {
+        const popup = document.getElementById('jobPopup');
+        if (popup) {
+            popup.classList.remove('hidden');
+            // Optional: Chota sa entry animation
+            popup.querySelector('.bg-white').classList.add('animate-bounce-short');
+        }
+    }, 4000); // 4000ms = 4 seconds
+});
+
+// Function to close the popup
+function closePopup() {
+    const popup = document.getElementById('jobPopup');
+    if (popup) {
+        popup.classList.add('hidden');
+    }
+}
+</script>
+
+		
+
 </body>
 </html>
+
 
 
 
