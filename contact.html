@@ -128,46 +128,8 @@
             pointer-events: auto;
         }
 
-        /* Mobile Menu Styles */
-        #menu-overlay {
-            opacity: 0;
-            visibility: hidden;
-            transition: opacity 0.3s ease-in-out;
-        }
-        body.menu-active #menu-overlay {
-            opacity: 1;
-            visibility: visible;
-        }
-        #mobile-menu-panel {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-            color: #ffffff;
-        }
-        body.menu-active #mobile-menu-panel {
-            transform: translateX(0);
-        }
-        #mobile-menu-panel nav a {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.3s ease, transform 0.3s ease;
-        }
-        body.menu-active #mobile-menu-panel nav a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-         /* Staggered animation delays */
-        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+        
+      
         
     </style>
 </head>
@@ -183,11 +145,11 @@
             <div class="flex items-center justify-between">
                 <a href="https://futuretopindia.in/">
                     <div class="flex items-center">
-                        <img src="image/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
+                        <img src="https://blogs.futuretopindia.in/images/logo.png" alt="Future Top India Company logo" class="h-12 mr-10">
                     </div>
                 </a>
 
-                <div class="hidden lg:flex items-center space-x-8">
+                  <div class="hidden lg:flex items-center space-x-8">
                     <a href="https://futuretopindia.in/" class="desktop-nav-link">Home</a>
                     <a href="https://futuretopindia.in/portfolio" class="desktop-nav-link">Portfolio</a>
                     <a href="https://futuretopindia.in/service" class="desktop-nav-link">Services</a>
@@ -200,8 +162,9 @@
                         </button>
                         <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
                             <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+							<a href="https://futuretopindia.in/careers" class="block px-4 py-2 hover:bg-teal-100">Careers</a>
                             <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
-                            <a href="https://blogs.futuretopindia.in" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://blogs.futuretopindia.in/" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
 						    <a href="https://futuretopindia.in/contact" class="block px-4 py-2 hover:bg-teal-100">Contact Us</a>
                             <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
                             <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
@@ -211,42 +174,11 @@
                         📞 Call Now
                     </a>
                 </div>
-
-                <div class="lg:hidden">
-                    <button id="menu-btn" aria-label="Open menu" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
             </div>
         </div>
     </nav>
 
-    <div id="mobile-menu-container">
-        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
-        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 p-4 z-50">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-bold">Menu</h2>
-                <button id="close-menu-btn" aria-label="Close menu" class="hover:text-white">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col space-y-2">
-                <a href="https://futuretopindia.in/" class="block py-2 rounded px-4">Home</a>
-                <a href="https://futuretopindia.in/portfolio" class="block py-2 rounded px-4">Our Portfolio</a>
-                <a href="https://futuretopindia.in/fti.ai" class="block py-2 rounded px-4">FTI-ai</a>
-                <a href="https://futuretopindia.in/about" class="block py-2 rounded px-4">About Us</a>
-                <a href="https://blogs.futuretopindia.in" class="block py-2 rounded px-4">Blogs</a>
-                <a href="https://futuretopindia.in/FAQ" class="block py-2 rounded px-4">FAQs</a>
-                <a href="https://futuretopindia.in/service" class="block py-2 rounded px-4">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
-                <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
-                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                    📞 Call Now
-                </a>
-            </nav>
-        </div>
-    </div>
+    
 
     <section id="contact" class="gradient-bg text-white px-4 pt-28 pb-20 md:pt-32">
         <div class="container mx-auto">
@@ -274,7 +206,7 @@
                         <div class="flex items-start">
                             <i class="fas fa-map-marker-alt mt-1 mr-4 text-xl"></i>
                             <div>
-                                <h3 class="font-bold text-lg">Visit Us:</h3>
+                                <h3 class="font-bold text-lg">Visit Head Office:</h3>
                                 <p class="text-lg">Royal Path, Opp. Balaji Temple,<br>Ahom Gaon, Guwahati, Assam – 781035</p>
                             </div>
                         </div>
@@ -315,15 +247,53 @@
             </div>
         </div>
     </section>
+	
+	<div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40 border-t border-gray-200">
+         <div class="flex justify-around items-center h-16">
+        
+            <a href="https://futuretopindia.in/" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+            <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            
+            <a href="https://futuretopindia.in/service" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <span class="text-xs mt-1">Service</span>
+            </a>
+            
+            <div style="flex: 1;" class="flex justify-center -mt-6"> 
+                <a href="https://futuretopindia.in/contact" class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-lg mobile-nav-middle-btn hover:bg-blue-700 transition">
+                    <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+                </a>
+            </div>
+            
+            <a href="tel:9864551558" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+                <span class="text-xs mt-1">Call</span>
+            </a>
+            
+            <a href="https://futuretopindia.in/more" class="flex flex-col items-center justify-center text-gray-600 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+                <span class="text-xs mt-1">More</span>
+            </a>
+        
+        </div>
+    </div>
+	
+	
+	
+	
 
     <hr style="height: 2px; background-color: #4B5563; border: none; width: 100%;">
 
-   <footer class="bg-gray-900 text-white py-8 px-4">
+  	
+
+<footer class="bg-gray-900 text-white py-8 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
                     <div class="flex items-center mb-4">
-                        <a href="https://futuretopindia.in/"><img src="image/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3"></a>
+                        <a href="https://futuretopindia.in/"><img src="https://blogs.futuretopindia.in/images/sublogo.png" alt="Future Top India Favicon logo" class="h-10 mr-3"></a>
                         <a href="https://futuretopindia.in/"><i class="not-italic"><span class="font-bold text-xl">FTI • Pvt Ltd</span></i></a>
                     </div>
                     <i class="not-italic"><p class="text-gray-400">One-stop solution for Websites, mobile apps and digital marketing for your brand.</p></i>
@@ -399,5 +369,6 @@
     </script>
 </body>
 </html>
+
 
 
