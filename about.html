@@ -78,10 +78,10 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
         
-        a img:hover {
-            transform: scale(1.2);
-            transition: 0.3s ease;
-        }
+        .desktop-nav-link img:hover, 
+#main-nav img:hover {
+    transform: none !important;
+}
 
         .gradient-bg {
             background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
@@ -89,7 +89,7 @@
         
         .floating-button {
             position: fixed;
-            bottom: 30px;
+            bottom: 110px;
             right: 30px;
             z-index: 50;
             animation: pulse 2s infinite;
@@ -351,51 +351,29 @@
             opacity: 1;
             visibility: visible;
         }
-        #mobile-menu-panel {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: #ffffff;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+		body {
+        padding-bottom: 60px;
+    }
+
+    @media (max-width: 768px) {
+        .container {
+            padding-left: 15px;
+            padding-right: 15px;
         }
-        body.menu-active #mobile-menu-panel {
-            transform: translateX(0);
-        }
-        #mobile-menu-panel h2 { color: #ffffff; }
-        #mobile-menu-panel #close-menu-btn { color: #e0e0e0; }
-        #mobile-menu-panel #close-menu-btn:hover { color: #ffffff; }
-        #mobile-menu-panel nav a {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        #mobile-menu-panel nav a:last-child { border-bottom: none; }
-        #mobile-menu-panel nav a:hover { background-color: rgba(255, 255, 255, 0.1); }
-        body.menu-active #mobile-menu-panel nav a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+		
+		
+		
+        
     </style>
 </head>
 
 <body class="font-sans bg-gray-50">
     
-    <a href="https://wa.me/919864551558" target="_blank" class="floating-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition">
+    <a href="https://wa.me/919864551558" target="_blank" class="floating-button bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 transition" rel="noopener noreferrer">
         <i class="fab fa-whatsapp text-2xl"></i>
     </a>
 
-    <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
+     <nav id="main-nav" class="text-white fixed top-0 w-full z-30 transition-all duration-300 ease-in-out">
         <div class="container mx-auto px-5 py-3">
             <div class="flex items-center justify-between">
                 <a href="https://futuretopindia.in/">
@@ -417,8 +395,9 @@
                         </button>
                         <div class="absolute hidden group-hover:block bg-white text-black py-2 rounded shadow-lg z-50 w-40">
                             <a href="https://futuretopindia.in/about" class="block px-4 py-2 hover:bg-teal-100">About Us</a>
+							<a href="https://futuretopindia.in/careers" class="block px-4 py-2 hover:bg-teal-100">Careers</a>
                             <a href="https://futuretopindia.in/fti.ai" class="block px-4 py-2 hover:bg-teal-100">FTI-ai</a>
-                            <a href="https://blogs.futuretopindia.in" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
+                            <a href="https://blogs.futuretopindia.in/" class="block px-4 py-2 hover:bg-teal-100">Blogs</a>
 						    <a href="https://futuretopindia.in/contact" class="block px-4 py-2 hover:bg-teal-100">Contact Us</a>
                             <a href="https://futuretopindia.in/FAQ" class="block px-4 py-2 hover:bg-teal-100">FAQs</a>
                             <a href="https://futuretopindia.in/privacy" class="block px-4 py-2 hover:bg-teal-100">Privacy Policy</a>
@@ -428,42 +407,11 @@
                         📞 Call Now
                     </a>
                 </div>
-
-                <div class="lg:hidden">
-                    <button id="menu-btn" aria-label="Open menu" class="text-white focus:outline-none">
-                        <i class="fas fa-bars text-2xl"></i>
-                    </button>
-                </div>
+                
             </div>
         </div>
     </nav>
 
-    <div id="mobile-menu-container">
-        <div id="menu-overlay" class="fixed inset-0 bg-black bg-opacity-50 z-40"></div>
-        <div id="mobile-menu-panel" class="fixed top-0 left-0 h-full w-64 p-4 z-50">
-            <div class="flex justify-between items-center mb-6">
-                <h2 class="text-xl font-bold">Menu</h2>
-                <button id="close-menu-btn" aria-label="Close menu" class="hover:text-white">
-                    <i class="fas fa-times text-2xl"></i>
-                </button>
-            </div>
-            <nav class="flex flex-col space-y-2">
-                <a href="https://futuretopindia.in/" class="block py-2 rounded px-4">Home</a>
-                <a href="https://futuretopindia.in/portfolio" class="block py-2 rounded px-4">Our Portfolio</a>
-                <a href="https://futuretopindia.in/fti.ai" class="block py-2 rounded px-4">FTI-ai</a>
-                <a href="https://futuretopindia.in/about" class="block py-2 rounded px-4">About Us</a>
-                <a href="https://blogs.futuretopindia.in" class="block py-2 rounded px-4">Blogs</a>
-                <a href="https://futuretopindia.in/FAQ" class="block py-2 rounded px-4">FAQs</a>
-                <a href="https://futuretopindia.in/service" class="block py-2 rounded px-4">Services</a>
-                <a href="https://futuretopindia.in/technologies" class="block py-2 rounded px-4">Technologies</a>
-                <a href="https://futuretopindia.in/contact" class="block py-2 rounded px-4">Contact Us</a>
-                <a href="https://futuretopindia.in/privacy" class="block py-2 rounded px-4">Privacy Policy</a>
-                <a href="tel:9864551558" class="block mt-4 py-3 bg-green-500 hover:bg-green-600 text-white text-center rounded-full shadow-md px-4">
-                    📞 Call Now
-                </a>
-            </nav>
-        </div> 
-    </div>
 
 <center>
 
@@ -684,7 +632,7 @@ From startups to established enterprises, our expert team combines creativity an
                 </div>
 
                 <div class="md:w-1/2">
-                    <form action="send.php" method="POST" class="bg-white bg-opacity-10 p-8 rounded-lg backdrop-filter backdrop-blur-sm border border-white border-opacity-20">
+                     <form id="contact-form" action="https://formspree.io/f/xnnbynog" method="POST" class="bg-white/10 p-8 rounded-lg backdrop-blur-sm border border-white/20">
                         <div class="mb-4">
                             <label for="name" class="block mb-2 font-medium">Your Name:</label>
                             <input type="text" name="name" id="name" required class="contact-input w-full px-4 py-2 rounded bg-white bg-opacity-20 border border-white border-opacity-30 focus:outline-none focus:bg-opacity-30" placeholder="Enter your name">
@@ -716,7 +664,7 @@ From startups to established enterprises, our expert team combines creativity an
 
    
 
-<footer class="bg-gray-900 text-white py-8 px-4">
+    <footer class="bg-gray-900 text-white py-8 px-4">
         <div class="container mx-auto">
             <div class="flex flex-col md:flex-row justify-between items-center">
                 <div class="mb-6 md:mb-0">
@@ -760,6 +708,45 @@ From startups to established enterprises, our expert team combines creativity an
         </div>
     </footer>
 
+                   <div class="lg:hidden fixed bottom-0 left-0 w-full bg-white z-40" style="box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.08);">
+             <div class="flex justify-around items-center h-16">
+            
+            <a href="https://futuretopindia.in/" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+              <i class="fa-solid fa-house text-xl"></i>
+                <span class="text-xs mt-1">Home</span>
+            </a>
+            
+            <a href="https://futuretopindia.in/service" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-briefcase text-xl"></i>
+                <span class="text-xs mt-1">Service</span>
+            </a>
+            
+<div style="flex: 1;" class="flex justify-center">
+    <a href="https://futuretopindia.in/contact" target="_blank"
+       class="flex items-center justify-center h-14 w-14 bg-blue-600 text-white rounded-full shadow-xl mobile-nav-middle-btn transform -translate-y-6">
+        <i class="fa-solid fa-heart-circle-plus text-2xl"></i>
+    </a>
+</div>
+
+
+            
+            <a href="tel:9864551558" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-phone-volume text-xl"></i>
+                <span class="text-xs mt-1">Call</span>
+            </a>
+            
+            <a href="https://futuretopindia.in/more" class="flex flex-col items-center justify-center text-gray-900 transition-all duration-300 mobile-nav-item" style="flex: 1;">
+                <i class="fa-solid fa-ellipsis text-xl"></i>
+                <span class="text-xs mt-1">More</span>
+            </a>
+            
+        </div>
+    </div>
+
+
+
+
+
 
 
 
@@ -799,6 +786,18 @@ From startups to established enterprises, our expert team combines creativity an
             });
         });
 
+
+     // --- Form submission alert ---
+            const contactForm = document.getElementById('contact-form');
+            if (contactForm) {
+                contactForm.addEventListener('submit', function (e) {
+                    setTimeout(() => {
+                        alert('Thank you for your message! We will contact you shortly.');
+                        this.reset();
+                    }, 500);
+                });
+            }
+        });
 
     </script>
 
