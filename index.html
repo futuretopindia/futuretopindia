@@ -227,85 +227,89 @@
             box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
         }
 
-        /* Service Cards */
-        .card {
-            display: block;
+      /* ==== SERVICE CARD STYLES ==== */
+        .service-card-modern {
             position: relative;
-            background: linear-gradient(to bottom, #c3e6ec, #a7d1d9);
-            border-radius: 10px;
-            padding: 2em 1.2em;
-            text-decoration: none;
-            z-index: 0;
+            background: #fff;
+            border-radius: 20px;
             overflow: hidden;
-            font-family: Arial, Helvetica, sans-serif;
-            width: 100%;
-            max-width: 400px;
+            border: 1px solid #e5e7eb;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
-        .card:before {
-            content: '';
+
+        /* Lift Effect */
+        .service-card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(37, 99, 235, 0.15);
+            border-color: #bfdbfe;
+        }
+
+        /* Top Right Corner Animation (The "Uncommon" Part) */
+        .card-corner-link {
             position: absolute;
-            z-index: -1;
-            top: -16px;
-            right: -16px;
-            background: linear-gradient(135deg, #364a60, #384c6c);
-            height: 32px;
-            width: 32px;
-            border-radius: 32px;
-            transform: scale(1);
-            transform-origin: 50% 50%;
-            transition: transform 0.35s ease-out;
+            top: 0;
+            right: 0;
+            width: 70px;
+            height: 70px;
+            background: #eff6ff; /* Light Blue */
+            border-bottom-left-radius: 100%;
+            transition: all 0.4s ease;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-end;
+            padding: 15px;
+            cursor: pointer;
         }
-        .card:hover:before {
-            transform: scale(28);
+        
+        .card-arrow {
+            font-size: 1.2rem;
+            color: #2563eb;
+            transition: all 0.4s ease;
+            transform: rotate(-45deg); /* Pointing to corner */
+            margin-right: 5px;
+            margin-top: 5px;
         }
-        .card:hover .small-desc {
-            transition: all 0.5s ease-out;
-            color: rgba(255, 255, 255, 0.8);
+
+        /* Hover State for Corner */
+        .service-card-modern:hover .card-corner-link {
+            background: #2563eb; /* Dark Blue */
+            width: 80px; 
+            height: 80px;
         }
-        .card:hover .card-title {
-            transition: all 0.5s ease-out;
-            color: #ffffff;
+        .service-card-modern:hover .card-arrow {
+            color: #fff;
+            transform: rotate(0deg) translate(2px, -2px); /* Arrow straightens out */
         }
-        .card-title {
-            color: #262626;
-            font-size: 1.5em;
-            line-height: normal;
-            font-weight: 700;
-            margin-bottom: 0.5em;
-        }
-        .small-desc {
-            font-size: 1em;
-            font-weight: 400;
-            line-height: 1.5em;
-            color: #452c2c;
-        }
-        .go-corner {
+
+        /* Icon Styling */
+        .modern-icon-box {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #eff6ff 0%, #ffffff 100%);
+            border: 1px solid #dbeafe;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            position: absolute;
-            width: 2em;
-            height: 2em;
-            overflow: hidden;
-            top: 0;
-            right: 0;
-            background: linear-gradient(135deg, #6293c8, #384c6c);
-            border-radius: 0 4px 0 32px;
+            margin-bottom: 20px;
+            font-size: 2rem;
+            color: #2563eb;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 6px rgba(37, 99, 235, 0.05);
         }
-        .go-arrow {
-            margin-top: -4px;
-            margin-right: -4px;
+        .service-card-modern:hover .modern-icon-box {
+            background: #2563eb;
             color: white;
-            font-family: courier, sans;
-        }
-        @media (min-width: 768px) {
-            .card {
-                max-width: 300px;
-                margin: 12px;
-            }
+            transform: rotate(5deg);
         }
 
-        /* AI Card */
+/* ==== END: Amazing Service Card Styles ==== */
+
+      /* AI Card */
         .gemini-ai-card {
             max-width: 500px;
             width: 100%;
@@ -594,41 +598,7 @@
             opacity: 1;
             visibility: visible;
         }
-        #mobile-menu-panel {
-            background: linear-gradient(135deg, #1e3a8a 0%, #2563eb 100%);
-            color: #ffffff;
-            transform: translateX(-100%);
-            transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-        }
-        body.menu-active #mobile-menu-panel {
-            transform: translateX(0);
-        }
-        #mobile-menu-panel h2 { color: #ffffff; }
-        #mobile-menu-panel #close-menu-btn { color: #e0e0e0; }
-        #mobile-menu-panel #close-menu-btn:hover { color: #ffffff; }
-        #mobile-menu-panel nav a {
-            opacity: 0;
-            transform: translateY(15px);
-            transition: opacity 0.3s ease, transform 0.3s ease, background-color 0.2s ease;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        #mobile-menu-panel nav a:last-child { border-bottom: none; }
-        #mobile-menu-panel nav a:hover { background-color: rgba(255, 255, 255, 0.1); }
-        body.menu-active #mobile-menu-panel nav a {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        body.menu-active #mobile-menu-panel nav a:nth-child(1) { transition-delay: 0.15s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(2) { transition-delay: 0.20s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(3) { transition-delay: 0.25s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(4) { transition-delay: 0.30s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(5) { transition-delay: 0.35s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(6) { transition-delay: 0.40s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(7) { transition-delay: 0.45s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(8) { transition-delay: 0.50s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(9) { transition-delay: 0.55s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(10) { transition-delay: 0.60s; }
-        body.menu-active #mobile-menu-panel nav a:nth-child(11) { transition-delay: 0.65s; }
+        
     
         /* ==== START: New CSS for Animated/Stylish Mobile Bar ==== */
         .mobile-nav-item:hover {
@@ -820,77 +790,145 @@
         </div>
     </section>
 
-    <section id="services" class="py-16 px-4 bg-gray-100">
+   
+	
+	
+    <!-- Services Section -->
+     <section id="services" class="py-20 px-4 bg-gray-50">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2"><code class="inline bg-yellow-100">What We Do ?</code></h2>
-            <div class="w-24 h-1 bg-red-500 mx-auto mb-2"></div>
-            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We provide end-to-end software development services tailored to your business needs</p>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 justify-items-center">
-                <div class="card">
-					<a href="https://futuretopindia.in/web-development" class="card block no-underline text-inherit">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-globe text-3xl"></i></div>
-                    <h3 class="card-title">Web Development</h3>
-                    <p class="small-desc">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
-                   <div class="go-corner"><div class="go-arrow">→</div></div>
-				   </a>
-                </div>
-                <div class="card">
-					<a href="https://futuretopindia.in/mobile-app-development" class="card block no-underline text-inherit">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-mobile-alt text-3xl"></i></div>
-                    <h3 class="card-title">Mobile Applications</h3>
-                    <p class="small-desc">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-					</a>
-                </div>
-                <div class="card">
-					<a href="https://futuretopindia.in/seo-optimization?service=seo-optimization" class="card block no-underline text-inherit">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-magnifying-glass"></i></div>
-                    <h3 class="card-title">SEO</h3>
-                    <p class="small-desc">SEO is a set of techniques and strategies aimed at increasing the quantity and quality of traffic to your website from search engines.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-					</a>	
-                </div>
-                <div class="card">
-					<a href="https://futuretopindia.in/desktop-software?service=desktop" class="card block no-underline text-inherit">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-laptop-code text-3xl"></i></div>
-                    <h3 class="card-title">Desktop Software</h3>
-                    <p class="small-desc">Custom desktop applications for Windows, macOS, and Linux platforms.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-					</a>	
-                </div>
-                <div class="card">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-cloud text-3xl"></i></div>
-                    <h3 class="card-title">SaaS Platforms</h3>
-                    <p class="small-desc">Scalable Software-as-a-Service solutions with subscription management.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-                </div>
-                <div class="card">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-chart-line text-3xl"></i></div>
-                    <h3 class="card-title">Admin Panels</h3>
-                    <p class="small-desc">Custom dashboards and admin panels for business management.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-                </div>
-                <div class="card">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-users text-3xl"></i></div>
-                    <h3 class="card-title">SMM Panels</h3>
-                    <p class="small-desc">Social media marketing tools and automation platforms.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-                </div>
-                <div class="card">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-project-diagram text-3xl"></i></div>
-                    <h3 class="card-title">ERP/CRM</h3>
-                    <p class="small-desc">Custom enterprise resource planning and customer relationship management systems.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-                </div>
-                <div class="card">
-                    <div class="text-blue-600 mb-4"><i class="fas fa-paint-brush text-3xl"></i></div>
-                    <h3 class="card-title">Design Services</h3>
-                    <p class="small-desc">UI/UX design, Graphics, branding, and Marketing Materials.</p>
-                    <div class="go-corner"><div class="go-arrow">→</div></div>
-                </div>
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-900">Our Premium Services</h2>
+                <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full mb-2"></div>
+				<marquee><p class="text-center text-gray-900 mb-12 max-w-2xl mx-auto">We provide end-to-end software development services tailored to your business needs</p></marquee>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <a href="https://futuretopindia.in/web-development?service=web" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link">
+                            <i class="fas fa-arrow-right card-arrow"></i>
+                        </div>
+                        
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Web Development</h3>
+                            <p class="text-gray-600 leading-relaxed">Static/Dynamic, E-commerce, Portfolio & Custom web portals built with modern technologies.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/mobile-app-development?service=app" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Mobile Applications</h3>
+                            <p class="text-gray-600 leading-relaxed">Android, iOS, and Hybrid apps development using native and cross-platform technologies.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/seo-optimization?service=seo" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-magnifying-glass"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SEO Optimization</h3>
+                            <p class="text-gray-600 leading-relaxed">Strategic SEO techniques to increase quality traffic to your website and rank higher on search engines.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/desktop-software?service=desktop" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Desktop Software</h3>
+                            <p class="text-gray-600 leading-relaxed">Robust custom desktop applications for Windows, macOS, and Linux platforms.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/SaaS-Platform-Development?service=saas" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-cloud"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SaaS Platforms</h3>
+                            <p class="text-gray-600 leading-relaxed">Scalable Software-as-a-Service solutions with subscription management and cloud integration.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/adminpanels?service=admin" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Admin Panels</h3>
+                            <p class="text-gray-600 leading-relaxed">Powerful custom dashboards to manage your business data, users, and analytics efficiently.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/smmpanel?service=smm" class="block h-full fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">SMM Panels</h3>
+                            <p class="text-gray-600 leading-relaxed">Automated Social Media Marketing tools and platforms designed for agencies and resellers.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/free-erp-crm-development?service=erp@crp" class="block h-full fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-project-diagram"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">ERP / CRM</h3>
+                            <p class="text-gray-600 leading-relaxed">Streamline operations with custom Enterprise Resource Planning and CRM systems.</p>
+                        </div>
+                    </div>
+                </a>
+
+                <a href="https://futuretopindia.in/designservices?service=design" class="block h-full fade-in-up" style="animation-delay: 0.3s;">
+                    <div class="service-card-modern p-8 group">
+                        <div class="card-corner-link"><i class="fas fa-arrow-right card-arrow"></i></div>
+                        <div class="relative z-10">
+                            <div class="modern-icon-box">
+                                <i class="fas fa-paint-brush"></i>
+                            </div>
+                            <h3 class="text-2xl font-bold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">Design Services</h3>
+                            <p class="text-gray-600 leading-relaxed">Creative UI/UX design, graphics, logo branding, and marketing materials that stand out.</p>
+                        </div>
+                    </div>
+                </a>
+
             </div>
         </div>
     </section>
+   
+
 
 
 
@@ -936,51 +974,103 @@
 
 	
 
-    <section id="technologies" class="py-16 px-4">
+   <section id="technologies" class="py-10 px-4">
         <div class="container mx-auto">
-            <h2 class="text-3xl font-bold text-center mb-2"><code class="inline bg-yellow-100">Technologies We Work With</code></h2>
-            <div class="w-28 h-1 bg-red-500 mx-auto mb-12"></div>
-
+            <h2 class="text-3xl font-bold text-center mb-2">Technologies We Work With</h2>
+			
+            <div class="w-24 h-1 bg-blue-600 mx-auto mt-4 rounded-full mb-2"></div>
+				<p class="text-center text-gray-900 mb-12 max-w-2xl mx-auto">Smart Code. <i class="fas fa-code text-xl"></i> Powerful Solutions.</p>
             <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Frontend Technologies</h3>
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2 flex items-center gap-3">
+                <i class="fas fa-code text-xl"></i>
+                 Frontend Technologies</h3>
+
                 <div class="flex flex-wrap gap-4">
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/html5.png" alt="HTML5 logo" class="w-10 h-10 mr-3"><span>HTML5</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/css3.png" alt="CSS3 logo" class="w-10 h-10 mr-3"><span>CSS3</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/js.png" alt="JavaScript logo" class="w-10 h-10 mr-3"><span>JavaScript</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3138bd6-ed32-423e-8a34-522e7dd9b6d3.png" alt="React logo" class="w-10 h-10 mr-3"><span>React.js</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f024f084-44df-487e-8b1f-c60a482c507e.png" alt="Next.js logo" class="w-10 h-10 mr-3"><span>Next.js</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37b34f72-5f47-435f-a8f9-9f906015a239.png" alt="Vue.js logo" class="w-10 h-10 mr-3"><span>Vue.js</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9cc4d8ea-4fb7-4fda-8df5-eec04ed9da23.png" alt="Angular logo" class="w-10 h-10 mr-3"><span>Angular</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55528df3-3f47-4258-87b1-c6a83f93f72d.png" alt="Tailwind CSS logo" class="w-10 h-10 mr-3"><span>Tailwind CSS</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/Bootstrap.jpg" alt="Bootstrap logo" class="w-10 h-10 mr-3"><span>Bootstrap</span></div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/html5.png" alt="HTML5" class="w-10 h-10 mr-3" loading="lazy"><span>HTML5</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/css3.png" alt="CSS3" class="w-10 h-10 mr-3" loading="lazy"><span>CSS3</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/js.png" alt="JavaScript" class="w-10 h-10 mr-3" loading="lazy"><span>JavaScript</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/a3138bd6-ed32-423e-8a34-522e7dd9b6d3.png" alt="React" class="w-10 h-10 mr-3" loading="lazy"><span>React.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f024f084-44df-487e-8b1f-c60a482c507e.png" alt="Next.js" class="w-10 h-10 mr-3" loading="lazy"><span>Next.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/37b34f72-5f47-435f-a8f9-9f906015a239.png" alt="Vue.js" class="w-10 h-10 mr-3" loading="lazy"><span>Vue.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/9cc4d8ea-4fb7-4fda-8df5-eec04ed9da23.png" alt="Angular" class="w-10 h-10 mr-3" loading="lazy"><span>Angular</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55528df3-3f47-4258-87b1-c6a83f93f72d.png" alt="Tailwind CSS" class="w-10 h-10 mr-3" loading="lazy"><span>Tailwind CSS</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/Bootstrap.jpg" alt="Bootstrap" class="w-10 h-10 mr-3" loading="lazy"><span>Bootstrap</span>
+                    </div>
                 </div>
             </div>
 
             <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Backend Technologies</h3>
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2 flex items-center gap-3">
+				<i class="fas fa-server text-xl"></i>
+				Backend Technologies</h3>
                 <div class="flex flex-wrap gap-4">
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2edc2f1-c254-44f1-a3ed-cd145bad949d.png" alt="Node.js logo" class="w-10 h-10 mr-3"><span>Node.js</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3528cf81-8907-4b7a-a1bc-23951bae6be6.png" alt="Express.js logo" class="w-10 h-10 mr-3"><span>Express.js</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6cd45de-b265-40da-9cc0-ebd3d1f163c0.png" alt="PHP logo" class="w-10 h-10 mr-3"><span>PHP</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb744bc3-57ba-465c-80f0-66be2f8e6f67.png" alt="Laravel logo" class="w-10 h-10 mr-3"><span>Laravel</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afacc929-75ad-4e59-ad3f-e2a90caa9f21.png" alt="Python logo" class="w-10 h-10 mr-3"><span>Python</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e46e6f83-7e66-41d0-b921-e8036a831a61.png" alt="Django logo" class="w-10 h-10 mr-3"><span>Django</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/674c8af5-0cd5-4a70-997c-786fc3a994cd.png" alt="Java logo" class="w-10 h-10 mr-3"><span>Java</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/07198f8e-d83f-4161-8d67-d3cd8dacd429.png" alt="Spring Boot logo" class="w-10 h-10 mr-3"><span>Spring Boot</span></div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/c2edc2f1-c254-44f1-a3ed-cd145bad949d.png" alt="Node.js" class="w-10 h-10 mr-3" loading="lazy"><span>Node.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/3528cf81-8907-4b7a-a1bc-23951bae6be6.png" alt="Express.js" class="w-10 h-10 mr-3" loading="lazy"><span>Express.js</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/f6cd45de-b265-40da-9cc0-ebd3d1f163c0.png" alt="PHP" class="w-10 h-10 mr-3" loading="lazy"><span>PHP</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/cb744bc3-57ba-465c-80f0-66be2f8e6f67.png" alt="Laravel" class="w-10 h-10 mr-3" loading="lazy"><span>Laravel</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/afacc929-75ad-4e59-ad3f-e2a90caa9f21.png" alt="Python" class="w-10 h-10 mr-3" loading="lazy"><span>Python</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/e46e6f83-7e66-41d0-b921-e8036a831a61.png" alt="Django" class="w-10 h-10 mr-3" loading="lazy"><span>Django</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/674c8af5-0cd5-4a70-997c-786fc3a994cd.png" alt="Java" class="w-10 h-10 mr-3" loading="lazy"><span>Java</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/07198f8e-d83f-4161-8d67-d3cd8dacd429.png" alt="Spring Boot" class="w-10 h-10 mr-3" loading="lazy"><span>Spring Boot</span>
+                    </div>
                 </div>
             </div>
 
             <div class="mb-12">
-                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2">Mobile Development</h3>
+                <h3 class="text-2xl font-semibold mb-6 text-blue-800 border-b-2 border-blue-200 pb-2 flex items-center gap-2 flex items-center gap-3">
+				<i class="fas fa-mobile-alt text-xl"></i>
+				Mobile Development</h3>
                 <div class="flex flex-wrap gap-4">
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/adf6c39f-6305-4982-8816-e2d27e331af9.png" alt="Flutter logo" class="w-10 h-10 mr-3"><span>Flutter</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55d13b75-c771-47c7-a470-1c03bcfa1ef3.png" alt="React Native logo" class="w-10 h-10 mr-3"><span>React Native</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="image/Kotlin.jpg" alt="Kotlin logo" class="w-10 h-10 mr-3"><span>Kotlin</span></div>
-                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center"><img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12e85de7-f078-43cc-bd0c-b50fca43c394.png" alt="Swift logo" class="w-10 h-10 mr-3"> <span>Swift</span> </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/adf6c39f-6305-4982-8816-e2d27e331af9.png" alt="Flutter" class="w-10 h-10 mr-3" loading="lazy"><span>Flutter</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/55d13b75-c771-47c7-a470-1c03bcfa1ef3.png" alt="React Native" class="w-10 h-10 mr-3" loading="lazy"><span>React Native</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="image/Kotlin.jpg" alt="Kotlin" class="w-10 h-10 mr-3" loading="lazy"><span>Kotlin</span>
+                    </div>
+                    <div class="tech-card bg-white p-4 rounded-lg shadow-sm border border-gray-200 flex items-center">
+                        <img src="https://storage.googleapis.com/workspace-0f70711f-8b4e-4d94-86f1-2a93ccde5887/image/12e85de7-f078-43cc-bd0c-b50fca43c394.png" alt="Swift" class="w-10 h-10 mr-3" loading="lazy"><span>Swift</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
+
+    
 
     <section class="py-16 px-4 bg-gray-50">
         <div class="container mx-auto">
@@ -1469,7 +1559,6 @@ window.addEventListener('load', () => {
 	
 </body>
 </html>
-
 
 
 
