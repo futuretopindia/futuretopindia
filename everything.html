@@ -739,17 +739,17 @@
 
       <div class="photo-card">
         <img src="images/life6.jpeg" alt="Forever">
-        <span class="photo-caption">Today, tomorrow & always</span>
+        <span class="photo-caption">Today, tomorrow & forever</span>
       </div>
 
       <div class="photo-card">
         <img src="images/life7.jpeg" alt="Forever">
-        <span class="photo-caption">Today, tomorrow & always</span>
+        <span class="photo-caption">Today, tomorrow & forever</span>
       </div>
 
       <div class="photo-card">
         <img src="images/life.png" alt="Forever">
-        <span class="photo-caption">Today, tomorrow & always</span>
+        <span class="photo-caption">Today, tomorrow & forever</span>
       </div>
 
 
@@ -758,29 +758,50 @@
     </div>
   </section>
 
+
+
+
+<audio id="bgMusic" loop>
+  <source src="music/music.mp3" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+
+
+
+
+
+
+
+
   <!-- Love Message -->
   <section class="section" id="message">
     <h2 class="section-title">My Heartfelt Message</h2>
     <div class="message-container">
       <p class="love-message">
-        My dearest Tannu,<br><br>
+       <b>My Dearest Tannu 🎀,</b><br><br>
 
-        On this beautiful day that marks your arrival into this world, I want to take a moment to tell you how
-        incredibly special you are to me. Your smile brightens even the darkest days, your laughter is the sweetest
-        melody, and your love is the greatest gift I've ever received.<br><br>
+        _Is khoobsurat din par, jis din tum is duniya mein aayi, 
+        main kuch pal nikaal kar tumko batana chahta hoon ki tum mere liye kitne khaas ho." <br> <br>
+        Aapke muskaan mere sabse andhere dinon ko bhi roshan kar dete hai, aapki hasi mere dil ki sabse pyaari dhun hai. <br>
+        Aur aapka pyaar… wo mere life ka sabse bada gift hai— jo mujhe kabhi mila nahi,<br><br>
 
-        Every moment with you feels like a beautiful dream I never want to wake up from. You've brought so much joy,
-        love, and meaning into my life. Today, I celebrate not just your birthday, but the wonderful person you are and
-        the incredible impact you have on everyone around you.<br><br>
+        lekin is baat ki mere dil mein koi shikayat bhi nahi hai." <br><br>
 
-        May this year bring you closer to your dreams, fill your life with endless happiness, and surround you with love
-        that grows stronger each day. Remember that you are cherished, you are loved, and you are truly one of a
-        kind.<br><br>
+        Main kabhi yeh nahi kahunga ki tum mere baare mein socho, 
+        kyunki mereko lagta hai mazburi se aaye yaade se behtar khamoshi main
+         chupa pyaar hi achaa hai<br> <br>
+
+         <b>Lekin ek baat hamesha yaad rakhna — </b><br><br>
+
+         hakhikhat janne ke baad bhi tumse mohabbat karte hai, 
+         tum kisi aur ka hu, <br> fir bhi tumhari chahat main marte hai, 
+         najane kaise harkat hai hamare, tum hamara hai bhi nhi, 
+         fir bhi tumse pyaar karta hu.<br><br><br>
 
         Happy birthday to the most beautiful soul I know. Here's to many more years of laughter, love, and beautiful
         memories together.
       </p>
-      <div class="signature">With all my love, forever and always ❤️</div>
+      <div class="signature">With all my love, forever and forever ❤️</div>
     </div>
   </section>
 
@@ -980,6 +1001,39 @@
       };
     }
   </script>
+  
+  
+  <script>
+  const bgMusic = document.getElementById("bgMusic");
+  let musicStarted = false;
+
+  function playMusic() {
+    if (!musicStarted) {
+      bgMusic.play().then(() => {
+        musicStarted = true;
+        console.log("Music started 🎵");
+      }).catch(err => {
+        console.log("Autoplay blocked, waiting for user interaction");
+      });
+    }
+  }
+
+  // Page pe kahin bhi first click par music start
+  document.addEventListener("click", playMusic);
+
+  // Play button ke saath connect
+  const playBtn = document.getElementById("playBtn");
+  playBtn.addEventListener("click", () => {
+    if (bgMusic.paused) {
+      bgMusic.play();
+      playBtn.innerHTML = '<i class="fas fa-pause"></i>';
+    } else {
+      bgMusic.pause();
+      playBtn.innerHTML = '<i class="fas fa-play"></i>';
+    }
+  });
+</script>
+
 </body>
 
 </html>
