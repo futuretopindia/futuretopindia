@@ -101,27 +101,7 @@
             margin: 0 auto;
         }
 
-        /* Name Section */
-        #name-section .glass-card {
-            text-align: center;
-            padding: 3rem;
-        }
-
-        .cursive-name {
-            font-family: 'Dancing Script', cursive;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .instagram-id {
-            font-size: 1.8rem;
-            color: var(--primary-gold);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
-        }
-
+        
         /* Message Section */
         #message-section {
             padding: 100px 20px;
@@ -614,6 +594,78 @@
     transform: translateY(-10px) rotate(0deg) scale(1.05);
     margin-right: 0; /* Overlap temporarily hatane ke liye */
 }
+
+
+
+/* NAME SECTION */
+#name-section{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  padding:60px 15px;
+}
+
+/* CARD */
+.name-card{
+  text-align:center;
+  padding:45px 35px;
+  max-width:420px;
+  width:100%;
+}
+
+/* NAME */
+.cursive-name{
+  font-family:'Segoe Script', cursive;
+  font-size:2.6rem;
+  margin-bottom:25px;
+  color:#fff;
+  letter-spacing:1px;
+  text-shadow:0 0 15px rgba(255,182,193,0.6);
+}
+
+/* INSTAGRAM BUTTON */
+.instagram-id{
+  display:flex;
+  justify-content:center;
+}
+
+.instagram-id a{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:12px;
+  font-size:1.15rem;
+  text-decoration:none;
+  color:#fff;
+  padding:12px 26px;
+  border-radius:50px;
+  background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+  transition:all 0.35s ease;
+  box-shadow:0 8px 25px rgba(0,0,0,0.25);
+}
+
+/* ICON */
+.instagram-id a i{
+  font-size:1.35rem;
+}
+
+/* HOVER */
+.instagram-id a:hover{
+  transform:scale(1.1);
+  box-shadow:0 15px 40px rgba(0,0,0,0.35);
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .cursive-name{
+    font-size:2.1rem;
+  }
+  .instagram-id a{
+    font-size:1rem;
+    padding:10px 22px;
+  }
+}
+
     </style>
 </head>
 <body>
@@ -642,16 +694,24 @@
 
     <!-- Name Section -->
     <section id="name-section">
-        <div class="container fade-in">
-            <div class="glass-card">
-                <h2 class="cursive-name">My Dearest Tannu 🎀</h2>
-                <div class="instagram-id">
-                    <span>Instagram:</span>
-                    <span>@tannu</span>
-                </div>
-            </div>
-        </div>
-    </section>
+  <div class="container fade-in">
+    <div class="glass-card name-card">
+
+      <h2 class="cursive-name">My Dearest Queen 🎀</h2>
+
+      <div class="instagram-id">
+        <a href="https://www.instagram.com/karki__tanu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+           target="_blank" rel="noopener">
+          <i class="fa-brands fa-instagram"></i>
+          <span>@karki__tanu</span>
+        </a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
 
     <!-- Message Section -->
     <section id="message-section">
@@ -669,7 +729,7 @@
 
    <section id="memory-section">
     <div class="container">
-        <h2 class="section-title fade-in">Our Precious Memories 💖</h2>
+        <h2 class="section-title fade-in">Precious Memories 💖</h2>
         
         <div class="swipe-hint fade-in">
             <span>Swipe Right to Re-live ➜</span>
@@ -678,32 +738,30 @@
         <div class="memory-cards-container">
             <div class="memory-card fade-in" style="z-index: 5;">
                 <div class="memory-card-image">
-                    <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=800&q=80" class="memory-img">
+                    <img src="images/life2.jpg" class="memory-img">
                 </div>
                 <div class="memory-card-content">
-                    <h3 class="memory-title">First Meet ✨</h3>
-                    <p class="memory-text">The moment I saw you, everything else faded away.</p>
+                    <h3 class="memory-title">Tumhare Khobsorat ka koi Mukaabala nhi✨</h3>
                     <div class="memory-quote">"Always in my heart."</div>
                 </div>
             </div>
 
             <div class="memory-card fade-in" style="z-index: 4;">
                 <div class="memory-card-image">
-                    <img src="https://images.unsplash.com/photo-1518568814500-bf0f8d125f46?auto=format&fit=crop&w=800&q=80" class="memory-img">
+                    <img src="images/life5.jpeg" class="memory-img">
                 </div>
                 <div class="memory-card-content">
                     <h3 class="memory-title">Beautiful Smile 😊</h3>
-                    <p class="memory-text">Your laughter is my favorite melody in the world.</p>
-                    <div class="memory-quote">"Keep smiling, Tannu."</div>
+                    <div class="memory-quote">"Keep smiling, Queen👑"</div>
                 </div>
             </div>
 
             <div class="memory-card fade-in" style="z-index: 3;">
                 <div class="memory-card-image">
-                    <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80" class="memory-img">
+                    <img src="images/life4.jpg" class="memory-img">
                 </div>
                 <div class="memory-card-content">
-                    <h3 class="memory-title">Special Days 🌸</h3>
+                    <h3 class="memory-title"> 🌸</h3>
                     <p class="memory-text">Every second spent with you is a gift from above.</p>
                     <div class="memory-quote">"Forever & Always."</div>
                 </div>
@@ -743,17 +801,17 @@
             "",
             "<span class='message-highlight'>Is khoobsurat din par, jis din tum is duniya mein aayi, main kuch pal nikaal kar tumko batana chahta hoon ki tum mere liye kitne khaas ho.</span>",
             "",
-            "Aapke muskaan mere sabse andhere dinon ko bhi roshan kar dete hai, aapki hasi mere dil ki sabse pyaari dhun hai. Aur aapka pyaar… wo mere life ka sabse bada gift hai—jo mujhe kabhi mila nahi,",
+            "Aapke muskaan mere sabse andhere dinon ko bhi roshan kar dete hai, aapki hasi mere dil ki sabse pyaari dhun hai. Aur aapka pyaar… wo mere life ka sabse bada gift hai—jo mujhe kabhi mila nahi😔,",
             "",
-            "lekin is baat ki mere dil mein koi shikayat bhi nahi hai.",
+            "lekin is baat ki mere dil mein koi shikayat bhi nahi hai .",
             "",
             "Main kabhi yeh nahi kahunga ki tum mere baare mein socho, kyunki majburi se aaye yaadon se behtar khamoshi mein chupa pyaar hi sabse acha hota hai.",
             "",
             "Lekin ek baat hamesha yaad rakhna —",
             "",
-            "<span class='message-highlight'>Haqeeqat jaanne ke baad bhi tumse mohabbat karte hai, tum kisi aur ke ho, phir bhi tumhari chahat mein marte hai.</span>",
+            "<span class='message-highlight'>Is duniya mein koi hai jo tumhe dil se chahta hai, aur jab bhi zarurat ho — bina kuch kahe, hamesha saath milega.</span>",
             "",
-            "Tum hamare ho bhi nahi, phir bhi tumse pyaar karte hai…",
+            "Tum Mere ho bhi nahi, phir bhi tumse pyaar karte hai…",
             "",
             "Happy Birthday to the most beautiful soul I know. Here's to many more years of laughter, love, and beautiful memories together.",
             "",
@@ -922,11 +980,11 @@
                     
                     // Animate the line
                     setTimeout(() => {
-                        line.style.animation = `fadeInUp 0.8s forwards`;
+                        line.style.animation = `fadeInUp 0.1s forwards`;
                     }, 100);
                     
                     lineIndex++;
-                    setTimeout(typeNextLine, 800); // Delay between lines
+                    setTimeout(typeNextLine, 100); // Delay between lines
                 }
             }
             
