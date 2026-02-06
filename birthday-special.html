@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy Birthday Tanuja Karki ✨</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Inter:wght@300;400;500;600&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -60,101 +61,88 @@
         }
 
         /* INTRO SECTION */
-.intro{
-  min-height:100vh;
-  background: radial-gradient(circle at top, #2a1247, #0b0614 70%);
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  position:relative;
-  overflow:hidden;
-}
+        .intro {
+            min-height: 100vh;
+            background: radial-gradient(circle at top, #2a1247, #0b0614 70%);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 20px 15px;
+        }
 
-/* SOFT LIGHT OVERLAY */
-.intro-overlay{
-  position:absolute;
-  inset:0;
-  background:
-    radial-gradient(circle at 30% 20%, rgba(255,105,180,0.15), transparent 40%),
-    radial-gradient(circle at 70% 60%, rgba(157,78,221,0.12), transparent 45%);
-  animation: slowGlow 8s ease-in-out infinite alternate;
-}
+        /* SOFT LIGHT OVERLAY */
+        .intro-overlay {
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 30% 20%, rgba(255,105,180,0.15), transparent 40%),
+                radial-gradient(circle at 70% 60%, rgba(157,78,221,0.12), transparent 45%);
+            animation: slowGlow 8s ease-in-out infinite alternate;
+        }
 
-@keyframes slowGlow{
-  from{opacity:0.6;}
-  to{opacity:1;}
-}
+        @keyframes slowGlow {
+            from { opacity: 0.6; }
+            to { opacity: 1; }
+        }
 
-/* CONTENT */
-.intro-content{
-  position:relative;
-  z-index:2;
-  animation: fadeUp 2s ease forwards;
-}
+        /* CONTENT */
+        .intro-content {
+            position: relative;
+            z-index: 2;
+            animation: fadeUp 2s ease forwards;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+        }
 
-@keyframes fadeUp{
-  from{opacity:0; transform:translateY(30px);}
-  to{opacity:1; transform:translateY(0);}
-}
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-/* BIRTHDAY TEXT */
-.birthday-text{
-  font-size:4.2rem;
-  font-weight:600;
-  margin-bottom:1rem;
-  letter-spacing:2px;
-  animation: textGlow 3s infinite alternate;
-}
+        /* BIRTHDAY TEXT */
+        .birthday-text {
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            letter-spacing: 2px;
+            animation: textGlow 3s infinite alternate;
+            line-height: 1.2;
+        }
 
-/* GLOW ANIMATION */
-@keyframes textGlow{
-  0%{
-    text-shadow:0 0 15px rgba(255,105,180,0.6);
-  }
-  100%{
-    text-shadow:
-      0 0 30px rgba(255,105,180,0.9),
-      0 0 50px rgba(157,78,221,0.7);
-  }
-}
+        /* GLOW ANIMATION */
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 15px rgba(255,105,180,0.6);
+            }
+            100% {
+                text-shadow:
+                    0 0 30px rgba(255,105,180,0.9),
+                    0 0 50px rgba(157,78,221,0.7);
+            }
+        }
 
-/* NAME */
-.name-text{
-  font-family:'Dancing Script', cursive;
-  font-size:3.2rem;
-  margin-bottom:1.5rem;
-  color:#ffd1ec;
-  text-shadow:0 0 20px rgba(255,182,193,0.5);
-}
+        /* NAME */
+        .name-text {
+            font-family: 'Dancing Script', cursive;
+            font-size: 3.2rem;
+            margin-bottom: 1rem;
+            color: #ffd1ec;
+            text-shadow: 0 0 20px rgba(255,182,193,0.5);
+            line-height: 1.2;
+        }
 
-/* SUBTITLE */
-.subtitle{
-  font-size:1.5rem;
-  color:rgba(255,255,255,0.75);
-  margin-top:2rem;
-  letter-spacing:1px;
-}
-
-/* MOBILE */
-@media(max-width:480px){
-  .birthday-text{font-size:3rem;}
-  .name-text{font-size:2.4rem;}
-  .subtitle{font-size:1.2rem;}
-}
-.birthday-text{
-  white-space: nowrap;        /* Line break band */
-  text-align:center;
-}
-
-/* Mobile fine tuning */
-@media (max-width:480px){
-  .birthday-text{
-    font-size:2.5rem;         /* Size thoda kam */
-    letter-spacing:1px;
-  }
-}
-
+        /* SUBTITLE */
+        .subtitle {
+            font-size: 1.5rem;
+            color: rgba(255,255,255,0.75);
+            margin-top: 1.5rem;
+            letter-spacing: 1px;
+            line-height: 1.4;
+        }
 
         /* Glassmorphism Cards */
         .glass-card {
@@ -166,9 +154,9 @@
             box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
             max-width: 800px;
             margin: 0 auto;
+            width: 100%;
         }
 
-        
         /* Message Section */
         #message-section {
             padding: 100px 20px;
@@ -429,6 +417,7 @@
             font-family: 'Dancing Script', cursive;
             margin-bottom: 2rem;
             max-width: 800px;
+            line-height: 1.3;
         }
 
         /* Floating Particles */
@@ -508,26 +497,192 @@
             transform: translateY(0);
         }
 
-        /* Responsive Design */
+        /* Overlapping Horizontal Memory Lane */
+        #memory-section {
+            padding-bottom: 100px;
+            overflow: hidden;
+        }
+
+        .memory-cards-container-horizontal {
+            display: flex;
+            flex-direction: row;
+            overflow-x: auto;
+            padding: 40px 20px;
+            scroll-snap-type: x mandatory;
+            scrollbar-width: none;
+            -webkit-overflow-scrolling: touch;
+            touch-action: pan-x;
+        }
+
+        .memory-cards-container-horizontal::-webkit-scrollbar {
+            display: none;
+        }
+
+        .memory-card-horizontal {
+            flex: 0 0 80%;
+            max-width: 320px;
+            margin-right: -60px;
+            position: relative;
+            background: var(--glass-bg);
+            backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            box-shadow: -10px 0 20px rgba(0,0,0,0.3);
+            scroll-snap-align: center;
+            transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            z-index: 1;
+            min-height: 400px;
+        }
+
+        .memory-card-horizontal:nth-child(odd) { transform: rotate(-2deg); }
+        .memory-card-horizontal:nth-child(even) { transform: rotate(2deg); }
+
+        .memory-card-horizontal:hover, .memory-card-horizontal:focus {
+            transform: translateY(-20px) rotate(0deg) scale(1.05);
+            z-index: 100 !important;
+            margin-right: 0;
+            border-color: var(--primary-pink);
+        }
+
+        .memory-card-image-horizontal {
+            width: 100%;
+            height: 220px;
+            border-bottom: 1px solid var(--glass-border);
+        }
+
+        .memory-img-horizontal {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 18px 18px 0 0;
+        }
+
+        .memory-card-content-horizontal {
+            padding: 20px;
+            background: rgba(15, 10, 26, 0.8);
+            height: calc(100% - 220px);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Swipe Hint Animation */
+        .swipe-hint {
+            text-align: center;
+            color: var(--primary-pink);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            animation: bounceRight 2s infinite;
+        }
+
+        @keyframes bounceRight {
+            0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
+            40% { transform: translateX(-10px); }
+            60% { transform: translateX(-5px); }
+        }
+
+        /* NAME SECTION */
+        #name-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 60px 15px;
+            min-height: 50vh;
+        }
+
+        /* CARD */
+        .name-card {
+            text-align: center;
+            padding: 45px 35px;
+            max-width: 420px;
+            width: 100%;
+        }
+
+        /* NAME */
+        .cursive-name {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.6rem;
+            margin-bottom: 25px;
+            color: #fff;
+            letter-spacing: 1px;
+            text-shadow: 0 0 15px rgba(255,182,193,0.6);
+            line-height: 1.2;
+        }
+
+        /* INSTAGRAM BUTTON */
+        .instagram-id {
+            display: flex;
+            justify-content: center;
+        }
+
+        .instagram-id a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            font-size: 1.15rem;
+            text-decoration: none;
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 50px;
+            background: linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
+            transition: all 0.35s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+        }
+
+        /* ICON */
+        .instagram-id a i {
+            font-size: 1.35rem;
+        }
+
+        /* HOVER */
+        .instagram-id a:hover {
+            transform: scale(1.1);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.35);
+        }
+
+        /* MOBILE RESPONSIVE STYLES */
         @media (max-width: 768px) {
+            section {
+                padding: 60px 15px;
+                min-height: auto;
+            }
+            
+            #intro {
+                min-height: 100vh;
+                padding: 20px 15px;
+            }
+            
+            .intro-content {
+                padding: 0 15px;
+            }
+            
             .birthday-text {
                 font-size: 2.8rem;
+                line-height: 1.1;
+                margin-bottom: 0.5rem;
             }
             
             .name-text {
                 font-size: 2.2rem;
+                line-height: 1.1;
+                margin-bottom: 0.8rem;
             }
             
             .cursive-name {
-                font-size: 2.5rem;
+                font-size: 2rem;
+                line-height: 1.2;
+                margin-bottom: 20px;
             }
             
             .section-title {
                 font-size: 2rem;
+                margin-bottom: 1.5rem;
             }
             
             .glass-card {
                 padding: 1.5rem;
+                margin: 0 10px;
             }
             
             .typing-container {
@@ -536,203 +691,113 @@
             
             .final-text {
                 font-size: 1.8rem;
+                line-height: 1.2;
+            }
+            
+            .subtitle {
+                font-size: 1.2rem;
+                margin-top: 1rem;
+                line-height: 1.3;
+            }
+            
+            .memory-cards-container-horizontal {
+                padding: 30px 15px;
+            }
+            
+            .memory-card-horizontal {
+                flex: 0 0 85%;
+                max-width: 85%;
+                margin-right: -40px;
+            }
+            
+            .memory-card-image-horizontal {
+                height: 180px;
+            }
+            
+            .music-controls {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .music-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .smile-btn {
+                padding: 12px 30px;
+                font-size: 1.2rem;
             }
         }
-		
-		
-		/* Overlapping Horizontal Memory Lane */
-#memory-section {
-    padding-bottom: 100px;
-    overflow: hidden; /* Taaki rotated cards screen se bahar na dikhein */
-}
 
-.memory-cards-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    padding: 40px 20px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none; /* Hide scrollbar */
-    -webkit-overflow-scrolling: touch;
-    /* Overlap create karne ke liye negative margin handle karega */
-}
+        @media (max-width: 480px) {
+            .birthday-text {
+                font-size: 2.2rem;
+            }
+            
+            .name-text {
+                font-size: 1.8rem;
+            }
+            
+            .cursive-name {
+                font-size: 1.8rem;
+            }
+            
+            .subtitle {
+                font-size: 1rem;
+            }
+            
+            .instagram-id a {
+                font-size: 1rem;
+                padding: 10px 22px;
+            }
+            
+            .memory-card-horizontal {
+                flex: 0 0 90%;
+                max-width: 90%;
+                margin-right: -30px;
+            }
+            
+            .memory-card-image-horizontal {
+                height: 150px;
+            }
+            
+            .memory-card-content-horizontal {
+                padding: 15px;
+            }
+            
+            .memory-title {
+                font-size: 1.4rem;
+            }
+            
+            .memory-quote {
+                font-size: 1rem;
+                padding: 0.6rem;
+            }
+            
+            .final-text {
+                font-size: 1.5rem;
+            }
+        }
 
-.memory-cards-container::-webkit-scrollbar {
-    display: none;
-}
-
-.memory-card {
-    flex: 0 0 80%; /* 80% width taaki agla card dikhe */
-    max-width: 350px;
-    margin-right: -60px; /* Yeh cards ko ek dusre ke upar layega */
-    position: relative;
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    box-shadow: -10px 0 20px rgba(0,0,0,0.3);
-    scroll-snap-align: center;
-    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    z-index: 1;
-}
-
-/* Har card ko thoda alag angle par rotate karenge romantic look ke liye */
-.memory-card:nth-child(odd) { transform: rotate(-2deg); }
-.memory-card:nth-child(even) { transform: rotate(2deg); }
-
-/* Hover ya Active card upar aayega */
-.memory-card:hover, .memory-card:focus {
-    transform: translateY(-20px) rotate(0deg) scale(1.05);
-    z-index: 100 !important;
-    margin-right: 0; /* Hover par overlap hat jayega */
-    border-color: var(--primary-pink);
-}
-
-.memory-card-image {
-    width: 100%;
-    height: 220px;
-    border-bottom: 1px solid var(--glass-border);
-}
-
-.memory-img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    border-radius: 18px 18px 0 0;
-}
-
-.memory-card-content {
-    padding: 20px;
-    background: rgba(15, 10, 26, 0.8);
-}
-
-/* Swipe Hint Animation */
-.swipe-hint {
-    text-align: center;
-    color: var(--primary-pink);
-    font-size: 0.9rem;
-    margin-bottom: 20px;
-    animation: bounceRight 2s infinite;
-}
-
-@keyframes bounceRight {
-    0%, 20%, 50%, 80%, 100% { transform: translateX(0); }
-    40% { transform: translateX(-10px); }
-    60% { transform: translateX(-5px); }
-}
-
-
-
-.memory-cards-container {
-    display: flex;
-    flex-direction: row;
-    overflow-x: auto;
-    overflow-y: hidden; /* Vertical overflow container ke andar band rahega */
-    padding: 40px 20px;
-    scroll-snap-type: x mandatory;
-    scrollbar-width: none;
-    -webkit-overflow-scrolling: touch;
-    
-    /* YEH IMPORTANT HAI: */
-    touch-action: pan-x pan-y; /* Dono taraf ke movement ko allow karta hai */
-    gap: 0; /* Kyunki hum negative margin use kar rahe hain */
-}
-
-.memory-card {
-    flex: 0 0 80%;
-    max-width: 320px;
-    margin-right: -80px; /* Overlap effect */
-    position: relative;
-    background: var(--glass-bg);
-    backdrop-filter: blur(15px);
-    border: 2px solid rgba(255, 255, 255, 0.1);
-    border-radius: 20px;
-    scroll-snap-align: center;
-    transition: all 0.4s ease;
-    
-    /* YEH BHI ADD KAREIN: */
-    touch-action: auto; /* Card ke upar touch hone par scroll na ruke */
-    user-select: none;
-}
-
-/* Jab card active ho (touch/click), toh usey upar dikhao */
-.memory-card:active, .memory-card:hover {
-    z-index: 999 !important;
-    transform: translateY(-10px) rotate(0deg) scale(1.05);
-    margin-right: 0; /* Overlap temporarily hatane ke liye */
-}
-
-
-
-/* NAME SECTION */
-#name-section{
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  padding:60px 15px;
-}
-
-/* CARD */
-.name-card{
-  text-align:center;
-  padding:45px 35px;
-  max-width:420px;
-  width:100%;
-}
-
-/* NAME */
-.cursive-name{
-  font-family:'Segoe Script', cursive;
-  font-size:2.6rem;
-  margin-bottom:25px;
-  color:#fff;
-  letter-spacing:1px;
-  text-shadow:0 0 15px rgba(255,182,193,0.6);
-}
-
-/* INSTAGRAM BUTTON */
-.instagram-id{
-  display:flex;
-  justify-content:center;
-}
-
-.instagram-id a{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  gap:12px;
-  font-size:1.15rem;
-  text-decoration:none;
-  color:#fff;
-  padding:12px 26px;
-  border-radius:50px;
-  background:linear-gradient(45deg,#feda75,#fa7e1e,#d62976,#962fbf,#4f5bd5);
-  transition:all 0.35s ease;
-  box-shadow:0 8px 25px rgba(0,0,0,0.25);
-}
-
-/* ICON */
-.instagram-id a i{
-  font-size:1.35rem;
-}
-
-/* HOVER */
-.instagram-id a:hover{
-  transform:scale(1.1);
-  box-shadow:0 15px 40px rgba(0,0,0,0.35);
-}
-
-/* MOBILE */
-@media(max-width:480px){
-  .cursive-name{
-    font-size:2.1rem;
-  }
-  .instagram-id a{
-    font-size:1rem;
-    padding:10px 22px;
-  }
-}
-
+        @media (max-width: 360px) {
+            .birthday-text {
+                font-size: 1.8rem;
+            }
+            
+            .name-text {
+                font-size: 1.6rem;
+            }
+            
+            .cursive-name {
+                font-size: 1.6rem;
+            }
+            
+            .subtitle {
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
@@ -751,37 +816,30 @@
     </div>
 
     <!-- Intro Section -->
-<section id="intro" class="intro">
-  <div class="intro-overlay"></div>
-
-  <div class="intro-content">
-    <h1 class="birthday-text">Happy Birthday <br>🎂</h1>
-    <h2 class="name-text">Tanuja Karki ✨</h2>
-    <p class="subtitle">For someone special… always.</p>
-  </div>
-</section>
-
+    <section id="intro" class="intro">
+        <div class="intro-overlay"></div>
+        <div class="intro-content">
+            <h1 class="birthday-text">Happy Birthday</h1>
+            <h2 class="name-text">Tanuja Karki ✨</h2>
+            <p class="subtitle">For someone special… always.</p>
+        </div>
+    </section>
 
     <!-- Name Section -->
     <section id="name-section">
-  <div class="container fade-in">
-    <div class="glass-card name-card">
-
-      <h2 class="cursive-name">My Dearest Queen 🎀</h2>
-
-      <div class="instagram-id">
-        <a href="https://www.instagram.com/karki__tanu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
-           target="_blank" rel="noopener">
-          <i class="fa-brands fa-instagram"></i>
-          <span>@karki__tanu</span>
-        </a>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-
+        <div class="container fade-in">
+            <div class="glass-card name-card">
+                <h2 class="cursive-name">My Dearest Queen 🎀</h2>
+                <div class="instagram-id">
+                    <a href="https://www.instagram.com/karki__tanu?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" 
+                       target="_blank" rel="noopener">
+                        <i class="fa-brands fa-instagram"></i>
+                        <span>@karki__tanu</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Message Section -->
     <section id="message-section">
@@ -794,52 +852,48 @@
             </div>
         </div>
     </section>
-	
-	<!-- images -->
 
-   <section id="memory-section">
-    <div class="container">
-        <h2 class="section-title fade-in">Precious Memories 💖</h2>
-        
-        <div class="swipe-hint fade-in">
-            <span>Swipe Right to Re-live ➜</span>
+    <!-- Memory Section -->
+    <section id="memory-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Precious Memories 💖</h2>
+            <div class="swipe-hint fade-in">
+                <span>Swipe Right to Re-live ➜</span>
+            </div>
+            <div class="memory-cards-container-horizontal">
+                <div class="memory-card-horizontal fade-in" style="z-index: 5;">
+                    <div class="memory-card-image-horizontal">
+                        <img src="images/life2.jpg" class="memory-img-horizontal" alt="Beautiful Memory">
+                    </div>
+                    <div class="memory-card-content-horizontal">
+                        <h3 class="memory-title">Tumhare Khobsorat ka koi Mukaabala nhi✨</h3>
+                        <div class="memory-quote">"Always in my heart."</div>
+                    </div>
+                </div>
+
+                <div class="memory-card-horizontal fade-in" style="z-index: 4;">
+                    <div class="memory-card-image-horizontal">
+                        <img src="images/life5.jpeg" class="memory-img-horizontal" alt="Beautiful Smile">
+                    </div>
+                    <div class="memory-card-content-horizontal">
+                        <h3 class="memory-title">Beautiful Smile 😊</h3>
+                        <div class="memory-quote">"Keep smiling, Queen👑"</div>
+                    </div>
+                </div>
+
+                <div class="memory-card-horizontal fade-in" style="z-index: 3;">
+                    <div class="memory-card-image-horizontal">
+                        <img src="images/life4.jpg" class="memory-img-horizontal" alt="Special Moment">
+                    </div>
+                    <div class="memory-card-content-horizontal">
+                        <h3 class="memory-title">Beautiful Moments 🌸</h3>
+                        <p class="memory-text">Every second spent with you is a gift from above.</p>
+                        <div class="memory-quote">"Forever & Always."</div>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div class="memory-cards-container">
-            <div class="memory-card fade-in" style="z-index: 5;">
-                <div class="memory-card-image">
-                    <img src="images/life2.jpg" class="memory-img">
-                </div>
-                <div class="memory-card-content">
-                    <h3 class="memory-title">Tumhare Khobsorat ka koi Mukaabala nhi✨</h3>
-                    <div class="memory-quote">"Always in my heart."</div>
-                </div>
-            </div>
-
-            <div class="memory-card fade-in" style="z-index: 4;">
-                <div class="memory-card-image">
-                    <img src="images/life5.jpeg" class="memory-img">
-                </div>
-                <div class="memory-card-content">
-                    <h3 class="memory-title">Beautiful Smile 😊</h3>
-                    <div class="memory-quote">"Keep smiling, Queen👑"</div>
-                </div>
-            </div>
-
-            <div class="memory-card fade-in" style="z-index: 3;">
-                <div class="memory-card-image">
-                    <img src="images/life4.jpg" class="memory-img">
-                </div>
-                <div class="memory-card-content">
-                    <h3 class="memory-title"> 🌸</h3>
-                    <p class="memory-text">Every second spent with you is a gift from above.</p>
-                    <div class="memory-quote">"Forever & Always."</div>
-                </div>
-            </div>
-            
-            </div>
-    </div>
-</section>
+    </section>
 
     <!-- Celebration Section -->
     <section id="celebration-section">
