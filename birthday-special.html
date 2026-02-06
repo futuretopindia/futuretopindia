@@ -59,35 +59,102 @@
             font-weight: 600;
         }
 
-        /* Intro Section */
-        #intro {
-            background: linear-gradient(135deg, #1a0b2e 0%, #0f0a1a 100%);
-            text-align: center;
-        }
+        /* INTRO SECTION */
+.intro{
+  min-height:100vh;
+  background: radial-gradient(circle at top, #2a1247, #0b0614 70%);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  position:relative;
+  overflow:hidden;
+}
 
-        .birthday-text {
-            font-size: 4rem;
-            margin-bottom: 1rem;
-            font-weight: 600;
-            animation: textGlow 3s infinite alternate;
-        }
+/* SOFT LIGHT OVERLAY */
+.intro-overlay{
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 30% 20%, rgba(255,105,180,0.15), transparent 40%),
+    radial-gradient(circle at 70% 60%, rgba(157,78,221,0.12), transparent 45%);
+  animation: slowGlow 8s ease-in-out infinite alternate;
+}
 
-        @keyframes textGlow {
-            0% { text-shadow: 0 0 10px rgba(255, 105, 180, 0.5); }
-            100% { text-shadow: 0 0 20px rgba(255, 105, 180, 0.8), 0 0 30px rgba(157, 78, 221, 0.6); }
-        }
+@keyframes slowGlow{
+  from{opacity:0.6;}
+  to{opacity:1;}
+}
 
-        .name-text {
-            font-size: 3rem;
-            margin-bottom: 1.5rem;
-            font-family: 'Dancing Script', cursive;
-        }
+/* CONTENT */
+.intro-content{
+  position:relative;
+  z-index:2;
+  animation: fadeUp 2s ease forwards;
+}
 
-        .subtitle {
-            font-size: 1.5rem;
-            color: var(--text-secondary);
-            margin-top: 2rem;
-        }
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(30px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* BIRTHDAY TEXT */
+.birthday-text{
+  font-size:4.2rem;
+  font-weight:600;
+  margin-bottom:1rem;
+  letter-spacing:2px;
+  animation: textGlow 3s infinite alternate;
+}
+
+/* GLOW ANIMATION */
+@keyframes textGlow{
+  0%{
+    text-shadow:0 0 15px rgba(255,105,180,0.6);
+  }
+  100%{
+    text-shadow:
+      0 0 30px rgba(255,105,180,0.9),
+      0 0 50px rgba(157,78,221,0.7);
+  }
+}
+
+/* NAME */
+.name-text{
+  font-family:'Dancing Script', cursive;
+  font-size:3.2rem;
+  margin-bottom:1.5rem;
+  color:#ffd1ec;
+  text-shadow:0 0 20px rgba(255,182,193,0.5);
+}
+
+/* SUBTITLE */
+.subtitle{
+  font-size:1.5rem;
+  color:rgba(255,255,255,0.75);
+  margin-top:2rem;
+  letter-spacing:1px;
+}
+
+/* MOBILE */
+@media(max-width:480px){
+  .birthday-text{font-size:3rem;}
+  .name-text{font-size:2.4rem;}
+  .subtitle{font-size:1.2rem;}
+}
+.birthday-text{
+  white-space: nowrap;        /* Line break band */
+  text-align:center;
+}
+
+/* Mobile fine tuning */
+@media (max-width:480px){
+  .birthday-text{
+    font-size:2.5rem;         /* Size thoda kam */
+    letter-spacing:1px;
+  }
+}
+
 
         /* Glassmorphism Cards */
         .glass-card {
@@ -684,13 +751,16 @@
     </div>
 
     <!-- Intro Section -->
-    <section id="intro">
-        <div class="container">
-            <h1 class="birthday-text">Happy Birthday 🎂</h1>
-            <h2 class="name-text">Tanuja Karki ✨</h2>
-            <p class="subtitle">For someone special… always.</p>
-        </div>
-    </section>
+<section id="intro" class="intro">
+  <div class="intro-overlay"></div>
+
+  <div class="intro-content">
+    <h1 class="birthday-text">Happy Birthday <br>🎂</h1>
+    <h2 class="name-text">Tanuja Karki ✨</h2>
+    <p class="subtitle">For someone special… always.</p>
+  </div>
+</section>
+
 
     <!-- Name Section -->
     <section id="name-section">
