@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://futuretopindia.in/sitemap.xml
+Sitemap: https://futuretopindia.com/sitemap.xml
