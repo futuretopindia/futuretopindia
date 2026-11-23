@@ -8,8 +8,8 @@
 </p>
 
 <p align="center">
-  <a href="https://futuretopindia.in"><img src="https://img.shields.io/badge/Website-futuretopindia.in-blue?style=for-the-badge"></a>
-  <a href="mailto:info@futuretopindia.in"><img src="https://img.shields.io/badge/Email-info@futuretopindia.in-red?style=for-the-badge"></a>
+  <a href="https://futuretopindia.com"><img src="https://img.shields.io/badge/Website-futuretopindia.com-blue?style=for-the-badge"></a>
+  <a href="mailto:info@futuretopindia.com"><img src="https://img.shields.io/badge/Email-info@futuretopindia.com-red?style=for-the-badge"></a>
   <a href="https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh"><img src="https://img.shields.io/badge/Instagram-@future__top__india-pink?style=for-the-badge&logo=instagram"></a>
 </p>
 
@@ -47,7 +47,7 @@ We believe in **performance, scalability, and design perfection** — ensuring t
 
 ## 🚀 Projects
 
-- 🔹 **[Future Top India Official Website](https://futuretopindia.in)** – Our main business portal.  
+- 🔹 **[Future Top India Official Website](https://futuretopindia.com)** – Our main business portal.  
 - 🔹 **Kodom Mart** – Modern eCommerce app for online sellers.  
 - 🔹 **Education Portal** – Dynamic education management system for universities and institutes.
 
@@ -62,9 +62,9 @@ We believe in **performance, scalability, and design perfection** — ensuring t
 
 ## 📬 Contact Us
 
-📧 **Email:** [info@futuretopindia.in](mailto:info@futuretopindia.in)  
+📧 **Email:** [info@futuretopindia.com](mailto:futuretopindia@gmail.com)  
 📱 **WhatsApp:** [+91 9864551558](https://wa.me/919864551558)  
-🌐 **Website:** [https://futuretopindia.in](https://futuretopindia.in)  
+🌐 **Website:** [https://futuretopindia.com](https://futuretopindia.com)  
 📸 **Instagram:** [@future_top_india](https://www.instagram.com/future_top_india?igsh=eHIwOHJhNW9nZGNh)  
 
 ---
